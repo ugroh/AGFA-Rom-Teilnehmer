@@ -1,4 +1,4 @@
-## AGFA-Rom Vorlage
+## AGFA-Rom Vorlage (Stand 2023/02/01)
 
 Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Der Aufbau ist wie folgt:
 
@@ -17,3 +17,8 @@ An diesen Dateien wird bitte **nichts** geändert. Sollte mal etwas nicht funkti
 
 * Eigene Ergänzungen, die erforderlich sind, bitte in die Datei `abcd-defn.tex` aufnehmen und über `\input{abcd-defn}` in die Hauptdatei `Rom-abcd.tex`. Wer dies machen will sollte aber wissen, was er macht und auch gute LaTeX-Kenntnisse besitzen.
 
+* Die Vorlagen bekommt man über []()
+
+#### Wie bekomme ich die Vorlagen:
+
+Für die Teilnehmer: Einfach auf das zip-File gehen (anklicken) und dann herunterladen oder auf `Code`gehen und das zip-File herunterladen. Dann werden die beiden Vorlagen heruntergeladen. Man kann dann diese entsprechend umbenennen bzw. löschen und etwa auf seinen PC entpacken. Wer `Overleaf`nutzt: Dieses dann als zip-File und als neues Projekt hochladen. 

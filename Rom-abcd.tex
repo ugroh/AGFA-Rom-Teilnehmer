@@ -75,9 +75,9 @@
 %% -- \begin{refsection} .. \printbibliography \end{refsection} in dem jeweiligen Artikel
 %% --
 \input{./preamble/Rom-BibLaTeX}
-\addbibresource{./bib/abcd-Biblio.bib}	
+\addbibresource{./bib-abcd/abcd-Biblio.bib}	
 \ExecuteBibliographyOptions{%
-	,backref		= false % true = was habe ich genutzt
+	,backref	= false 	% true = was habe ich genutzt
  	,url		= true		% true: URL werden angezeigt
  	,doi		= false		% DOI werden im Titel hinterlegt 
 	,eprint		= false		% true  - ” -
@@ -87,7 +87,6 @@
 %% -- Inhaltsverzeichnis -> Die Vorträge
 %% -- KOMA-Script 12.4
 %% --
-%\usepackage{scrbase}
 \renewcaptionname{ngerman}{\contentsname}{Die Vorträge}
 
 %% -- Keine ganze Zeile Abstand
@@ -118,7 +117,7 @@
 
 \mainmatter
 
-\input{./content/Beitrag-abcd}
+\input{./content-abcd/Beitrag-abcd}
 	
 %% -- Backmattter
 %% -- Literaturverzeichnis
