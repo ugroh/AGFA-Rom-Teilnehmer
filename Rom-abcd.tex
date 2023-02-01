@@ -1,0 +1,132 @@
+
+%% -- Stand: 2023/02/01
+%% -- Master-Datei für die Erstellung des Beitrags 
+%% -- Wir nutzen KOMA-Script
+%% --
+\documentclass[%
+	,ngerman					% Deutsch als Standard, andere über babel
+	,bibliography 	= leveldown % kein eigenes Kapitel sondern ein Abschnitt
+%	,parskip = half+			% halbe Leerzeile Abstand für Absätze
+	]{scrbook}
+
+%% -- KOMA Otions
+%% -- 
+\KOMAoptions{%
+	,paper 		= a4
+	,pagesize
+	,BCOR		= 15mm		% siehe KOMA-Script 2.6, S. 39
+	,twoside	= true		% siehe KOMA-Script 2.6, S. 47
+	,fontsize	= 12pt		% Standard ist 11pt
+% 	,DIV		= calc		% siehe KOMA-Script 2.6, S. 42
+	,open		= any		% siehe KOMA-Script 3.16, S. 111
+	,headings 	= small		% siehe KOMA-Script 3.16, S. 113
+	,open		= any
+	}
+
+%% -- Unterstützung von Paketen
+%% --
+\usepackage{scrhack}
+
+%% -- Gehe davon aus, dass alle UTF8-nutzen
+%% --
+\usepackage[T1]{fontenc}		%% für LuaLaTeX entbehrlich
+
+
+%% -- Sprache und Anführungsszeichen richtig
+%% -- Andere Sprache via \selectlanguage{sprache}; siehe Manual
+%% -- 
+\usepackage[%
+	,english
+	,italian
+	,french
+	,main=ngerman]{babel} 
+
+%% -- Richtige Trennung
+%% --
+\babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
+
+%% -- Hochkomma: Eingabe mittels \enquote{text}; dann wird alles richtig
+%% --
+\usepackage[%
+	,autostyle
+	,italian = guillemets
+	,french  = guillemets
+	,german  = guillemets
+	,english = american]{csquotes}
+
+%% -- Die Schrift
+%% --
+\usepackage{libertinus}
+
+%% -- Das Layout
+%% --
+\input{./preamble/Rom-Layout}
+
+%% -- Die Pakete
+%% --
+\input{./preamble/Rom-Pakete}
+
+%% -- Die Abkürzungen
+%% --
+\input{./preamble/Rom-Abkuerzungen}
+
+%% -- Literatur
+%% -- Die einzelnen Referenzen kann man dann mit den Möglichkeiten des Pakets lokal halten
+%% -- \begin{refsection} .. \printbibliography \end{refsection} in dem jeweiligen Artikel
+%% --
+\input{./preamble/Rom-BibLaTeX}
+\addbibresource{./bib/abcd-Biblio.bib}	
+\ExecuteBibliographyOptions{%
+	,backref		= false % true = was habe ich genutzt
+ 	,url		= true		% true: URL werden angezeigt
+ 	,doi		= false		% DOI werden im Titel hinterlegt 
+	,eprint		= false		% true  - ” -
+	}
+
+
+%% -- Inhaltsverzeichnis -> Die Vorträge
+%% -- KOMA-Script 12.4
+%% --
+%\usepackage{scrbase}
+\renewcaptionname{ngerman}{\contentsname}{Die Vorträge}
+
+%% -- Keine ganze Zeile Abstand
+%% -- KOMA-Script 15.3; Abb. 15.1
+%% --
+\DeclareTOCStyleEntries[
+	raggedentrytext,
+	beforeskip=.8em plus 1pt
+]{tocline}{chapter}
+
+\newcommand{\LongTitel}{}
+\newcommand{\ShortTitel}{}
+\newcommand{\AutorenBeitrag}{}
+%% -- Wir starten nun
+%% --
+\begin{document}
+
+%% -- Frontmatter
+%\frontmatter
+%\input{./content/Rom-Titelseite}
+%\tableofcontents
+%\input{./content/Rom-Vorwort}
+%\input{./content/Rom-Agenda}
+
+%% -- Mainmatter
+%% -- Beiträge der Teilnehmer
+%% --
+
+\mainmatter
+
+\input{./content/Beitrag-abcd}
+	
+%% -- Backmattter
+%% -- Literaturverzeichnis
+%% -- Jeder Beitrag hat seine eigenes Literaturverzeichnis
+%% --
+%\backmatter
+%\nocite{*}
+%\printbibliography
+
+%% --
+\end{document} 

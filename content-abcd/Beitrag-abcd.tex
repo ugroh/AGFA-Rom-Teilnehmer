@@ -1,0 +1,52 @@
+%% -- Musterdatei für die Erstellung des Beitrags
+%% -- Stand: 2023/02/01
+%% --
+%% -- Definitionen, damit die Eingabe einfacher wird
+%% -- Bitte \renewcommand belassen
+%% --
+\renewcommand{\LongTitel}{Hier steht der lange Titel des Beitrags}
+\renewcommand{\ShortTitel}{Hier steht der kurze Titel}
+\renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
+
+
+%% -- Kapitelüberschrift und Eintrag in TOC
+%% --
+\addchap[\ShortTitel]{\LongTitel}
+\addtocontents{toc}{\textsc{\AutorenBeitrag}}
+\addtocontents{toc}{}
+
+%% -- Kopfzeile 
+%% -- Gerade Seiten : Autoren
+%% -- Ungerade Seiten: Kurztitel
+%% --
+\markleft{\textsc{\AutorenBeitrag}}	
+\markright{\textsc{\ShortTitel}}	
+
+%% -- Titelseite des Beitrags
+%% --
+\begin{center}
+\textsc{\Large \AutorenBeitrag}
+\end{center}
+	\vspace{1cm}
+	
+%% -- Bild der/des Vortragenden
+\begin{center}
+%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content/Beitrag-abef/content/autor1}
+%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content/Beitrag-abef/content/autor1}
+\end{center}
+
+%% --
+%% -- ab hier die Sammlung der LIT-Zitate
+\begin{refsection}
+
+%% -- Begin des eigenen Artikels
+%% --
+\section*{Erster Hauptabschnitt}
+\subsection*{Eine Unterabschnitt}
+
+%% -- weitere Text
+
+%% -- Literaturverzeichnis
+\printbibliography
+\end{refsection}
+
