@@ -1,5 +1,5 @@
 %% -- Die Pakete für RomSeminar
-%% -- Stand: 2022/10/13
+%% -- Stand: 2023/02/01
 %% --
 
 %% -- Mathematik
@@ -8,8 +8,16 @@
 	,amssymb
 	,amsthm} 
 \usepackage[tbtags]{mathtools}
+
+\newtheorem*{theorem}{Theorem}
 \newtheorem*{proposition}{Satz}
 \newtheorem*{lemma}{Lemma}
+
+%% -- 
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{R}}
 
 %% -- tikz
 \usepackage{tikz}
@@ -57,20 +65,11 @@
 %% -- 
 \usepackage{blindtext,lipsum}
 
-%% -- Für das Schachspiel
-%% -- 
-\usepackage{xskak}
-
 %% -- Für Rahmen
 %% -- 
 \usepackage{mdframed}
 %% -- infobox
 \newmdenv{infobox} %% \begin{infobox} .. \end{infobox}
-
-%% -- Falls erforderlich, sind halt alte Pakete
-%% -- 
-\usepackage{dialogue}	% gibt es sicherlich Nachfolger
-\usepackage{attrib}		% dito
 
 \usepackage[nospace]{varioref}	% \vref
 % -----------------------------------------------------------
