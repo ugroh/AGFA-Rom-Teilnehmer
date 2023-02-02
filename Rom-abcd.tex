@@ -1,7 +1,7 @@
 % !TEX TS-program = pdflatexmk
 %% ---------------------------------------------------
 %% -- Stand: 2023/02/02
-%% -- Master-Datei für die Erstellung des Beitrags 
+%% -- Datei für die Erstellung des Beitrags 
 %% -- Wir nutzen KOMA-Script  
 %% ---------------------------------------------------
 \documentclass[%
@@ -76,7 +76,7 @@
 %% -- \begin{refsection} .. \printbibliography \end{refsection} in dem jeweiligen Artikel
 %% --
 \input{./preamble/Rom-BibLaTeX}
-\addbibresource{./bib-abcd/abcd-Biblio.bib}	
+\addbibresource{./content-abcd/bib-abcd/Biblio-abcd.bib}	
 \ExecuteBibliographyOptions{%
 	,backref	= false 	% true = was habe ich genutzt
  	,url		= true		% true: URL werden angezeigt
@@ -85,7 +85,7 @@
 	}
 %% -- Eigene, zusätzliche Definitionen
 %% -- 
-\input{./content-abcd/abcd-Defn}
+\input{./content-abcd/Defn-abcd}
 %% -- Inhaltsverzeichnis -> Die Vorträge
 %% -- KOMA-Script 12.4
 %% --
@@ -124,7 +124,7 @@
 
 \mainmatter
 
-\input{./content-abcd/abcd-Beitrag}
+\input{./content-abcd/Beitrag-abcd}
 	
 %% -- Backmattter
 %% -- Literaturverzeichnis

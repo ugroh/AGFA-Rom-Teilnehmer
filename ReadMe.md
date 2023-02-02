@@ -13,9 +13,9 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 
 * Im Verzeichnis `AGFA-Rom-Teilnehmer` befinden sich die folgenden Unterverzeichnisse:
 
-	- `bib-abcd`: Hier findet dich die Datei mit der benutzten Literatur, `abcd-Biblio.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in LaTeX. Eine kleine Anleitung dazu findet man in den LaTeX-Tipps.
+	- `bib-abcd`: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in LaTeX. Eine kleine Anleitung dazu findet man in den LaTeX-Tipps.
 	
-	- `content-abcd`: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `abcd-Beitrag-.tex` für den Beitrag, eventuelle Bilder u. ä. Hierzu gehören auch die zusätzlichen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `abcd-Defn.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt. Diese Datei ist bereits mittels `\input{abcd-Defn}` eingebunden. 
+	- `content-abcd`: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `Beitrag-abcd.tex` für den Beitrag, eventuelle Bilder u. ä. Hierzu gehören auch die zusätzlichen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `Defn-abcd.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt. Diese Datei ist bereits mittels `\input{Defn-abcd}` eingebunden. 
 	
 	- `preamble`: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dies mitzuteilen.
 	Im Einzelnen sind dies: 
@@ -24,7 +24,7 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 		Hier finden sich die Abkürzungen für die richtige Schreibweise etwa von d. h. etwa. 
 			
 		- `Rom-BibLaTeX.tex`:  
-		Für die Darstellung der Referenzen im Literaturverzeichnis. Bitte darauf achten, dass man einen zusätzlichen Lauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. Mithilfe von `% !TEX TS-program = pdflatexmk` ist dies sichergestellt. 
+		Für die Darstellung der Referenzen im Literaturverzeichnis. Bitte darauf achten, dass man einen zusätzlichen Lauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. Mithilfe von `% !TEX TS-program = pdflatexmk` ist dies sichergestellt. Das zugehöringe `bib`-File findet sich in `content-abcd/bib-abcd`.
 	
 		- `Rom-Layout.tex`:  
 		Alles, was für das Layout zuständig ist.
@@ -32,13 +32,13 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 		- `Rom-Pakete.tex`:  
 		Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder in das Buch von H. Voss: _Einführung in LaTeX_ reinsehen. Wichtig: _Learning-by-Doing_ ist dann angesagt. 
 
-* Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `abcd-Beitrag-.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
+* Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `Beitrag-abcd.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
 
-	Die Datei `abcd-Beitrag-.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder  entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. 
+	Die Datei `Beitrag-abcd.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder  entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. 
 
 ### Die Erstellung eines Beitrags mit LaTeX 
 
-LaTeX ist ein sog. [WYSIWYM]()-System und kein Textverarbeitungsprogramm, mit dem man einen Fließtext schreibt, wie bei Word. Es basiert auf [TeX](), das ein Programm ist, mithilfe dessen  man Texte, die auf einem Computer geschrieben wurden, in eine druckbare Version umwandelt. Dies sollte man bei der Erstellung eines Textes berücksichtigen, d. h. man _programmiert_ den Inhalt seines Textes, um ein _schönes_ Ergebnis zu bekommen. 
+LaTeX ist ein sog. [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System und kein Textverarbeitungsprogramm, mit dem man einen Fließtext schreibt, wie bei Word. Es basiert auf [TeX](), das ein Programm ist, mithilfe dessen  man Texte, die auf einem Computer geschrieben wurden, in eine druckbare Version umwandelt. Dies sollte man bei der Erstellung eines Textes berücksichtigen, d. h. man _programmiert_ den Inhalt seines Textes, um ein _schönes_ Ergebnis zu bekommen. 
 
 Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksichtigen. Meine Empfehlungen für das Lernen und Verstehen:
 
@@ -59,7 +59,7 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 * Die Datei `Rom-Muster.pdf` ist ein Beispiel, basierend auf `./beispiel/Rom-Muster.tex`. Diese Datei kann man sich ansehen, um noch weitere Details zu erfahren, wie die Eingabe der Beispiele erfolgt ist.
 
-* __TODO__ Ein Paket aus den Dateien in der  Preambel machen, damit die Eingabe einfacher wird und die Vorlage __entschlacken__. 
+* __TODO__ Ein Paket aus den Dateien in der  Preambel machen, damit die Eingabe einfacher wird und die Vorlage kompakter zu machen. 
 
 * Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
 
