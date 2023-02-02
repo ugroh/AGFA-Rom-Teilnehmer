@@ -13,15 +13,35 @@
 
 %% -- Theoreme etc. ohne Nummerierung
 %% -- 
-\newtheorem*{theorem}{Theorem}
-\newtheorem*{proposition}{Satz}
-\newtheorem*{lemma}{Lemma}
+\newtheoremstyle{rom}
+{3pt}% ⟨Space above ⟩ 
+{3pt}% ⟨Space below ⟩ 
+{}% ⟨Body font ⟩
+{}% ⟨Indent amount ⟩2
+{\itshape}% ⟨Theorem head font⟩
+{}% ⟨Punctuation after theorem head ⟩
+{.5em}% ⟨Space after theorem head ⟩ 
+{}% 
+\theoremstyle{rom}
+	\newtheorem*{theorem}{Theorem}
+	\newtheorem*{thm}{Theorem}
+	\newtheorem*{proposition}{Satz}
+	\newtheorem*{prop}{Satz}
+	\newtheorem*{corollary}{Korollar}
+	\newtheorem*{cor}{Korollar}
+	\newtheorem*{lemma}{Lemma}
 
-%% -- 
+%% -- Symbole
+%% --
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{R}}
-\newcommand{\Z}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+%% -- Sonstiges
+%% --
+
 
 %% -- Aufzählungen
 %% -- 

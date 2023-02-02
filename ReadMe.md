@@ -20,16 +20,16 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 	- `preamble`: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dies mitzuteilen.
 	Im Einzelnen sind dies: 
 
-		>`Rom-Abkuerzungen.tex`:  
-		Hier finden sich die Abkürzungen für die richtige Schreibweise etwa von d. h. u. a. 
+		- `Rom-Abkuerzungen.tex`:  
+		Hier finden sich die Abkürzungen für die richtige Schreibweise etwa von d. h. etwa. 
 			
-		> `Rom-BibLaTeX.tex`:  
-		Für die Darstellung der Referenzen im Literaturverzeichnis. 
+		- `Rom-BibLaTeX.tex`:  
+		Für die Darstellung der Referenzen im Literaturverzeichnis. Bitte darauf achten, dass man einen zusätzlichen Lauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. Mithilfe von `% !TEX TS-program = pdflatexmk` ist dies sichergestellt. 
 	
-		> `Rom-Layout.tex`:  
+		- `Rom-Layout.tex`:  
 		Alles, was für das Layout zuständig ist.
 	
-		> `Rom-Pakete.tex`:  
+		- `Rom-Pakete.tex`:  
 		Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder in das Buch von H. Voss: _Einführung in LaTeX_ reinsehen. Wichtig: _Learning-by-Doing_ ist dann angesagt. 
 
 * Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `abcd-Beitrag-.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
@@ -56,5 +56,10 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 
 ### Sonstiges 
-Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
+
+* Die Datei `Rom-Muster.pdf` ist ein Beispiel, basierend auf `./beispiel/Rom-Muster.tex`. Diese Datei kann man sich ansehen, um noch weitere Details zu erfahren, wie die Eingabe der Beispiele erfolgt ist.
+
+* __TODO__ Ein Paket aus den Dateien in der  Preambel machen, damit die Eingabe einfacher wird und die Vorlage __entschlacken__. 
+
+* Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
 
