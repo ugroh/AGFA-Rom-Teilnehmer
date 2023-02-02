@@ -28,12 +28,12 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 		> `Rom-Pakete.tex`: Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. 
 
 * Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `abcd-Beitrag-.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
-Die Datei `abcd-Beitrag-.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). 
-	
-	Da ich _TeXShop_ als Editor benutze (auf einem Apple iMac), kann ich direkt aus der Datei heraus LaTeX aufrufen. Bei [TeXworks](https://tug.org/texworks/) geht es entsprechend auch und ich empfehlen diesen als Editor für nicht-Apple-Systeme.
+
+	Die Datei `abcd-Beitrag-.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder  entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. 
 
 * Im Unterverzeichnis `preamble` findet sich noch die Datei `ReadMe.pdf`, die weitere Erläuterungen für die Anfertigung des Beitrags enthält.
 	
 
 
 Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
+
