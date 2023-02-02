@@ -30,7 +30,7 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 * Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `abcd-Beitrag-.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
 Die Datei `abcd-Beitrag-.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). 
 	
-	Da ich _TeXShop_ als Editor benutze (auf einem Apple iMac), kann ich direkt aus der Datei heraus LaTeX aufrufen. Bei [TeXWorks](https://tug.org/texworks/) geht es entsprechend auch und ich empfehlen diesen als Editor für nicht-Apple-Systeme.
+	Da ich _TeXShop_ als Editor benutze (auf einem Apple iMac), kann ich direkt aus der Datei heraus LaTeX aufrufen. Bei [TeXworks](https://tug.org/texworks/) geht es entsprechend auch und ich empfehlen diesen als Editor für nicht-Apple-Systeme.
 
 * Im Unterverzeichnis `preamble` findet sich noch die Datei `ReadMe.pdf`, die weitere Erläuterungen für die Anfertigung des Beitrags enthält.
 	
