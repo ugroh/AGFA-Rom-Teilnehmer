@@ -1,5 +1,7 @@
 %% -- Die Pakete für RomSeminar
-%% -- Stand: 2023/02/01
+%% -- Stand: 2023/02/02
+%% -- Literatur: H. Voss, Einführung in LaTeX (7. Auflage) 2022 
+%% -- Muss mal sehen, wie ich dieses besser machen kann
 %% --
 
 %% -- Mathematik
@@ -9,6 +11,8 @@
 	,amsthm} 
 \usepackage[tbtags]{mathtools}
 
+%% -- Theoreme etc. ohne Nummerierung
+%% -- 
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{proposition}{Satz}
 \newtheorem*{lemma}{Lemma}
@@ -19,6 +23,13 @@
 \newcommand{\N}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{R}}
 
+%% -- Aufzählungen
+%% -- 
+\usepackage[%
+	,inline			% für Aufzählungen im Text = Sternvariante
+	,shortlabels	% damit \begin{enumerate}[(i)] funktioniert
+	]{enumitem}
+	
 %% -- tikz
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows}
@@ -50,13 +61,6 @@
 	,cutwin		% Voss, LaTeX - 5.10.3 - Seite 178
 	}
 
-%% -- Aufzählungen
-%% -- 
-\usepackage[%
-	,inline			% für Aufzählungen im Text = Sternvariante
-	,shortlabels	% damit \begin{enumerate}[(i)] funktioniert
-	]{enumitem}
-
 %% -- Wenn schon, dann muss man es auch definieren
 %% -- 
 \usepackage{nicefrac}
@@ -71,10 +75,12 @@
 %% -- infobox
 \newmdenv{infobox} %% \begin{infobox} .. \end{infobox}
 
+%% -- Querverweise
+%% -- 
 \usepackage[nospace]{varioref}	% \vref
 % -----------------------------------------------------------
-\RequirePackage[%            	%  texdoc hyperref; zum Nutzen der Hyperlinks;                                                                                                        
-	,colorlinks=true    		%  Farbige Links false/true, für onlineversion true                                                           
+\RequirePackage[%            	%  texdoc hyperref;                                                                                                         
+	,colorlinks=true    		%  Farbige Links true                                                           
 	,urlcolor=blue       		%                                                              
 	,citecolor=blue      		%                                                              
 	,linkcolor=blue      		%    

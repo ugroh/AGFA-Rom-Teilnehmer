@@ -2,7 +2,8 @@
 
 Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hierfür ist [KOMA-Script](https://www.ctan.org/pkg/koma-script), da dieses Paket auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. 
 
-Die Vorlage ist wie folgt aufgebaut:
+
+### Aufbau der Vorlage
 
 * Die Vorlage findet man auf GitHub unter [ugroh/AGFA-Rom-Teilnehmer](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken installieren. 
 
@@ -31,9 +32,28 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 
 	Die Datei `abcd-Beitrag-.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder  entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. 
 
-* Im Unterverzeichnis `preamble` findet sich noch die Datei `ReadMe.pdf`, die weitere Erläuterungen für die Anfertigung des Beitrags enthält.
-	
+### Die Erstellung eines Beitrags mit LaTeX 
 
+LaTeX ist ein sog. [WYSIWYM]()-System und kein Textverarbeitungsprogramm, mit dem man einen Fließtext schreibt, wie bei Word. Es basiert auf [TeX](), das ein Programm ist, mithilfe dessen  man Texte, die auf einem Computer geschrieben wurden, in eine druckbare Version umwandelt. Dies sollte man bei der Erstellung eines Textes berücksichtigen, d. h. man _programmiert_ den Inhalt seines Textes, um ein _schönes_ Ergebnis zu bekommen. 
 
+Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksichtigen. Meine Empfehlungen für das Lernen und Verstehen:
+
+* [lsshort](https://ctan.org/pkg/lshort-german): Eine kleine, aber übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX
+
+* Da wir es mit einem Text auf Deutsch zu tun haben, sollte Rechtschreibung und die Zeichensetzung stimmen. Dabei hilft [LanguageTool](https://languagetool.org/de) und [IDS-Mannheim](https://grammis.ids-mannheim.de).
+
+* Natürlich sind auch einige typografische Regeln zu beachten, etwa der Unterschied zwischen Bindestrich, Gedankenstrich und Minuszeichen. Dabei hilft das [TypoLexikon](https://www.typolexikon.de)
+
+* Für einen Einstieg in die Umsetzung mathematischer Formeln empfiehlt sich der [AMS ShortMathGuide](https://ctan.org/pkg/short-math-guide), der völlig ausreichend ist. Auch hier sind einige typografische Regeln zu beachten, die man unter dem Stichwort [Formelsatz](http://www.moritz-nadler.de/formelsatz.pdf) findet.
+
+* Wer mehr verstehen oder lernen will – einfach mal auf [Dante – Literatur und mehr](https://www.dante.de/dante-e-v/literatur/) nachsehen. Ein schöner Artikel zu TeX findet man  [etwa hier](https://www.ams.org/publications/authors/Communication_of_Mathematics_with_TEX.pdf).
+
+* Einige Regeln zur Verfassung eines mathematischen Artikels findet man bei [P. Halmos: _How to Write Mathematics](https://www2.cs.duke.edu/donaldlab/Teaching/add/2011/resources/halmos.pdf) und [D. Knuth: _Mathematical Writing](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf).
+
+### Übersicht zu den vorhandenen Definitionen
+
+Siehe hierzu die Datei `Rom-ReadMe.pdf`
+
+### Sonstiges 
 Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
 
