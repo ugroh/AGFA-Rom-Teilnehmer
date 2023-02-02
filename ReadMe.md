@@ -20,13 +20,17 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 	- `preamble`: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dies mitzuteilen.
 	Im Einzelnen sind dies: 
 
-		>`Rom-Abkuerzungen.tex`: Hier finden sich die Abkürzungen für die Richtige Schreibweise etwa von d.h. u.a. 
+		>`Rom-Abkuerzungen.tex`:  
+		Hier finden sich die Abkürzungen für die richtige Schreibweise etwa von d. h. u. a. 
 			
-		> `Rom-BibLaTeX.tex`: Für die Darstellung der Referenzen im Literaturverzeichnis. 
+		> `Rom-BibLaTeX.tex`:  
+		Für die Darstellung der Referenzen im Literaturverzeichnis. 
 	
-		> `Rom-Layout.tex`: Alles, was für das Layout zuständig ist.
+		> `Rom-Layout.tex`:  
+		Alles, was für das Layout zuständig ist.
 	
-		> `Rom-Pakete.tex`: Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. 
+		> `Rom-Pakete.tex`:  
+		Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder in das Buch von H. Voss: _Einführung in LaTeX_ reinsehen. Wichtig: _Learning-by-Doing_ ist dann angesagt. 
 
 * Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `abcd-Beitrag-.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
 
@@ -42,7 +46,7 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 * Da wir es mit einem Text auf Deutsch zu tun haben, sollte Rechtschreibung und die Zeichensetzung stimmen. Dabei hilft [LanguageTool](https://languagetool.org/de) und [IDS-Mannheim](https://grammis.ids-mannheim.de).
 
-* Natürlich sind auch einige typografische Regeln zu beachten, etwa der Unterschied zwischen Bindestrich, Gedankenstrich und Minuszeichen. Dabei hilft das [TypoLexikon](https://www.typolexikon.de)
+* Natürlich sind auch einige typografische Regeln zu beachten, etwa der Unterschied zwischen Bindestrich, Gedankenstrich und Minuszeichen. Dabei hilft das [TypoLexikon.](https://www.typolexikon.de)
 
 * Für einen Einstieg in die Umsetzung mathematischer Formeln empfiehlt sich der [AMS ShortMathGuide](https://ctan.org/pkg/short-math-guide), der völlig ausreichend ist. Auch hier sind einige typografische Regeln zu beachten, die man unter dem Stichwort [Formelsatz](http://www.moritz-nadler.de/formelsatz.pdf) findet.
 
@@ -50,9 +54,6 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 * Einige Regeln zur Verfassung eines mathematischen Artikels findet man bei [P. Halmos: _How to Write Mathematics](https://www2.cs.duke.edu/donaldlab/Teaching/add/2011/resources/halmos.pdf) und [D. Knuth: _Mathematical Writing](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf).
 
-### Übersicht zu den vorhandenen Definitionen
-
-Siehe hierzu die Datei `Rom-ReadMe.pdf`
 
 ### Sonstiges 
 Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
