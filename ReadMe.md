@@ -1,4 +1,4 @@
-## AGFA-Rom Vorlage (Stand 2023/02/01)
+## AGFA-Rom Vorlage (Stand 2023/02/02)
 
 Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hierfür ist [KOMA-Script](https://www.ctan.org/pkg/koma-script), da dieses Paket auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. 
 
@@ -29,4 +29,5 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 
 	- Im Stammverzeichnis befindet sich due Datei `Rom-abcd.tex`, die für die Erstellung des eignene Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `abcd-Beitrag-.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 
 	Die Datei `abcd-Beitrag-.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). Da ich _TeXShop_ als Editor benutze (auf einem Apple iMac), kann ich direkt aus der Datei heraus LaTeX aufrufen. Bei [TeXWorks](https://tug.org/texworks/) geht es entsprechend auch und ich empfehlen diesen als Editor für nicht-Apple-Systeme.
-		
+
+Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>

@@ -1,14 +1,15 @@
 % !TEX root = ../Rom-abcd.tex
+%% -----------------------------------------------------
 %% -- Musterdatei für die Erstellung des Beitrags
-%% -- Stand: 2023/02/01
-%% --
+%% -- Stand: 2023/02/02
+%% -----------------------------------------------------
+
 %% -- Definitionen, damit die Eingabe einfacher wird
 %% -- Bitte \renewcommand belassen
 %% --
 \renewcommand{\LongTitel}{Hier steht der lange Titel des Beitrags}
 \renewcommand{\ShortTitel}{Hier steht der kurze Titel}
 \renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
-
 
 %% -- Kapitelüberschrift und Eintrag in TOC
 %% --
@@ -32,21 +33,25 @@
 	
 %% -- Bild der/des Vortragenden
 \begin{center}
-%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content/Beitrag-abef/content/autor1}
-%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content/Beitrag-abef/content/autor1}
+%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content-abcd/autor1}
+%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content-abcd/autor1}
 \end{center}
 
-%% --
-%% -- ab hier die Sammlung der LIT-Zitate
+%% -- Die Referenzen werden am Ende des jeweiligen Beitrags ausgegeben
+%% -- 
 \begin{refsection}
 
 %% -- Begin des eigenen Artikels
 %% --
-\section*{Erster Hauptabschnitt}
-\subsection*{Eine Unterabschnitt}
-
+\section*{Erster Hauptabschnitt}		%% 
+\subsection*{Eine Unterabschnitt}		%% 
+\subsubsection{}							%% Nur Nummerierung; eventuell sinnvoll, sonst weglassen
+%% --
+%% -- etc.
+%% --
 
 %% -- Literaturverzeichnis
+%% --
 \printbibliography
 \end{refsection}
 
