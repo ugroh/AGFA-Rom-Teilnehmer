@@ -24,7 +24,11 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 		Hier finden sich die Abkürzungen für die richtige Schreibweise etwa von d. h. etwa. 
 			
 		- `Rom-BibLaTeX.tex`:  
-		Für die Darstellung der Referenzen im Literaturverzeichnis. Bitte darauf achten, dass man einen zusätzlichen Lauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. Mithilfe von `% !TEX TS-program = pdflatexmk` ist dies sichergestellt. Das zugehöringe `bib`-File findet sich in `content-abcd/bib-abcd`.
+		Für die Darstellung der Referenzen im Literaturverzeichnis. Bitte darauf achten, dass man einen zusätzlichen Lauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. Mithilfe von 
+		
+				% !TEX TS-program = pdflatexmk
+		
+		in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd`.
 	
 		- `Rom-Layout.tex`:  
 		Alles, was für das Layout zuständig ist.
@@ -34,11 +38,15 @@ Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File 
 
 * Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `Beitrag-abcd.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
 
-	Die Datei `Beitrag-abcd.tex` enthält als erste Zeile `% !TEX root = ../Rom-abcd.tex` (`magic command line`). Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder  entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. 
+	Die Datei `Beitrag-abcd.tex` enthält als erste Zeile 
+		
+			% !TEX root = ../Rom-abcd.tex  
+	
+	Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder  entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. 
 
 ### Die Erstellung eines Beitrags mit LaTeX 
 
-LaTeX ist ein sog. [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System und kein Textverarbeitungsprogramm, mit dem man einen Fließtext schreibt, wie bei Word. Es basiert auf [TeX](), das ein Programm ist, mithilfe dessen  man Texte, die auf einem Computer geschrieben wurden, in eine druckbare Version umwandelt. Dies sollte man bei der Erstellung eines Textes berücksichtigen, d. h. man _programmiert_ den Inhalt seines Textes, um ein _schönes_ Ergebnis zu bekommen. 
+LaTeX ist ein sog. [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System und kein Textverarbeitungsprogramm, mit dem man einen Fließtext schreibt, wie bei Word. Es basiert auf [TeX](https://de.wikipedia.org/wiki/TeX), das ein Programm ist, mithilfe dessen  man Texte, die auf einem Computer geschrieben wurden, in eine druckbare Version umwandelt. Dies sollte man bei der Erstellung eines Textes berücksichtigen, d. h. man _programmiert_ den Inhalt seines Textes, um ein _schönes_ Ergebnis zu bekommen. 
 
 Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksichtigen. Meine Empfehlungen für das Lernen und Verstehen:
 
@@ -59,7 +67,8 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 * Die Datei `Rom-Muster.pdf` ist ein Beispiel, basierend auf `./beispiel/Rom-Muster.tex`. Diese Datei kann man sich ansehen, um noch weitere Details zu erfahren, wie die Eingabe der Beispiele erfolgt ist.
 
-* __TODO__ Ein Paket aus den Dateien in der  Preambel machen, damit die Eingabe einfacher wird und die Vorlage kompakter zu machen. 
+* __TODO__ Ein \LaTeX{}-Paket aus den Dateien in der Preambel erstellen, um die Eingabe einfacher und die Vorlage kompakter zu machen. 
+
 
 * Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
 
