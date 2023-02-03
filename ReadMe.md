@@ -67,7 +67,7 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 * Die Datei `Rom-Muster.pdf` ist ein Beispiel, basierend auf `./beispiel/Rom-Muster.tex`. Diese Datei kann man sich ansehen, um noch weitere Details zu erfahren, wie die Eingabe der Beispiele erfolgt ist.
 
-* __TODO__ Ein \LaTeX{}-Paket aus den Dateien in der Preambel erstellen, um die Eingabe einfacher und die Vorlage kompakter zu machen. 
+* __TODO__ Ein LaTeX-Paket aus den Dateien in der Preambel erstellen, um die Eingabe einfacher und die Vorlage kompakter zu machen. 
 
 
 * Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
