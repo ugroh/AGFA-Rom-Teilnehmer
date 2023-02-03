@@ -5,35 +5,35 @@ Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hi
 
 ### Aufbau der Vorlage
 
-* Die Vorlage findet man auf GitHub unter [ugroh/AGFA-Rom-Teilnehmer](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken installieren. 
+* Die Vorlage findet man auf GitHub unter [_ugroh/AGFA-Rom-Teilnehmer_](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken installieren. 
 
-Wer das System [Overleaf](https://www.overleaf.com) nutzt, kann dieses ZIP-File als neues Projekt in Overleaf installieren.
+Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, kann dieses ZIP-File als neues Projekt in Overleaf installieren.
 
 * Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an erster Stelle kommt.
 
-* Im Verzeichnis `AGFA-Rom-Teilnehmer` befinden sich die folgenden Unterverzeichnisse:
+* Im Verzeichnis __`AGFA-Rom-Teilnehmer`__ befinden sich die folgenden Unterverzeichnisse:
 
-	- `bib-abcd`: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in LaTeX. Eine kleine Anleitung dazu findet man in den LaTeX-Tipps.
+	- __`bib-abcd`__: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in LaTeX. Eine kleine Anleitung dazu findet man in den LaTeX-Tipps.
 	
-	- `content-abcd`: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `Beitrag-abcd.tex` für den Beitrag, eventuelle Bilder u. ä. Hierzu gehören auch die zusätzlichen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `Defn-abcd.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt. Diese Datei ist bereits mittels `\input{Defn-abcd}` eingebunden. 
+	- __`content-abcd`__: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `Beitrag-abcd.tex` für den Beitrag, eventuelle Bilder u. ä. Hierzu gehören auch die zusätzlichen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `Defn-abcd.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt. Diese Datei ist bereits mittels `\input{Defn-abcd}` eingebunden. 
 	
-	- `preamble`: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dies mitzuteilen.
+	- __`preamble`__: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dies mitzuteilen.
 	Im Einzelnen sind dies: 
 
-		- `Rom-Abkuerzungen.tex`:  
+		- __`Rom-Abkuerzungen.tex`__:  
 		Hier finden sich die Abkürzungen für die richtige Schreibweise etwa von d. h. etwa. 
 			
-		- `Rom-BibLaTeX.tex`:  
+		- __`Rom-BibLaTeX.tex`__:  
 		Für die Darstellung der Referenzen im Literaturverzeichnis. Bitte darauf achten, dass man einen zusätzlichen Lauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. Mithilfe von 
 		
 				% !TEX TS-program = pdflatexmk
 		
 		in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd`.
 	
-		- `Rom-Layout.tex`:  
+		- __`Rom-Layout.tex`__:  
 		Alles, was für das Layout zuständig ist.
 	
-		- `Rom-Pakete.tex`:  
+		- __`Rom-Pakete.tex`__:  
 		Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder in das Buch von H. Voss: _Einführung in LaTeX_ reinsehen. Wichtig: _Learning-by-Doing_ ist dann angesagt. 
 
 * Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eignen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `Beitrag-abcd.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
@@ -50,15 +50,15 @@ LaTeX ist ein sog. [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System und k
 
 Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksichtigen. Meine Empfehlungen für das Lernen und Verstehen:
 
-* [lsshort](https://ctan.org/pkg/lshort-german): Eine kleine, aber übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX
+* [_lsshort_](https://ctan.org/pkg/lshort-german): Eine kleine, aber übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX
 
-* Da wir es mit einem Text auf Deutsch zu tun haben, sollte Rechtschreibung und die Zeichensetzung stimmen. Dabei hilft [LanguageTool](https://languagetool.org/de) und [IDS-Mannheim](https://grammis.ids-mannheim.de).
+* Da wir es mit einem Text auf Deutsch zu tun haben, sollte Rechtschreibung und die Zeichensetzung stimmen. Dabei hilft [_LanguageTool_](https://languagetool.org/de) und [_IDS-Mannheim_](https://grammis.ids-mannheim.de).
 
-* Natürlich sind auch einige typografische Regeln zu beachten, etwa der Unterschied zwischen Bindestrich, Gedankenstrich und Minuszeichen. Dabei hilft das [TypoLexikon.](https://www.typolexikon.de)
+* Natürlich sind auch einige typografische Regeln zu beachten, etwa der Unterschied zwischen Bindestrich, Gedankenstrich und Minuszeichen. Dabei hilft das [_TypoLexikon._](https://www.typolexikon.de)
 
-* Für einen Einstieg in die Umsetzung mathematischer Formeln empfiehlt sich der [AMS ShortMathGuide](https://ctan.org/pkg/short-math-guide), der völlig ausreichend ist. Auch hier sind einige typografische Regeln zu beachten, die man unter dem Stichwort [Formelsatz](http://www.moritz-nadler.de/formelsatz.pdf) findet.
+* Für einen Einstieg in die Umsetzung mathematischer Formeln empfiehlt sich der [_AMS ShortMathGuide_](https://ctan.org/pkg/short-math-guide), der völlig ausreichend ist. Auch hier sind einige typografische Regeln zu beachten, die man unter dem Stichwort [_Formelsatz_](http://www.moritz-nadler.de/formelsatz.pdf) findet.
 
-* Wer mehr verstehen oder lernen will – einfach mal auf [Dante – Literatur und mehr](https://www.dante.de/dante-e-v/literatur/) nachsehen. Ein schöner Artikel zu TeX findet man  [etwa hier](https://www.ams.org/publications/authors/Communication_of_Mathematics_with_TEX.pdf).
+* Wer mehr verstehen oder lernen will – einfach mal auf [_Dante – Literatur und mehr_](https://www.dante.de/dante-e-v/literatur/) nachsehen. Ein schöner Artikel zu TeX findet man  [_etwa hier_](https://www.ams.org/publications/authors/Communication_of_Mathematics_with_TEX.pdf).
 
 * Einige Regeln zur Verfassung eines mathematischen Artikels findet man bei [P. Halmos: _How to Write Mathematics](https://www2.cs.duke.edu/donaldlab/Teaching/add/2011/resources/halmos.pdf) und [D. Knuth: _Mathematical Writing](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf).
 
