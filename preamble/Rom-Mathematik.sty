@@ -1,0 +1,48 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Rom-Mathematik.sty 
+%% -- Theorem-Umgebungen, sinnvolle Abkürzungen etc.
+%% -- Stand: 2023/02/07
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kenndaten
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}											
+\ProvidesPackage{Rom-Mathematik}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Initialisierungen
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
+
+
+%% -- Theoreme etc. 
+%% -- 
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\normalfont\bfseries,
+  notefont=\mdseries, notebraces={(}{)},
+  bodyfont=\normalfont,
+  headpunct={},
+  postheadspace=1em,
+]{rom-style}
+
+\declaretheorem[style=rom-style]{theorem}
+\declaretheorem[sibling=theorem]{lemma} 
+\declaretheorem[name=Korollar, sibling=theorem, numbered=unless unique]{corollary}
+\declaretheorem[name=Satz, sibling=theorem]{proposition}
+
+\declaretheorem[sibling=theorem, style=definition]{definition}
+
+\declaretheorem[sibling=theorem, name=Anmerkung, style=remark]{remark}
+\declaretheorem[sibling=theorem, name=Zusammenfassung, style=remark]{summary}
+
+%% -- Symbole
+%% --
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+%% -- Sonstiges
+%% --
