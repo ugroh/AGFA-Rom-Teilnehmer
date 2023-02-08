@@ -37,6 +37,9 @@
 \DeclareRobustCommand{\ShortTitel}{}
 \DeclareRobustCommand{\AutorenBeitrag}{}
 
+%% -- mathematische Umgebungen mit / ohne Nummer
+%\DeclareOption{ThmNummer}{\PassOptionsToPackage{ThmNummer}{Rom-Theorem}}
+
 \ProcessOptions\relax
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,3 +123,12 @@
 %% -- Mathematik
 %% -- 
 \RequirePackage{./preamble/Rom-Mathematik}
+
+%% -- Mathematik Theoreme
+%% -- 
+\RequirePackage{./preamble/Rom-Theorem}
+
+
+
+
+

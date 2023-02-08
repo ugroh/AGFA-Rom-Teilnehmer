@@ -1,6 +1,6 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Mathematik.sty 
-%% -- Theorem-Umgebungen, sinnvolle Abkürzungen etc.
+%% -- Sinnvolle mathematuische Definitionen
 %% -- Stand: 2023/02/07
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kenndaten
@@ -11,40 +11,103 @@
 % Initialisierungen
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage{amsthm}
-\RequirePackage{thmtools}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notwendige Pakete
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%% -- Theoreme etc. 
-%% -- 
-\declaretheoremstyle[
-  headpunct={},
-  postheadspace=1em,
-]{rom-style}
-
-\declaretheorem[style=rom-style]{theorem}
-
-\declaretheorem[%
-	,style=rom-style
-	,name=Theorem
-	,numbered=unless unique]{thm}
-
-\declaretheorem[sibling=theorem]{lemma} 
-\declaretheorem[name=Korollar, sibling=theorem, ,numbered=unless unique]{corollary}
-\declaretheorem[name=Satz, sibling=theorem]{proposition}
-
-\declaretheorem[sibling=theorem, style=definition]{definition}
-
-\declaretheorem[sibling=theorem, name=Anmerkung, style=remark]{remark}
-\declaretheorem[sibling=theorem, name=Zusammenfassung, style=remark]{summary}
-
+	
 %% -- Symbole
 %% --
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\N}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}		% Natuerliche Zahlen
+\newcommand{\Z}{\mathbb{Z}}		% Ganze Zahlen
+\newcommand{\Q}{\mathbb{Q}}		% Rationale Zahlen
+\newcommand{\R}{\mathbb{R}}		% Reelle Zahlen
+\newcommand{\C}{\mathbb{C}}		% Komplexe Zahlen
+\newcommand{\K}{\mathbb{K}}		% Koerperzeichen
 
-%% -- Sonstiges
+%% -- Differential Allgemeine Abkuerzungen
 %% --
+\newcommand*{\diff}[1]{\mathop{}\!\mathrm{d}{#1}}	% \diff{s} = ds, 
+\renewcommand*{\d}[1]{\mathop{}\!\mathrm{d}{#1}}	% \d{\mu} = d.., 
+\newcommand*{\ds}{\mathop{}\!\mathrm{d}{s}}       	% \ds = ds, 
+\newcommand*{\dg}{\mathop{}\!\mathrm{d}{g}}       	% \dg = dg, 
+\newcommand*{\dt}{\mathop{}\!\mathrm{d}{t}}       	% \dt = dt, 
+\newcommand*{\dx}{\mathop{}\!\mathrm{d}{x}}       	% \dx = dx, 
+\newcommand*{\dy}{\mathop{}\!\mathrm{d}{y}}       	% \dy = dy, 
+\newcommand*{\dr}{\mathop{}\!\mathrm{d}{r}}       	% \dx = dr
+
+%% -- Eulersche Zahl und imaginäre Einheit
+%% --
+\newcommand{\im}{\ensuremath{\mathrm{i}}}
+\newcommand{\eu}{\ensuremath{\mathrm{e\;\!}}}
+
+%% -- var-Symbole für griechisches Alphabet
+%% --
+\let\ORGvarepsilon=\varepsilon
+\let\varepsilon=\epsilon
+\let\epsilon=\ORGvarepsilon
+%
+\let\ORGvarrho=\varrho
+\let\varrho=\rho
+\let\rho=\ORGvarrho
+%
+\let\ORGvartheta=\vartheta
+\let\vartheta=\theta
+\let\theta=\ORGvartheta
+%
+\let\ORGvarphi=\varphi
+\let\varphi=\phi
+\let\phi=\ORGvarphi
+%
+\let\ORGvarleq=\leqslant
+\let\leqslant=\leq
+\let\leq=\ORGvarleq
+%
+\let\ORGvargeq=\geqslant
+\let\geqslant=\geq
+\let\geq=\ORGvargeq
+%
+\let\ORGvarpreccurlyeq=\preccurlyeq
+\let\preccurlyeq=\preceq
+\let\preceq=\ORGvarpreccurlyeq
+%
+\AtBeginDocument{
+\let\setminus\smallsetminus			% A - B fuer Mengen
+\renewcommand{\P}{\mathfrak{P}}		% Achtung: \P hat andere Bedeutung in LaTeX
+}
+
+%% -- Norm, Absolutbetrag mathtools sec 3.6
+%% --
+\DeclarePairedDelimiterX{\norm}[1]{\lVert}{\rVert}{\ifblank{#1}{\:\cdot\:}{#1}}
+\DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{\ifblank{#1}{\:\cdot\:}{#1}}
+
+%% -- Tippfaul DTK 1/2011 & Mail H Voss
+%% -- Die Greosse der Klammern werden automatisch angepasst
+%% -- 
+\makeatletter
+\gdef\resetMathstrut@{%
+ \setbox\z@\hbox{%
+   \mathchardef\@tempa\mathcode`\!\relax%
+   \def\@tempb##1"##2##3{\the\textfont"##3\char"}%
+   \expandafter\@tempb\meaning\@tempa \relax
+ }%
+\ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}
+\makeatother
+%
+\begingroup
+ \catcode`(\active \xdef({\left\string(}
+ \catcode`)\active \xdef){\right\string)}
+ \catcode`[\active \xdef[{\left\string[}
+ \catcode`]\active \xdef]{\right\string]}
+% \catcode`|\active \xdef|{\middle\string|}
+\endgroup
+\mathcode`(="8000 \mathcode`)="8000
+\mathcode`[="8000 \mathcode`]="8000
+
+%% -- sonst gehen Klammern nicht
+%% -- 
+\DeclareRobustCommand{\{}{\ifmmode\left\lbrace\else\textbraceleft\fi}
+\DeclareRobustCommand{\}}{\ifmmode\right\rbrace\else\textbraceright\fi}
+
+
+\endinput

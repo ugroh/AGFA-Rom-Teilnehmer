@@ -1,0 +1,110 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Rom-Theorem.sty 
+%% -- Theorem-Umgebungen
+%% -- Stand: 2023/02/07
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kenndaten
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}											
+\ProvidesPackage{Rom-Mathematik}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Initialisierungen
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{ifthen}
+%	\provideboolean{ThmNummer}	
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Deklaration von Optionen
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\DeclareOption{ThmNummer}{\setboolean{ThmNummer}{true}}	
+\ProcessOptions\relax
+
+% Notwendige Pakete
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{amsmath}		%
+\RequirePackage[amsmath,thmmarks]{ntheorem}
+\RequirePackage{thmtools}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hauptteil
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% -- Theoremumgebungen mit Nummer
+%% -- 
+	\theoremstyle{plain}
+	\newtheorem{ntheorem}{Theorem} 
+	\newtheorem{nproposition}[ntheorem]{Satz}
+	\newtheorem{nlemma}[ntheorem]{Lemma}
+	\newtheorem{ncorollary}[ntheorem]{Korollar}
+	%% -------------------------------------------------	
+	\newtheorem{nthm}[ntheorem]{Theorem}
+	\newtheorem{nlem}[ntheorem]{Lemma}
+	\newtheorem{ncor}[ntheorem]{Korollar}
+	\newtheorem{nprop}[ntheorem]{Satz}
+	%% ------------------------------------------------
+	\theorembodyfont{\upshape}
+	\theoremindent5pt
+	\newtheorem{nexample}[ntheorem]{Beispiel} 
+	\newtheorem{nexamples}[ntheorem]{Beispiele}
+	\newtheorem{ndefinition}[ntheorem]{Definition}
+	\newtheorem{ndefn}[ntheorem]{Definition}
+	%% -------------------------------------------------
+	\theorembodyfont{\small}
+	\theoremindent5pt
+	\newtheorem{nremark}[ntheorem]{Anmerkung}
+	\newtheorem{nremarks}[ntheorem]{Anmerkungen}	
+	\newtheorem{nanmerkung}[ntheorem]{Anmerkung}
+	\newtheorem{nanmerkungen}[ntheorem]{Anmerkungen}
+	\newtheorem{nrem}[ntheorem]{Anmerkung}
+	\newtheorem{nrems}[ntheorem]{Anmerkungen}
+
+%% -- Theoremumgebungen ohne Nummer
+%% -- 
+	\theoremstyle{nonumberplain}
+	\theoremindent5pt
+	\newtheorem{theorem}{Theorem} 
+	\newtheorem{proposition}[theorem]{Satz}
+	\newtheorem{lemma}[theorem]{Lemma}
+	\newtheorem{corollary}[theorem]{Korollar}
+	%% -------------------------------------------------	
+	\newtheorem{thm}[theorem]{Theorem}
+	\newtheorem{lem}[theorem]{Lemma}
+	\newtheorem{cor}[theorem]{Korollar}
+	\newtheorem{prop}[theorem]{Satz}
+	%% -------------------------------------------------	
+	\theorembodyfont{\upshape}
+	\theoremindent5pt
+	\newtheorem{example}[theorem]{Beispiel} 
+	\newtheorem{examples}[theorem]{Beispiele}
+	\newtheorem{definition}[theorem]{Definition}
+	\newtheorem{defn}[theorem]{Definition}
+	%% -------------------------------------------------	
+	\theorembodyfont{\small}
+	\theoremindent5pt
+	\newtheorem{remark}[theorem]{Anmerkung}%[section] 
+	\newtheorem{remarks}[theorem]{Anmerkungen}	
+	\newtheorem{anmerkung}[theorem]{Anmerkung}
+	\newtheorem{anmerkungen}[theorem]{Anmerkungen}
+	\newtheorem{rem}[theorem]{Anmerkung}
+	\newtheorem{rems}[theorem]{Anmerkungen}
+
+%% -------------------------------------------------
+	\theoremstyle{nonumberplain}  
+	\theoremindent5pt
+	\theoremheaderfont{\itshape}
+	\theoremseparator{}
+	\theorembodyfont{\upshape}  
+	\newtheorem{summary}{Zusammenfassung}	
+	\newtheorem{zusammenfassung}{Zusammenfassung}
+	\newtheorem{question}{Frage}
+	\newtheorem{frage}{Frage}
+	
+%\theoremsymbol{\fbox}
+%\theoremsymbol{\rule{1ex}{1ex}} 
+%\newtheorem{proof}{Beweis}
+%% -- Halmosgrabstein bei Beweis
+%% -- 
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Beweis}
+%% -------------------------------------------------
+\endinput	
