@@ -18,17 +18,19 @@
 %% -- Theoreme etc. 
 %% -- 
 \declaretheoremstyle[
-  spaceabove=6pt, spacebelow=6pt,
-  headfont=\normalfont\bfseries,
-  notefont=\mdseries, notebraces={(}{)},
-  bodyfont=\normalfont,
   headpunct={},
   postheadspace=1em,
 ]{rom-style}
 
 \declaretheorem[style=rom-style]{theorem}
+
+\declaretheorem[%
+	,style=rom-style
+	,name=Theorem
+	,numbered=unless unique]{thm}
+
 \declaretheorem[sibling=theorem]{lemma} 
-\declaretheorem[name=Korollar, sibling=theorem, numbered=unless unique]{corollary}
+\declaretheorem[name=Korollar, sibling=theorem, ,numbered=unless unique]{corollary}
 \declaretheorem[name=Satz, sibling=theorem]{proposition}
 
 \declaretheorem[sibling=theorem, style=definition]{definition}

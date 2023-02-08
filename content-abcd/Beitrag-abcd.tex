@@ -1,14 +1,14 @@
 % !TEX root = ../Rom-abcd.tex
 %% -----------------------------------------------------
 %% -- Musterdatei für die Erstellung des Beitrags
-%% -- Stand: 2023/02/02
+%% -- Stand: 2023/02/08
 %% -----------------------------------------------------
 
 %% -- Definitionen, damit die Eingabe einfacher wird
 %% -- Bitte \renewcommand belassen
 %% --
-\renewcommand{\LongTitel}{Hier steht der lange Titel des Beitrags}
-\renewcommand{\ShortTitel}{Hier steht der kurze Titel}
+\renewcommand{\LongTitel}{Langform des Titels}
+\renewcommand{\ShortTitel}{Kurzform des Titel}
 \renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
 
 %% -- Kapitelüberschrift und Eintrag in TOC
@@ -24,32 +24,30 @@
 \markleft{\textsc{\AutorenBeitrag}}	
 \markright{\textsc{\ShortTitel}}	
 
-%% -- Titelseite des Beitrags
+%% -- Titelseite des Beitrags inkl. Bild
+%% -- des/der Vortragenden
 %% --
 \begin{center}
-\textsc{\Large \AutorenBeitrag}
-\end{center}
-	\vspace{1cm}
-	
-%% -- Bild der/des Vortragenden
-\begin{center}
-%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content-abcd/autor1}
-%\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content-abcd/autor1}
+	\textsc{\Large \AutorenBeitrag}\\[1.5em]
+	\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content-abcd/autor1}
 \end{center}
 
-%% -- Die Referenzen werden am Ende des jeweiligen Beitrags ausgegeben
-%% -- 
-\begin{refsection}
-
-%% -- Wer dies machen will
+%% -- Wer einen sinnvollen Spruch nutzen will
+%% -- dann bitte mit \dictum[]{}; Größe kann man anpassen
 %% --
-\dictum[\href{https://de.wikipedia.org/wiki/Albert_Einstein}{Albert Einstein}]{Wahnsinn ist, dasselbe immer \mbox{wieder} zu tun und andere Ergebnisse zu erwarten.}
+\renewcommand{\dictumwidth}{0.45\textwidth}
+\dictum[\href{https://de.wikipedia.org/wiki/Albert_Einstein}{Albert Einstein}]{Wahnsinn ist, dasselbe immer  \mbox{wieder} zu tun und andere Ergebnisse zu erwarten.}
 %%
 \begin{quote}
-Für eine kurze Zusammenfassung
+Für eine kurze Zusammenfassung des Beitrags -- sollte schon sein.
+\begin{thm}
+	Theorem
+\end{thm}
 \end{quote}
-%% 
 
+%% -- Referenzen des Beitrags am Ende
+%% --
+\begin{refsection}
 %% --
 \section*{Erster Hauptabschnitt}		%% 
 \subsection*{Erster Unterabschnitt}		%% 

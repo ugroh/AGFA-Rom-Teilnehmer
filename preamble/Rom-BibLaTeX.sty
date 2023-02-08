@@ -17,10 +17,13 @@
 	,backend		= biber
  	,uniquename	= false
 ]{biblatex}  	
+%%
+\ExecuteBibliographyOptions{%
+ 	,url		= true		% true: URL werden angezeigt
+ 	,doi		= false		% DOI werden im Titel hinterlegt 
+	,eprint		= false		% true  - ” -
+	}
 %% --
-%\setlength{\bibhang}{1em} 
-%\setlength{\bibnamesep}{.5\normalbaselineskip}
-%\setlength{\biblabelsep}{.75em}
 %% --
 \AtEveryBibitem{\clearfield{issn}}%
 \AtEveryBibitem{\clearlist{language}}%
@@ -92,9 +95,9 @@
 \DeclareFieldFormat{postnote}{#1}
 \DeclareFieldFormat{multipostnote}{#1}
 %%%
-\renewcommand*{\labelnamepunct}{\addcolon\space} 		% : nach Namen oder \addcomma
-\renewcommand*{\finalnamedelim}{\addspace\&\addspace} 	% kein "und" bei Doppelname
-\renewcommand*{\bibpagespunct}{\addspace} % : vor Seiten oder \addcomma
+\renewcommand*{\labelnamepunct}{\addcolon\space}%
+\renewcommand*{\finalnamedelim}{\addspace\&\addspace}% 	
+\renewcommand*{\bibpagespunct}{\addspace} %\addcomma
 %%\renewcommand*{\newunitpunct}{\addspace}
 %%\renewcommand*{\finentrypunct}{}
 \renewcommand{\mkbibnamegiven}{\textsc}

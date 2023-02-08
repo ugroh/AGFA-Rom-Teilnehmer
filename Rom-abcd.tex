@@ -1,6 +1,6 @@
 % !TEX TS-program = pdflatexmk
 %% ---------------------------------------------------
-%% -- Stand: 2023/02/02
+%% -- Stand: 2023/02/08
 %% -- Datei für die Erstellung des Beitrags 
 %% -- Wir nutzen KOMA-Script  
 %% ---------------------------------------------------
@@ -10,109 +10,18 @@
 %	,parskip = half+			 
 	]{scrbook}
 
-%% -- KOMA Otions
-%% -- 
-\KOMAoptions{%
-	,paper 		= a4
-	,pagesize
-	,BCOR		= 15mm		% siehe KOMA-Script 2.6, S. 39
-	,twoside	= true		% siehe KOMA-Script 2.6, S. 47
-	,fontsize	= 12pt		% Standard ist 11pt
-% 	,DIV		= calc		% siehe KOMA-Script 2.6, S. 42
-%	,open		= any		% siehe KOMA-Script 3.16, S. 111
-	,headings 	= small		% siehe KOMA-Script 3.16, S. 113
-	,open		= any
-	}
 
-%% -- Unterstützung von Paketen
+%% -- Hier finden sich die wesentlichen Definitionen
 %% --
-%\usepackage{scrhack}
+\usepackage{./preamble/Rom-Beitrag}	
 
-%% -- Gehe davon aus, dass alle UTF8-nutzen
+%% -- Literaturverzeichnis
 %% --
-\usepackage{./preamble/Rom-Beitrag}		%% für LuaLaTeX entbehrlich
-
-
-%% -- Sprache und Anführungszeichen richtig
-%% -- Andere Sprache via \selectlanguage{sprache}; siehe Manual
-%% -- 
-%\usepackage[%
-%	,english
-%	,italian
-%	,french
-%	,main=ngerman]{babel} 
-
-%% -- Richtige Trennung
-%% --
-%\babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
-
-%% -- Hochkomma: Eingabe mittels \enquote{text}; dann wird alles richtig
-%% --
-%\usepackage[%
-%	,autostyle
-%	,italian = guillemets
-%	,french  = guillemets
-%	,german  = guillemets
-%	,english = american]{csquotes}
-%
-%%% -- Die Schrift
-%%% --
-%\usepackage{libertinus}
-
-%% -- Das Layout
-%% --
-%\input{./preamble/Rom-Layout}
-%
-%%% -- Die Pakete
-%%% --
-%\input{./preamble/Rom-Pakete}
-%
-%%% -- Die Abkürzungen
-%%% --
-%\input{./preamble/Rom-Abkuerzungen}
-
-%% -- Literatur
-%% -- Die einzelnen Referenzen kann man dann mit den Möglichkeiten des Pakets lokal halten
-%% -- \begin{refsection} .. \printbibliography \end{refsection} in dem jeweiligen Artikel
-%% --
-%\input{./preamble/Rom-BibLaTeX}
 \addbibresource{./content-abcd/bib-abcd/Biblio-abcd.bib}	
-\ExecuteBibliographyOptions{%
-	,backref	= false 	% true = was habe ich genutzt
- 	,url		= true		% true: URL werden angezeigt
- 	,doi		= false		% DOI werden im Titel hinterlegt 
-	,eprint		= false		% true  - ” -
-	}
-	
-%% -- Links 
-%% --
-\hypersetup{%
-	,colorlinks	= true                                                          
-	,urlcolor	= blue  %                                                              
-	,citecolor	= blue  %                                                          
-	,linkcolor	= blue	% 
-%  	,hidelinks 			% Vor dem Druck % entfernen
-	}
+
 %% -- Eigene, zusätzliche Definitionen
 %% -- 
 \input{./content-abcd/Defn-abcd}
-
-%% -- Inhaltsverzeichnis -> Die Vorträge
-%% -- KOMA-Script 12.4
-%% --
-%\renewcaptionname{ngerman}{\contentsname}{Die Vorträge}
-
-%% -- Keine ganze Zeile Abstand
-%% -- KOMA-Script 15.3; Abb. 15.1
-%% --
-%\DeclareTOCStyleEntries[
-%	raggedentrytext,
-%	beforeskip=.8em plus 1pt
-%]{tocline}{chapter}
-%
-%\newcommand{\LongTitel}{}
-%\newcommand{\ShortTitel}{}
-%\newcommand{\AutorenBeitrag}{}
 
 %% -- Einstellungen Dictum; siehe KOMA Seite 138-140
 %% --
@@ -122,28 +31,9 @@
 %% --
 \begin{document}
 
-%% -- Frontmatter
-%\frontmatter
-%\input{./content/Rom-Titelseite}
-%\tableofcontents
-%\input{./content/Rom-Vorwort}
-%\input{./content/Rom-Agenda}
-
-%% -- Mainmatter
-%% -- Beiträge der Teilnehmer
+%% -- Der Beitrag in separater Datei
 %% --
-
-\mainmatter
-
 \input{./content-abcd/Beitrag-abcd}
-	
-%% -- Backmattter
-%% -- Literaturverzeichnis
-%% -- Jeder Beitrag hat seine eigenes Literaturverzeichnis
-%% --
-%\backmatter
-%\nocite{*}
-%\printbibliography
 
 %% --
 \end{document} 

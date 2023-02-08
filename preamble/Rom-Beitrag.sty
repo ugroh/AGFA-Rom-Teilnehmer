@@ -12,8 +12,6 @@
 %% -- Initialisierungen
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{ifthen, iftex}
-	\provideboolean{Rom2Buch}
-	\provideboolean{Rom2Online}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Deklaration von Optionen
@@ -22,29 +20,22 @@
 
 \DeclareOption*{\expandafter\PassOptionsToClass\expandafter{\CurrentOption}{scrartcl}}
 
-\DeclareOption{Rom2Buch}{\setboolean{Rom2Buch}{true}} 
-\DeclareOption{Rom2Online}{\setboolean{Rom2Buch}{false}} 
+%% -- KOMA Otions
+%% -- 
+\KOMAoptions{%
+	,paper 		= a4
+	,pagesize
+	,BCOR		= 15mm		% siehe KOMA-Script 2.6, S. 39
+	,twoside		= true		% siehe KOMA-Script 2.6, S. 47
+	,fontsize	= 12pt		% Standard ist 11pt
+	,headings 	= small		% siehe KOMA-Script 3.16, S. 113
+	,open = any
+	}
 
-\ifthenelse{\boolean{Rom2Buch}}
-	{\KOMAoptions{open = right}} % für Buch
-	{\KOMAoptions{open = any}}	 % für online
-	
-%% -- Inhaltsverzeichnis -> Die Vorträge
-%% -- KOMA-Script 12.4
-%% --
-\renewcaptionname{ngerman}{\contentsname}{Die Vorträge}
-
-%% -- Keine ganze Zeile Abstand
-%% -- KOMA-Script 15.3; Abb. 15.1
-%% --
-\DeclareTOCStyleEntries[
-	raggedentrytext,
-	beforeskip=.8em plus 1pt
-]{tocline}{chapter}
-
-\newcommand{\LongTitel}{}
-\newcommand{\ShortTitel}{}
-\newcommand{\AutorenBeitrag}{}
+%% -- 
+\DeclareRobustCommand{\LongTitel}{}
+\DeclareRobustCommand{\ShortTitel}{}
+\DeclareRobustCommand{\AutorenBeitrag}{}
 
 \ProcessOptions\relax
 
@@ -107,13 +98,20 @@
 %% -- Querverweise und hyperref
 %% -- 
 \RequirePackage{nameref}
-\usepackage[nospace]{varioref}	% \vref
+\RequirePackage[nospace]{varioref}	% \vref
 %% -- hyperref
 \RequirePackage[%  
 	,breaklinks= true                                                     
-	]{hyperref}          		%% \href{xterner-Link}{Bezeichnung-in-Doku}
-%% --
-\usepackage{cleveref}
+	]{hyperref}     %% \href{xterner-Link}{Bezeichnung-in-Doku}
+%
+\hypersetup{%
+	,colorlinks	= true                                                          
+	,urlcolor	= blue  %                                                              
+	,citecolor	= blue  %                                                          
+	,linkcolor	= blue	% 
+%  	,hidelinks 			% Vor dem Druck % entfernen
+	}
+\RequirePackage{cleveref}
 
 %% -- Abkürzungen
 %% --
