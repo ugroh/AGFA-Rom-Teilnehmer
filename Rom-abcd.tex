@@ -19,63 +19,63 @@
 	,twoside	= true		% siehe KOMA-Script 2.6, S. 47
 	,fontsize	= 12pt		% Standard ist 11pt
 % 	,DIV		= calc		% siehe KOMA-Script 2.6, S. 42
-	,open		= any		% siehe KOMA-Script 3.16, S. 111
+%	,open		= any		% siehe KOMA-Script 3.16, S. 111
 	,headings 	= small		% siehe KOMA-Script 3.16, S. 113
 	,open		= any
 	}
 
 %% -- Unterstützung von Paketen
 %% --
-\usepackage{scrhack}
+%\usepackage{scrhack}
 
 %% -- Gehe davon aus, dass alle UTF8-nutzen
 %% --
-\usepackage[T1]{fontenc}		%% für LuaLaTeX entbehrlich
+\usepackage{./preamble/Rom-Beitrag}		%% für LuaLaTeX entbehrlich
 
 
 %% -- Sprache und Anführungszeichen richtig
 %% -- Andere Sprache via \selectlanguage{sprache}; siehe Manual
 %% -- 
-\usepackage[%
-	,english
-	,italian
-	,french
-	,main=ngerman]{babel} 
+%\usepackage[%
+%	,english
+%	,italian
+%	,french
+%	,main=ngerman]{babel} 
 
 %% -- Richtige Trennung
 %% --
-\babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
+%\babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
 
 %% -- Hochkomma: Eingabe mittels \enquote{text}; dann wird alles richtig
 %% --
-\usepackage[%
-	,autostyle
-	,italian = guillemets
-	,french  = guillemets
-	,german  = guillemets
-	,english = american]{csquotes}
-
-%% -- Die Schrift
-%% --
-\usepackage{libertinus}
+%\usepackage[%
+%	,autostyle
+%	,italian = guillemets
+%	,french  = guillemets
+%	,german  = guillemets
+%	,english = american]{csquotes}
+%
+%%% -- Die Schrift
+%%% --
+%\usepackage{libertinus}
 
 %% -- Das Layout
 %% --
-\input{./preamble/Rom-Layout}
-
-%% -- Die Pakete
-%% --
-\input{./preamble/Rom-Pakete}
-
-%% -- Die Abkürzungen
-%% --
-\input{./preamble/Rom-Abkuerzungen}
+%\input{./preamble/Rom-Layout}
+%
+%%% -- Die Pakete
+%%% --
+%\input{./preamble/Rom-Pakete}
+%
+%%% -- Die Abkürzungen
+%%% --
+%\input{./preamble/Rom-Abkuerzungen}
 
 %% -- Literatur
 %% -- Die einzelnen Referenzen kann man dann mit den Möglichkeiten des Pakets lokal halten
 %% -- \begin{refsection} .. \printbibliography \end{refsection} in dem jeweiligen Artikel
 %% --
-\input{./preamble/Rom-BibLaTeX}
+%\input{./preamble/Rom-BibLaTeX}
 \addbibresource{./content-abcd/bib-abcd/Biblio-abcd.bib}	
 \ExecuteBibliographyOptions{%
 	,backref	= false 	% true = was habe ich genutzt
@@ -100,19 +100,19 @@
 %% -- Inhaltsverzeichnis -> Die Vorträge
 %% -- KOMA-Script 12.4
 %% --
-\renewcaptionname{ngerman}{\contentsname}{Die Vorträge}
+%\renewcaptionname{ngerman}{\contentsname}{Die Vorträge}
 
 %% -- Keine ganze Zeile Abstand
 %% -- KOMA-Script 15.3; Abb. 15.1
 %% --
-\DeclareTOCStyleEntries[
-	raggedentrytext,
-	beforeskip=.8em plus 1pt
-]{tocline}{chapter}
-
-\newcommand{\LongTitel}{}
-\newcommand{\ShortTitel}{}
-\newcommand{\AutorenBeitrag}{}
+%\DeclareTOCStyleEntries[
+%	raggedentrytext,
+%	beforeskip=.8em plus 1pt
+%]{tocline}{chapter}
+%
+%\newcommand{\LongTitel}{}
+%\newcommand{\ShortTitel}{}
+%\newcommand{\AutorenBeitrag}{}
 
 %% -- Einstellungen Dictum; siehe KOMA Seite 138-140
 %% --
