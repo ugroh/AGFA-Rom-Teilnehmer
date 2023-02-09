@@ -1,20 +1,12 @@
-## AGFA-Rom Vorlage (Stand 2023/02/02)
+## AGFA-Rom Vorlage (Stand 2023/02/09)
 
 Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hierfür ist [KOMA-Script](https://www.ctan.org/pkg/koma-script), da dieses Paket auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. Alle notwendigen Definition sind in der Datei `Rom-Beitrag.sty` enthalten bzw. diese ruft weitere Dateien auf. 
 
-Die Vorlage findet man auf GitHub unter [_ugroh/AGFA-Rom-Teilnehmer_](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken in einem geeigneten Unterverzeicnis auf dem PC installieren. Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, kann dieses ZIP-File als neues Projekt in Overleaf installieren.
+Die Vorlage findet man auf GitHub unter [ugroh/AGFA-Rom-Teilnehmer](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken in einem geeigneten Unterverzeicnis auf dem PC installieren. Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, kann dieses ZIP-File als neues Projekt in Overleaf installieren.
 
 ### Der Aufbau der Vorlage
 
-Beim Installieren wird das Verzeichnis __`AGFA-Rom-Teilnehmer`__ angelegt.
-
-
-
-
-
-
-
-in dem die folgenden Unterverzeichnisse enthalten sind: 
+Beim Installieren wird das Verzeichnis __`AGFA-Rom-Teilnehmer`__ angelegt, in dem die folgenden Unterverzeichnisse enthalten sind.
 
 * __`bib-abcd`__: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in LaTeX. Eine kleine Anleitung dazu findet man in den LaTeX-Tipps.
 	
@@ -42,15 +34,15 @@ in dem die folgenden Unterverzeichnisse enthalten sind:
 		
 				% !TEX TS-program = pdflatexmk
 		
-		in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd` und heißt `Biblio-abcd.bib`. In diese Datei werden die Referenzen eingetragen und gepflegt. Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [JabRef](https://www.jabref.org) zu empfehlen. In meinen LaTeX-Tipps habe ich hierzu etwas zusammengestellt, dass man im Unterverzeichnis `beispiel` findet.
+		in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd` und heißt `Biblio-abcd.bib`. In diese Datei werden die Referenzen eingetragen und gepflegt. Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [JabRef](https://www.jabref.org) zu empfehlen. In meinen LaTeX-Tipps habe ich hierzu etwas zusammengestellt, dass man im Unterverzeichnis `beispiel` findet – [LasTeX-Tipp5]{https://github.com/ugroh/AGFA-Rom-Teilnehmer/blob/main/beispiel/LaTeX-Tipp5.pdf}.
 	
-		- __`Rom-Layout.tex`__:  
-		Alles, was für das Layout zuständig ist.
+	- __`Rom-Layout.sty`__:  Alles, was für das Layout zuständig ist. Dabei funktioniert `\section` und `\subsection` wie üblich. Meiner Meinung nach ist  `\subsubsection` entbehrlich und es wird bei der Nutzung eine Nummer ausgegeben. Kann man ganz gut nutzen, um etwas besser zu Untergliedern. Auch sollen die erstgenannten Befehle mit ihrere *-Variante genutzt werden. Eine Nummerierung ist nicht erforderlich.
 	
-		- __`Rom-Pakete.tex`__:  
-		Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder in das Buch von H. Voss: _Einführung in LaTeX_ reinsehen. Wichtig: _Learning-by-Doing_ ist dann angesagt. 
-
-
+	- __`Rom-Mathematik.sty`__: Enthält Definitionen, etwa `\N` für den Blackboard-Stil für die Darstellung der natürlichen Zahlen. Alle Definitionen habe ich separat zusammengestellt und die Übersicht findet sich auch in dem Unterverzeichnis `beispiel`.
+	
+	- __`Rom-Theorem.sty`__: Wie der Name schon sagt: In dieser Datei finden sich die Definitionen der mathematischen Umgebungen für Theoreme etc. Da gibt es zwei Varianten: Einmal nicht nummeriert, was ich für die Beiträge sinnvoll halte und die Möglichkeit, diese auch zu nummerieren. Alles weitere in der oben erwähnten Übersicht.
+	
+	- __`Rom-Pakete.tex`__:  Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder in das Buch von H. Voss: _Einführung in LaTeX_ reinsehen. Wichtig: _Learning-by-Doing_ ist dann angesagt. 
 
 ### Die Erstellung eines Beitrags mit LaTeX 
 
@@ -68,15 +60,15 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 * Wer mehr verstehen oder lernen will – einfach mal auf [_Dante – Literatur und mehr_](https://www.dante.de/dante-e-v/literatur/) nachsehen. Ein schöner Artikel zu TeX findet man  [_etwa hier_](https://www.ams.org/publications/authors/Communication_of_Mathematics_with_TEX.pdf).
 
-* Einige Regeln zur Verfassung eines mathematischen Artikels findet man bei [P. Halmos: _How to Write Mathematics](https://www2.cs.duke.edu/donaldlab/Teaching/add/2011/resources/halmos.pdf) und [D. Knuth: _Mathematical Writing](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf).
+* Regeln zur Verfassung eines mathematischen Artikels findet man bei [P. Halmos: _How to Write Mathematics](https://www2.cs.duke.edu/donaldlab/Teaching/add/2011/resources/halmos.pdf) und [D. Knuth: _Mathematical Writing](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf). Letztere ist ein Vorlesung, die man auch auf [YouTube](https://www.youtube.com/watch?v=mert0kmZvVM&list=PLABJEFgj0PWV22nvw3YKXvR_n1NB6fn5D) findet, auch [P. Halmos kann man da erleben](https://www.youtube.com/watch?v=Cy_1JgYfKmE). 
 
 
 ### Sonstiges 
 
-* Die Datei `Rom-Muster.pdf` ist ein Beispiel, basierend auf `./beispiel/Rom-Muster.tex`. Diese Datei kann man sich ansehen, um noch weitere Details zu erfahren, wie die Eingabe der Beispiele erfolgt ist.
-
-* __TODO__ Ein LaTeX-Paket aus den Dateien in der Preambel erstellen, um die Eingabe einfacher und die Vorlage kompakter zu machen. 
+* Die Datei `./beispiel/Rom-Muster.pdf` ist ein Beispiel, basierend auf `./beispiel/Rom-Muster.tex`. Diese Datei kann man sich ansehen, um noch weitere Details zu erfahren.
 
 
-* Wünsche, Fehler etc. bitte an: <ulgr@math.uni-tuebingen.de>
+
+
+* Wünsche, etwaige Fehler etc. bitte an <ulgr@math.uni-tuebingen.de> melden.
 
