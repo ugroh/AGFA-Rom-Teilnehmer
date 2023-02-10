@@ -33,7 +33,7 @@
 	
 %% -- Bild der/des Vortragenden
 \begin{center}
-\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{autor1}
+\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./beispiel/autor1}
 \end{center}
 
 %% -- Die Referenzen werden am Ende des jeweiligen Beitrags ausgegeben
@@ -42,8 +42,9 @@
 \dictum[\href{https://de.wikipedia.org/wiki/Winston_Churchill}{Winston Churchill}]{Ein kluger Mann macht nicht alle Fehler selbst. Er gibt auch anderen eine Chance.}
 %%
 \begin{quote}
-Dies ist eine Testdatei und kann als Beispiel dienen.
-Für die eigene Eingabe des Beitrags kann man diesen Inhalt löschen oder auch nutzen.
+Dies ist eine Testdatei, mit Hilfe deren wir die Makros überprüft haben.
+Daher kann dieses nicht direkt genutzt werden.
+Ich habe hier aber alle Definitionen zusammengestellt und erläutert, wie dies auch in dem README.pdf \bzw README.md beschrieben sind.
 
 Dies ist ein Typoblindtext. 
 An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. 
@@ -52,7 +53,100 @@ Manchmal Sätze, die alle Buchstaben des Alphabets enthalten -- man nennt diese 
 Sehr bekannt ist dieser: {\selectlanguage{english} The quick brown fox jumps over the lazy old dog} (siehe hierzu den \href{https://www.blindtextgenerator.de}{Blindtextgenerator›}
 \end{quote}
 %% 
-\section*{Einige Definitionen}
+\section*{Definitionen für die Erstellung der Beiträge}
+\subsection*{Für die Eingabe des Textes}
+\subsubsection{}
+Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
+%%
+\begin{tcblisting}{title=Überschriften}
+\section*{Definitionen für die Erstellung der Beiträge}
+\subsection*{Für die Eingabe des Textes}
+\subsubsection{}
+Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
+\end{tcblisting}
+%
+Da ich der Meinung bin, dass für die Beiträge kein \cs{subsubsection} erforderlich ist, habe ich diesen Befehl so umdefiniert, dass bei einer Nutzung nur die Nummer angegeben wird. 
+%
+\begin{tcblisting}{title=\cs{subsubsection}}
+\section*{Zweiter Abschnitt}
+\subsection*{Die Nutzung von }
+\subsubsection{}
+Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
+Daher kann man -- bei Bedarf -- einen längeren Abschnitt nochmals untergliedern.
+\subsubsection{}
+Und eine weitere Numerierung.
+Siehe hierzu auch den zweiten Abschnitt in dieser Zusammenstellung.
+\end{tcblisting}
+%%
+\subsubsection{}
+Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummreiert -- etwa für Äquivalenzen -- oder mit \enquote{--} versehen.
+%
+\begin{tcblisting}{title=Aufzählungen mit (i) \& (a), sidebyside}
+\begin{enumerate}[(i)]
+	\item 
+	Item (i)
+	\item
+	Item (ii)
+\end{enumerate}
+%
+\begin{enumerate}[(a)]
+	\item 
+	Item (a)
+	\item
+	Item (b)
+\end{enumerate}
+\end{tcblisting}
+%%
+\begin{tcblisting}{title=Aufzählungen mit --, sidebyside}
+\begin{enumerate}[--]
+	\item 
+	Item 
+	\item
+	Item 
+\end{enumerate}
+\end{tcblisting}
+%% --
+Das Paket hierzu ist \textcite{enumitem}, mit Hilfe dessen noch kompliziertere Dinge getan werden können.
+%%
+\begin{tcblisting}{title=Aufzählungen mit -- und nosep}
+Text \ldots
+%
+\medskip
+\begin{enumerate}[--, nosep]
+	\item 
+	Wie mache ich die Listen enger?
+	\item
+	Indem ich \texttt{nosep} nutze.
+\end{enumerate}
+\medskip
+%
+Text \ldots 
+\end{tcblisting}
+%% --
+Und man kann mit der Stern-Variante auch Aufzählungen erzeugen, die innerhalb des laufenden Textes erscheinen.
+%%
+\begin{tcblisting}{title=Aufzählungen im Text}
+Und man kann mit der Stern-Variante auch Aufzählungen erzeugen -- 
+%
+\begin{enumerate*}[(i)]
+	\item 
+	wie etwa hier  
+	\item
+	und auch hier -- 
+\end{enumerate*}
+%
+die innerhalb des laufenden Textes erscheinen.
+\end{tcblisting}
+%%
+\subsubsection{}
+Die richtigen Gänsefüßchen erzeugen wir mit \cs{enquote}, etwa so:
+%%
+\begin{tcblisting}{title=Gänsefüchen}
+Ein Text und \enquote{einer in Gänsefüßchen}. 
+Und es wird auch richtig, \enquote{wenn man mal \enquote{einen in einem} hat}. 
+\end{tcblisting}
+%%
+
 \subsection*{Mathematische Umgebungen}
 Definiert sind
 \begin{verbatim}

@@ -1,0 +1,31 @@
+% !TEX TS-program = pdflatexmk
+%% ---------------------------------------------------
+%% -- Stand: 2023/02/02
+%% -- Master-Datei für die Erstellung des Beitrags 
+%% -- Wir nutzen KOMA-Script 
+%% ---------------------------------------------------
+\documentclass[%
+	,ngerman					% Deutsch als Standard, andere über babel
+	,bibliography 	= leveldown % kein eigenes Kapitel sondern ein Abschnitt
+%	,parskip = half+			% halbe Leerzeile Abstand für Absätze
+	,numbers = noenddot
+	]{scrbook}
+
+
+\usepackage{./preamble/Rom-Beitrag}
+
+\addbibresource{./beispiel/Biblio-ulgr.bib}	
+%\ExecuteBibliographyOptions{%
+%	,backref	= false 	% true = was habe ich genutzt
+% 	,url		= true		% true: URL werden angezeigt
+% 	,doi		= false		% DOI werden im Titel hinterlegt 
+%	,eprint		= false		% true  - ” -
+%	}
+\usepackage{ablatt-listings}
+%% -- Wir starten nun
+%% --
+\begin{document}
+\input{./beispiel/Beitrag-ulgr}		% mit %% versehen
+
+%% --
+\end{document} 
