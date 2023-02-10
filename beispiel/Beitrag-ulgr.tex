@@ -1,4 +1,6 @@
-% !TEX root = Rom-Muster.tex
+% !TEX root = ../Rom-Muster.tex
+% !TEX TS-program = pdflatexmk
+
 %% -----------------------------------------------------
 %% -- Beitrag ulgr
 %% -- Stand: 2023/02/02
@@ -44,7 +46,7 @@
 \begin{quote}
 Dies ist eine Testdatei, mit Hilfe deren wir die Makros überprüft haben.
 Daher kann dieses nicht direkt genutzt werden.
-Ich habe hier aber alle Definitionen zusammengestellt und erläutert, wie dies auch in dem README.pdf \bzw README.md beschrieben sind.
+Und ich habe hier aber alle Definitionen zusammengestellt und erläutert, wie diese in dem README.pdf \bzw README.md beschrieben sind.
 
 Dies ist ein Typoblindtext. 
 An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. 
@@ -57,38 +59,32 @@ Sehr bekannt ist dieser: {\selectlanguage{english} The quick brown fox jumps ove
 \subsection*{Für die Eingabe des Textes}
 \subsubsection{}
 Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
-%%
-\begin{tcblisting}{title=Überschriften}
-\section*{Definitionen für die Erstellung der Beiträge}
-\subsection*{Für die Eingabe des Textes}
-\subsubsection{}
-Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
-\end{tcblisting}
+Da ich der Meinung bin, dass für die Beiträge kein \cs{subsubsection} erforderlich ist, habe ich diesen Befehl so umdefiniert, dass bei einer Nutzung nur die Nummer angegeben wird -- siehe hierzu auch den zweiten Abschnitt in dieser Zusammenstellung.
+%% 
 %
-Da ich der Meinung bin, dass für die Beiträge kein \cs{subsubsection} erforderlich ist, habe ich diesen Befehl so umdefiniert, dass bei einer Nutzung nur die Nummer angegeben wird. 
-%
-\begin{tcblisting}{title=\cs{subsubsection}}
+\begin{tcblisting}{title=\cs{subsubsection}, breakable,  lower separated = false}
 \section*{Zweiter Abschnitt}
 \subsection*{Die Nutzung von }
 \subsubsection{}
-Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
-Daher kann man -- bei Bedarf -- einen längeren Abschnitt nochmals untergliedern.
+Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung und man kann -- bei Bedarf -- einen längeren Abschnitt nochmals untergliedern.
 \subsubsection{}
 Und eine weitere Numerierung.
-Siehe hierzu auch den zweiten Abschnitt in dieser Zusammenstellung.
+
 \end{tcblisting}
 %%
 \subsubsection{}
-Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummreiert -- etwa für Äquivalenzen -- oder mit \enquote{--} versehen.
+Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummeriert -- etwa für Äquivalenzen -- oder mit \enquote{--} versehen.
 %
-\begin{tcblisting}{title=Aufzählungen mit (i) \& (a), sidebyside}
+\begin{tcblisting}{title=Aufzählungen, sidebyside, breakable,  lower separated = false}
 \begin{enumerate}[(i)]
 	\item 
 	Item (i)
 	\item
 	Item (ii)
 \end{enumerate}
+\end{tcblisting}
 %
+\begin{tcblisting}{title=Aufzählungen, sidebyside, breakable,  lower separated = false}
 \begin{enumerate}[(a)]
 	\item 
 	Item (a)
@@ -96,8 +92,8 @@ Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummreiert -- et
 	Item (b)
 \end{enumerate}
 \end{tcblisting}
-%%
-\begin{tcblisting}{title=Aufzählungen mit --, sidebyside}
+%
+\begin{tcblisting}{title=Aufzählungen, sidebyside, breakable,  lower separated = false}
 \begin{enumerate}[--]
 	\item 
 	Item 
@@ -106,9 +102,26 @@ Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummreiert -- et
 \end{enumerate}
 \end{tcblisting}
 %% --
-Das Paket hierzu ist \textcite{enumitem}, mit Hilfe dessen noch kompliziertere Dinge getan werden können.
+\medskip
+Das Paket hierzu ist \textcite{enumitem}, mit Hilfe dessen noch kompliziertere Dinge getan werden können, etwa kompaktere Listen mit \texttt{nosep} oder mit der Stern-Variante Aufzählungen erzeugen, die innerhalb des laufenden Textes erscheinen.
 %%
-\begin{tcblisting}{title=Aufzählungen mit -- und nosep}
+\begin{tcblisting}{title=Aufzählungen im Text, breakable, lower separated = false, breakable}
+Und man kann mit der Stern-Variante auch Aufzählungen erzeugen -- 
+%
+\begin{enumerate*}[(i)]
+	\item 
+	wie etwa hier  
+	\item
+	und auch hier -- 
+\end{enumerate*}
+%
+die innerhalb des laufenden Textes erscheinen.
+%%
+\end{tcblisting}
+%%
+Ein weiteres Beispiel:
+%%
+\begin{tcblisting}{title=Aufzählungen mit -- und nosep, breakable,  lower separated = false}
 Text \ldots
 %
 \medskip
@@ -123,30 +136,48 @@ Text \ldots
 Text \ldots 
 \end{tcblisting}
 %% --
-Und man kann mit der Stern-Variante auch Aufzählungen erzeugen, die innerhalb des laufenden Textes erscheinen.
 %%
-\begin{tcblisting}{title=Aufzählungen im Text}
-Und man kann mit der Stern-Variante auch Aufzählungen erzeugen -- 
-%
-\begin{enumerate*}[(i)]
-	\item 
-	wie etwa hier  
-	\item
-	und auch hier -- 
-\end{enumerate*}
-%
-die innerhalb des laufenden Textes erscheinen.
-\end{tcblisting}
-%%
+
+
 \subsubsection{}
 Die richtigen Gänsefüßchen erzeugen wir mit \cs{enquote}, etwa so:
 %%
-\begin{tcblisting}{title=Gänsefüchen}
+\begin{tcblisting}{title=Gänsefüchen, breakable,  lower separated = false}
 Ein Text und \enquote{einer in Gänsefüßchen}. 
 Und es wird auch richtig, \enquote{wenn man mal \enquote{einen in einem} hat}. 
 \end{tcblisting}
 %%
+Und dies gilt dann auch, wenn mal eine andere Sprache hat, etwa USenglisch.
+%%
+%%
+\begin{tcblisting}{title=Gänsefüchen, breakable,  lower separated = false}
+{\selectlanguage{english} \enquote{The quick brown \enquote{fox jumps over the lazy} old dog}}
+\end{tcblisting}
+%%
+\subsubsection{}
+Aber auch nicht vergessen:
+%%
+\begin{itemize}[nosep]
+	\item
+	Bindestrich - mittels \verb|-|, also \verb|Riemann-Integral| gibt Riemann-Integral
+	\item
+	Gedankenstrich -- mittels \verb|--|, also \verb|Seite 100--120| gibt Seite 100--120
+	\item
+	Minuszeichen $ -1 $ mittels \verb|$-1$|.
+\end{itemize}
+%%
+Für die Regeln des \enquote{Gedankenstrichs} -- siehe etwa \href{https://www.annika-lamer.de/beliebte-rechtschreibfehler-der-gedankenstrich/}{\enquote{Der Gedankenstrich}}.
+%%
+\subsubsection{}
+Mittels \verb|\dh| bekommt man korrekt \dh und nicht d.h. -- gilt für \ua auch.
+Wichtig zum Verständnis iet es, das \TeX{} stets einen Punkt als Satzende interpretiert.
+Dieses kann man mit Hilfe des Pakets \lpkg{xspace} umgehen und dieses ist in der Vorlage berücksichtig.
+Hier eine Übersicht über die Definitionen.
+%%
 
+\texttt{dh einfügen}
+%%
+%% --
 \subsection*{Mathematische Umgebungen}
 Definiert sind
 \begin{verbatim}
@@ -178,75 +209,14 @@ Definiert sind
 %%
 $ \N $, $ \Z $, $ \Q $, $ \R $, $ \C $.
 %%
-\subsection*{Aufzählungen}
-%%
-Dazu wird das Paket \texttt{enumitem} von \textcite{enumitem} verwendet.
-Möglichkeiten:
-%%
-\begin{verbatim}
-\begin{enumerate}
- 	\item
-	Item
-\end{enumerate}
-\end{verbatim} 
-%%
-gibt
-%%
-\begin{enumerate}
- 	\item
-	Item
-\end{enumerate}
-%%
-oder
-%%
-\begin{verbatim}
-\begin{enumerate}[(a)]
- 	\item
-\end{enumerate}
-\end{verbatim}
-%%
-gibt
-%%
-\begin{enumerate}[(a)]
- 	\item
-	Item
-\end{enumerate}
-%%
-Also durch \verb|\begin{enumerate}[(i)]| entsprechend
-%%
-\begin{enumerate}[(i)]
- 	\item
-	Item
-\end{enumerate}
-%%
-Mit der $^{*}$-Variante dann auch im Fließtext, etwa
-%%
-\begin{enumerate*}[(a)]
- 	\item
-	Item1
-	\item
-	Item2; 
-\end{enumerate*}
-%%
-einfach ausprobieren.
+
 %%
 \subsection*{Texteingabe}
 %%
-Mittels \verb|\dh| bekommt man korrekt \dh und nicht d.h. -- gilt für \ua auch.
-Weiteres ist im \texttt{ReadMe.md} beschrieben. 
-Und die richtigen \enquote{Gänsefüßchen} bekommt man mit \verb|\enquote{Gänsefüßchen}|.
 
-Aber auch nicht vergessen:
-%%
-\begin{itemize}[nosep]
-	\item
-	Bindestrich - mittels \verb|-|, also \verb|Riemann-Integral| gibt Riemann-Integral
-	\item
-	Gedankenstrich -- mittels \verb|--|, also \verb|Seite 100--120| gibt Seite 100--120
-	\item
-	Minuszeichen $ -1 $ mittels \verb|$ -1 $|.
-\end{itemize}
-%%
+
+
+
 
 
 %% -- Begin des eigenen Artikels; diesen \blindtext kann man löschen (Test)
