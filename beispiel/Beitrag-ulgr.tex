@@ -224,9 +224,18 @@ Hier eine Übersicht über die Definitionen.
 \texttt{dh einfügen}
 %%
 %% --
-\subsection*{Die Eingabe der Mathematik}
+\subsection*{Die Eingabe des mathematischen Textes}
 \subsubsection{}
-Zunächst zu den mathematischen Umgebungen wie \texttt{Theorem} sind folgende Definitionen vorhanden.
+Die Eingabe mathematischer Umgebungen erfolgt durch
+%
+\begin{docEnvironment}{THM-Umgebung}{}
+\end{docEnvironment}
+%
+Für diese Umgebungen habe ich eine Variante ohne Nummerierung gewählt, da für diese Art von Beiträgen eine Nummerierung nicht erforderlich ist. 
+%%
+\begin{ntheorem}
+Theorem
+\end{ntheorem}
 %%
 %\begin{center}
 %\begin{table}
@@ -280,17 +289,33 @@ Dies ist ein Theorem mit NUmmer
 \end{ntheorem}
 \end{tcblisting}
 %%
-\subsection*{Mathematische Symbole}
+%\subsection*{Mathematische Symbole}
 \subsubsection{}
-Um die lästige Eingabe von \cs{varphi} für ein $ \phi $ zu vermeiden, sind alle
+Vorab noch eine Anmerkung zur Eingabe eines mathematischen Textes: Auch hierfür gelten einige typographische Regeln für die mathematischen Symbole, die zu beachten sind.
+Eine Kurzfassung findet man etwa in \textcite{nadler:formelsatz}, in \textcite[Kap. 9.1]{voss:2012a} und ausführlicher, versehen mit vielen Beispielen in \href{https://archiv.dante.de/DTK/PDF/komoedie_1997_1.pdf}{Marion Neubauer: \emph{Feinheiten bei wissenschaftlichen PublikationenPublikationen}}.%
+\footnote{Der Link ist hinterlegt und der Artikel findet sich ab Seite 25 und der zugehörige erste Teil \href{https://archiv.dante.de/DTK/PDF/komoedie_1996_4.pdf}{findet sich hier}}
 
-\begin{verbatim}
-\N, \Z, \Q, \R, \C
-\end{verbatim}
-%%
-$ \N $, $ \Z $, $ \Q $, $ \R $, $ \C $.
-%%
+%In \vref{tab:definitionen} finden sich einig Beispiele dazu.
+%Den Rest bitte in der Datei \texttt{agfa-defn.sty} nachsehen.
+%Falls mal ein mittels \cs{newcommand} definierter eigener Befehl nicht klappt (\ldots bereits definiert), dann unbedingt reinsehen.
 
+Noch ein Hinweis: Ich habe die \cs{var}-Varianten \enquote{umgetauft}: also \cs{phi} gibt $ \phi $ und \cs{varphi} gibt $ \varphi $. 
+Entsprechend auch bei den anderen aufgeführten Zeichensätze, die eine \cs{var}-Variante haben. 
+%
+\begin{tcolorbox}[tabulars={l  >{$}l<{$} l l  >{$}l<{$} l},
+          boxrule=0.5pt,title=Mathematische Symbole, breakable]
+\cs{N}	&	\N 	& 		& 	\cs{phi} 			& 		\phi 		&  	\\
+\cs{Z}	&   \Z	&	   	& 	\cs{psi}			&      	\psi  			\\
+\cs{Q}	&   \Q 	&		&	\cs{epsilon}		&       \epsilon    	\\
+\cs{R}	&	\R	&		&	\cs{rho}			&	 	\rho 			\\
+\cs{C}	&	\C	&		&	\cs{theta}			&	 	\theta			\\
+\cs{P} 	&	\P	& Potenzmenge	& \cs{geq}		&	 	\geq 			\\
+\cs{d}\brackets{\cs{mu}}	& \diff{\mu}  &	& \cs{leq}	&	 	\leq  \\
+\cs{dt}	&	\dt &	Eulersche Zahl		& 	\cs{eu} 	& \eu  &    \\
+\cs{ds} & 	\ds	& 	Imaginäre Einheit	&	\cs{im}	& \im &  \\
+%%
+\end{tcolorbox}
+%%
 
 %% -- Literaturverzeichnis
 %% --
