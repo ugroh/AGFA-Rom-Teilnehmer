@@ -56,8 +56,52 @@ Sehr bekannt ist dieser: {\selectlanguage{english} The quick brown fox jumps ove
 \footnote{Für den Dummy-Text siehe \href{https://www.blindtextgenerator.de}{Blindtextgenerator›}}
 \end{quote}
 %% 
-\section*{Definitionen für die Erstellung der Beiträge}
-\subsection*{Für die Eingabe des Textes}
+%\subsection*{Definitionen für die Erstellung der Beiträge}[
+\subsection*{Die Eingabe des reinen Textes}
+\subsubsection{}
+\LaTeX{} ist eine \href{https://de.wikipedia.org/wiki/Auszeichnungssprache}{Markup-Sprache}, die auf dem \href{https://de.wikipedia.org/wiki/Satz_(Druck)}{Textsatzsystem} \TeX{} basiert und ist, vor allem im naturwissenschaftlichen Bereich, zu einem \emph{de facto} Standard geworden.
+Im Gegensatz zu den \href{https://de.wikipedia.org/wiki/WYSIWYG}{\emph{What You See is What You Get}} Systemen wie etwa Word, wird hier mittels Steuerelemente die Gestalt (Layout) des Dokuments festgelegt 
+-- \href{https://de.wikipedia.org/wiki/WYSIWYM}{\emph{What You See is What You Mean}}.
+Der Nutzer kann sich somit ganz auf den \emph{Inhalt} seiner Arbeit konzentrieren.
+Dies ist zwar am Anfang etwas aufwendiger zu erlernen ist, aber es ist dadurch flexibler und besser auf die eigenen Bedürfnisse anpassbar.%
+\footnote{Nebenbei: Word lernt man auch nicht über Nacht und für mathematischen Text ist dieses System weitestgehend unbrauchbar.}
+
+Daher ist es wichtig, seinen Text nicht als Fließtext zu schreiben, sondern \emph{strukturiert} einzugeben.
+%%
+\begin{enumerate}[\textbullet]
+	\item
+		Beginne jeden Satz auf einer neuen Zeile -- dies erleichtert das Lesen und die Fehlersuche.
+	
+	\item
+		Kommentiere, speziell im mathematischen Teil, was gemacht wurde, -- dies hilft sich später zu erinnern, warum an dieser Stelle was steht.
+		
+	\item
+		Bei Anpassungen mittels eigener Makros bitte nur das machen, was man auch verstanden hat.
+		
+\end{enumerate}
+%%
+Tipps zur begleitenden Literatur:
+%%
+\begin{enumerate}[\textbullet]
+	\item
+	\textcite{lshort-german}: Bestens geeignet für den Einsteig in \LaTeX{}, auch wenn die Autoren nicht KOMA-Script als Basis nehmen.
+	
+	\item
+	\textcite{short-math-guide}: Eine ausgezeichnete, kompakte Einführung in das Setzen von mathematischen Formeln.
+	
+	\item
+	Die \LaTeX{}-Tipps speziell zur Literaturverwaltung und  zu den Querverweisen, \textcite{latextipps5} und \textcite{latextipps2}.
+	
+	\item
+	Wer keine Installation auf einem PC hat oder haben will -- das Online-System \href{https://www.overleaf.com}{Overleaf} ist bestens für den Einstieg geeignet und hat überdies ein hervorragendes Hilfesystem. 
+	
+	\item
+	Rechtschreibung, Kommasetzung und typografische Regeln unterstützen (nachtragen)
+	
+\end{enumerate}
+%%
+
+%%
 \subsubsection{}
 Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
 Da ich der Meinung bin, dass für die Beiträge kein \cs{subsubsection} erforderlich ist, habe ich diesen Befehl so umdefiniert, dass bei einer Nutzung nur die Nummer angegeben wird -- siehe hierzu auch den zweiten Abschnitt in dieser Zusammenstellung.
@@ -73,6 +117,7 @@ Und eine weitere Numerierung.
 
 \end{tcblisting}
 %%
+\setcounter{subsubsection}{1}
 \subsubsection{}
 Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummeriert -- etwa für Äquivalenzen -- oder mit \enquote{--} versehen.
 %
@@ -94,6 +139,7 @@ Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummeriert -- et
 \end{enumerate}
 \end{tcblisting}
 %
+\medskip
 \begin{tcblisting}{title=Aufzählungen, sidebyside, breakable,  lower separated = false}
 \begin{enumerate}[--]
 	\item 
@@ -106,6 +152,7 @@ Aufzählungen erfolgen römisch Nummeriert, oder mit Buchstaben nummeriert -- et
 \medskip
 Das Paket hierzu ist \textcite{enumitem}, mit Hilfe dessen noch kompliziertere Dinge getan werden können, etwa kompaktere Listen mit \texttt{nosep} oder mit der Stern-Variante Aufzählungen erzeugen, die innerhalb des laufenden Textes erscheinen.
 %%
+\medskip
 \begin{tcblisting}{title=Aufzählungen im Text, breakable, lower separated = false, breakable}
 Und man kann mit der Stern-Variante auch Aufzählungen erzeugen -- 
 %
@@ -120,6 +167,7 @@ die innerhalb des laufenden Textes erscheinen.
 %%
 \end{tcblisting}
 %%
+\medskip
 Ein weiteres Beispiel:
 %%
 \begin{tcblisting}{title=Aufzählungen mit -- und nosep, breakable,  lower separated = false}
@@ -179,7 +227,11 @@ Hier eine Übersicht über die Definitionen.
 \texttt{dh einfügen}
 %%
 %% --
-\subsection*{Mathematische Umgebungen}
+\subsection*{Die Eingabe der Mathematik}
+\subsubsection{}
+Zunächst zu den mathematischen Umgebungen wie \texttt{Theorem} sind folgende Definitionen vorhanden.
+
+
 Definiert sind
 \begin{verbatim}
 \begin{theorem} \ldots \end{theorem}
@@ -190,6 +242,7 @@ Definiert sind
 \begin{cor} \ldots \end{cor}
 \end{verbatim}
 %%
+
 \begin{theorem} 
 	\ldots 
 \end{theorem}
@@ -198,9 +251,9 @@ Definiert sind
 	\ldots 
 \end{proposition}
 %%
-\begin{corollary} 
+\begin{thm} 
 	\ldots 
-\end{corollary}
+\end{thm}
 %%
 \subsection*{Mathematische Symbole}
 %
@@ -211,34 +264,6 @@ Definiert sind
 $ \N $, $ \Z $, $ \Q $, $ \R $, $ \C $.
 %%
 
-%%
-\subsection*{Texteingabe}
-%%
-
-
-
-
-
-
-%% -- Begin des eigenen Artikels; diesen \blindtext kann man löschen (Test)
-%% --
-\section*{Erster Hauptabschnitt}		%% 
-\subsection*{Erster Unterabschnitt}		%% 
-\subsubsection{}	 \blindtext				%% Nur Nummerierung; eventuell sinnvoll, sonst weglassen
-\subsubsection{}	 \blindtext	
-%%				
-\subsection*{Zweiter Unterabschnitt}
-\subsubsection{}	 \blindtext				%% Nur Nummerierung; eventuell sinnvoll, sonst weglassen
-\subsubsection{}	 \blindtext[2]				%% Nur Nummerierung; eventuell sinnvoll, sonst weglassen
-%% --
-%% --
-\section*{Zweiter Hauptabschnitt}		%% 
-\subsection*{Erster Unterabschnitt}		%% 
-\subsubsection{}	 \blindtext				%% Nur Nummerierung; eventuell sinnvoll, sonst weglassen
-\subsubsection{}	 \blindtext	
-%%
-%% -- etc.
-%% --
 
 %% -- Literaturverzeichnis
 %% --
