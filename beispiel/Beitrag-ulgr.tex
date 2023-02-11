@@ -40,7 +40,7 @@
 
 %% -- Die Referenzen werden am Ende des jeweiligen Beitrags ausgegeben
 %% -- 
-%\begin{refsection}
+\begin{refsection}
 \dictum[\href{https://de.wikipedia.org/wiki/Winston_Churchill}{Winston Churchill}]{Ein kluger Mann macht nicht alle Fehler selbst. Er gibt auch anderen eine Chance.}
 %%
 \begin{quote}
@@ -352,9 +352,67 @@ Also stets:
 Weiteres zur Eingabe im abgesetzten Modus -- etwa mehrzeilige Formeln -- findet man in \textcite{short-math-guide}.
 Bitte \textbf{niemals} obiges durch die \verb|align|-Umgebung ersetzten -- dies ist falsch. Und auch nicht mit \verb|$$ ... $$|, dies ist verboten.% -- siehe hierzu nachmals \vref{eq:eq1}.
 %%
+\subsubsection{}
+Es ist nicht erforderlich, etwa bei Klammern, \verb|\left( ... \right)| einzugeben. 
+Es genügt \verb|( ... )|und diese werden dann angepasst, etwa wie hier:
+%
+%
+\[
+	\sin(x) = ( \sum_{n=1}^{\infty} (-1)^{n} 
+		\frac{ x^{2n+1} }{ (sn+1)! } ) .
+\]
+%
+\subsubsection{}
+Als Beispiel, was man alles machen kann, hier noch zwei weitere Beispiele: \cs{norm} und \cs{abs}, wobei die Sternvariante die Länge der Norm an die Größe der Umgebung anpasst.
+%%
+\begin{docCommands}[%
+%	,doc description = Norm
+	,doc parameter = \marg{MathSymbol}
+	,doc name = norm
+	] {
+		,{ }
+		,doc name = norm*}	
+\end{docCommands}
+%
+Ein Beispiel dazu::
+%
+\begin{dispExample*}{title= Beispiel für die Norm}
+\ldots $ \norm{} $: So bezeichnet etwa  $ \norm{x} $ die Norm von $ x $ und die Sternvariante passt alles in der Größe an: 
+%
+\[
+	\norm*{\frac{ 1 }{ 1 + t^{ 2 } } }
+\]
+%
+\end{dispExample*}
+%
+Nun zum entsprechenden Beispiel für en Absolutbetrag: 
+%%
+\begin{docCommands}[%
+% 	,doc description = Absolutbetrag
+	,doc parameter = \marg{MathSymbol}
+	,doc name = abs
+	] {
+		,{ }
+		,doc name = abs*}	
+\end{docCommands}
+%
+%%
+\begin{dispExample*}{title= Beispiel für den Absolutbetrag }
+Text $ \int_{ \R } \abs{f(t)} \dt $ Text \ldots
+%
+\[
+	g(t) = \abs*{\frac{ 1 }{ 1 - t^{ 2 } } } \, , \quad t \in \R \, .
+\]
+%
+\end{dispExample*}
+%%
+\subsubsection{}
+Soweit zu den Beispielen und Erläuterungen.
+Alles andere verbleibt dem Üben.
+
 %% -- Literaturverzeichnis
 %% --
 \RaggedRight
 \printbibliography
-%\end{refsection}
+\end{refsection}
 
