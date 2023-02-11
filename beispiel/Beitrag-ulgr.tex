@@ -56,7 +56,7 @@ Sehr bekannt ist dieser: {\selectlanguage{english} The quick brown fox jumps ove
 \footnote{Für den Dummy-Text siehe \href{https://www.blindtextgenerator.de}{Blindtextgenerator›}}
 \end{quote}
 %% 
-\subsection*{Einiges vorab}
+\subsection*{Einiges Vorab}
 \subsubsection{}
 \LaTeX{} ist eine \href{https://de.wikipedia.org/wiki/Auszeichnungssprache}{Markup-Sprache}, die auf dem \href{https://de.wikipedia.org/wiki/Satz_(Druck)}{Textsatzsystem} \TeX{} basiert und ist, vor allem im naturwissenschaftlichen Bereich, zu einem \emph{de facto} Standard geworden.
 Im Gegensatz zu den \href{https://de.wikipedia.org/wiki/WYSIWYG}{\emph{What You See is What You Get}} Systemen wie etwa Word, wird hier mittels Steuerelemente die Gestalt (Layout) des Dokuments festgelegt 
@@ -67,7 +67,7 @@ Dies ist zwar am Anfang etwas aufwendiger zu erlernen ist, aber es ist dadurch f
 
 Daher ist es wichtig, seinen Text nicht als Fließtext zu schreiben, sondern \emph{strukturiert} einzugeben.
 %%
-\begin{enumerate}[\textbullet]
+\begin{enumerate}[--]
 	\item
 		Beginne jeden Satz auf einer neuen Zeile -- dies erleichtert das Lesen und die Fehlersuche.
 	
@@ -77,11 +77,14 @@ Daher ist es wichtig, seinen Text nicht als Fließtext zu schreiben, sondern \em
 	\item
 		Bei Anpassungen mittels eigener Makros bitte nur das machen, was man auch verstanden hat.
 		
+	\item
+	Einen neuen Absatz erhält man durch die Eingabe einer Leerzeil in der Eingabedatei und nicht durch \verb|\\| oder \verb|\newline| oder ähnliche Konstruktionen.
+			
 \end{enumerate}
 %%
 Tipps zur begleitenden Literatur:
 %%
-\begin{enumerate}[\textbullet]
+\begin{enumerate}[--]
 	\item
 	\textcite{lshort-german}: Bestens geeignet für den Einsteig in \LaTeX{}, auch wenn die Autoren nicht KOMA-Script als Basis nehmen.
 	
@@ -104,7 +107,7 @@ Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
 Da ich der Meinung bin, dass für die Beiträge kein \cs{subsubsection} erforderlich ist, habe ich diesen Befehl so umdefiniert, dass bei einer Nutzung nur die Nummer angegeben wird -- siehe hierzu auch den zweiten Abschnitt in dieser Zusammenstellung.
 %% 
 %
-\begin{tcblisting}{title=\cs{subsubsection}, breakable,  lower separated = false}
+\begin{tcblisting}{title=Abschnitte und Unterabschnitte, breakable,  lower separated = true}
 \section*{Zweiter Abschnitt}
 \subsection*{Die Nutzung von }
 \subsubsection{}
@@ -231,14 +234,16 @@ Die Eingabe mathematischer Umgebungen erfolgt durch
 \begin{docEnvironment}{THM-Umgebung}{}
 \end{docEnvironment}
 %
-Für diese Umgebungen habe ich eine zwei Variante: einmal mit und einmal ohne Nummerierung eingerichtet.
-Da es sich um kleinere Arbeiten handelt, ist aus meiner Sicht eine Nummerierung nicht erforderlich, aber eine Alternative ist vorhanden (für den Fall-der-Fälle). 
+Für diese Umgebungen habe ohne Nummerierung der Umgebungen eingerichtet.
+Da es sich um kleinere Arbeiten handelt, ist aus meiner Sicht eine Nummerierung nicht erforderlich.
+Der nachteil: Man kann nicht darauf verweisen, was aber auch nicht so schlimm ist.
+Falls dennoch der Wunsch besteht stest nummeriert zu haben, so kann man dieses einfach ändern. 
 
-Immer ohne Nummerierung sind die 
+Hier eine Übersicht zu den Definitionen: 
 %%
 \begin{tcolorbox}[tabulars={ll |ll},   boxrule=0.5pt,title=Theoremumgebungen, breakable]
-Ohne Nummer: & 				& Mit Nummer: 				\\ \hline
-Umgebung 	& Ersetzung  	& Umgebung 	& Ersetzung   	\\\hline \hline
+%Ohne Nummer: & 				& Mit Nummer: 				\\ \hline
+THM-Umgebung 	& Ersetzung  	& THM-Umgebung 	& Ersetzung   	\\\hline \hline
 Theorem		& Theorem   		& thm		& Theorem 		\\ \hline
 proposition	& Satz			& prop	   	& Satz			\\ \hline
 lemma		& Lemma			& lem		& Lemma			\\ \hline
@@ -247,31 +252,27 @@ definition	& Definition 	& defn		& Definition	\\ \hline
 remark 		& Anmerkung		& rem		& Anmerkung   	\\ \hline
 remarks 	& Anmerkungen	& rems		& Anmerkung   	\\ \hline
 example 	& Beispiel		& examp		& Beispiel   	\\ \hline
-proof		& Beweis 									\\ \hline
-summary		& Zusammenfassung							\\ \hline
-question	& Frage										\\ \hline\hline
+proof		& Beweis 			& Stets ohne Nummer		\\ \hline
+summary		& Zusammenfassung	& Stets ohne Nummer		\\ \hline
+question	& Frage				& Stets ohne Nummer		\\ \hline\hline
 \end{tcolorbox}
 %%
 \bigskip
+
+\begin{tcblisting}{title=example}
+\begin{theorem}
+Dies ist ein Theorem.
+\end{theorem}
+%%%
+\begin{remark}
+Dies ist eine Anmerkung.
+\end{remark}
+\end{tcblisting}
 %%
-\begin{example}
-Dies ist ein Theorem ohne Nummer
-\end{example}
-%%
-\begin{examp}
-Dies ist ein Theorem ohne Nummer
-\end{examp}
-%\end{tcblisting}
-%%
-%\subsection*{Mathematische Symbole}
 \subsubsection{}
 Vorab noch eine Anmerkung zur Eingabe eines mathematischen Textes: Auch hierfür gelten einige typographische Regeln für die mathematischen Symbole, die zu beachten sind.
 Eine Kurzfassung findet man etwa in \textcite{nadler:formelsatz}, in \textcite[Kap. 9.1]{voss:2012a} und ausführlicher, versehen mit vielen Beispielen in \href{https://archiv.dante.de/DTK/PDF/komoedie_1997_1.pdf}{Marion Neubauer: \emph{Feinheiten bei wissenschaftlichen PublikationenPublikationen}}.%
 \footnote{Der Link ist hinterlegt und der Artikel findet sich ab Seite 25 und der zugehörige erste Teil \href{https://archiv.dante.de/DTK/PDF/komoedie_1996_4.pdf}{findet sich hier}}
-
-%In \vref{tab:definitionen} finden sich einig Beispiele dazu.
-%Den Rest bitte in der Datei \texttt{agfa-defn.sty} nachsehen.
-%Falls mal ein mittels \cs{newcommand} definierter eigener Befehl nicht klappt (\ldots bereits definiert), dann unbedingt reinsehen.
 
 Noch ein Hinweis: Ich habe die \cs{var}-Varianten \enquote{umgetauft}: also \cs{phi} gibt $ \phi $ und \cs{varphi} gibt $ \varphi $. 
 Entsprechend auch bei den anderen aufgeführten Zeichensätze, die eine \cs{var}-Variante haben. 
@@ -290,7 +291,67 @@ Entsprechend auch bei den anderen aufgeführten Zeichensätze, die eine \cs{var}
 %%
 \end{tcolorbox}
 %%
+\subsubsection{}
+Die Eingabe von mathematischen Formeln hat zwei Modi: %Den \emph{Zeilenmodus} eingeleitet durch 
+%%
+\begin{tcblisting}{title= Zeilenmodus}
+Den \emph{Zeilenmodus} eingeleitet durch $ \sin(x) $ und den 
+\end{tcblisting}
+%
+und den abgesetzten Modus.
+Hierfür gibt es zwei Varianten
 
+\begin{enumerate}[(i)]
+\item
+den, ohne Nummerierung mittels \verb|\[ ... \]|
+
+\item
+und den mit Nummerierung, also  
+\verb|\begin{equation} ... \end{equation}|.
+\end{enumerate} 
+%
+In dieser Vorlage verzichten wir auf die zweite Variante.
+Also stets:
+%%
+\begin{tcblisting}{title= Abgesetzter Modus}
+ %
+\[
+	\sin(x) = \sum_{n=1}^{\infty} (-1)^{n} 
+		\frac{ x^{2n+1} }{ (sn+1)! } .
+\]
+%
+\end{tcblisting}
+%%
+%... einmal ohne Nummerierung
+% %
+%\[
+%	\sin(x) = \sum_{j=1}^{\infty} \sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (sn+1)! } .
+%\]
+%%
+%In dieser Vorlage verzichten wir auf die Nummerierung von abgesetzten Formeln, wie man diese 
+%%
+%\begin{tcblisting}{title= Abgesetzter Modus, listing only}
+%.. folgendermaßen bekommt und auch diese man auch verweisen kann
+%\begin{equation}\label{eq:eq1}
+%	\sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (sn+1)! } .
+%\end{equation}
+%%
+%\end{tcblisting}
+%%%
+%\begin{example}
+%%%
+%\ldots folgendermaßen bekommt und auch diese man auch verweisen kann
+%%
+%\begin{equation}\label{eq:eq1}
+%	\sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (sn+1)! } .
+%\end{equation}
+%%%
+%\end{example}
+
+%%
+Weiteres zur Eingabe im abgesetzten Modus -- etwa mehrzeilige Formeln -- findet man in \textcite{short-math-guide}.
+Bitte \textbf{niemals} obiges durch die \verb|align|-Umgebung ersetzten -- dies ist falsch. Und auch nicht mit \verb|$$ ... $$|, dies ist verboten.% -- siehe hierzu nachmals \vref{eq:eq1}.
+%%
 %% -- Literaturverzeichnis
 %% --
 \RaggedRight

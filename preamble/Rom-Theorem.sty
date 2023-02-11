@@ -6,7 +6,7 @@
 %% Kenndaten
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}											
-\ProvidesPackage{Rom-Mathematik}
+\ProvidesPackage{Rom-Theorem}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Initialisierungen
@@ -33,52 +33,55 @@
 %% -- 
  	\theoremstyle{nonumberplain}
 	\newtheorem{theorem}{Theorem} 
-	\newtheorem{proposition}{Satz}
-	\newtheorem{lemma}{Lemma}
-	\newtheorem{corollary}{Korollar}
+	\newtheorem{proposition}[theorem]{Satz}
+	\newtheorem{lemma}[theorem]{Lemma}
+	\newtheorem{corollary}[theorem]{Korollar}
 	%% -------------------------------------------------	
-%%	\newtheorem{thm}[theorem]{Theorem}
-%%	\newtheorem{lem}[theorem]{Lemma}
-%%	\newtheorem{cor}[theorem]{Korollar}
-%%	\newtheorem{prop}[theorem]{Satz}
-	%% ------------------------------------------------
-	\theorembodyfont{\upshape}
-	\theoremindent5pt
-	\newtheorem{example}{Beispiel} 
-	\newtheorem{examples}{Beispiele}
-	\newtheorem{definition}{Definition}
-%%	\newtheorem{defn}[theorem]{Definition}
-	%% -------------------------------------------------
-	\theorembodyfont{\small}
-	\theoremindent5pt
-	\newtheorem{remark}{Anmerkung}
-	\newtheorem{remarks}{Anmerkungen}	
-	\newtheorem{anmerkung}{Anmerkung}
-	\newtheorem{anmerkungen}{Anmerkungen}
-%%	\newtheorem{rem}[theorem]{Anmerkung}
-%%	\newtheorem{rems}[theorem]{Anmerkungen}
-
-%% -- Theoremumgebungen mit Nummer
-%% -- 
- 	\theoremstyle{plain}
-%%	\renewtheorem{theorem}[theorem]{Theorem} 
-%%	\renewtheorem{proposition}[theorem]{Satz}
-%%	\renewtheorem{lemma}[theorem]{Lemma}
-%%	\renewtheorem{corollary}[theorem]{Korollar}
-%%	%% -------------------------------------------------	
  	\newtheorem{thm}[theorem]{Theorem}
  	\newtheorem{lem}[theorem]{Lemma}
  	\newtheorem{cor}[theorem]{Korollar}
  	\newtheorem{prop}[theorem]{Satz}
+	%% ------------------------------------------------
+	\theorembodyfont{\upshape}
+	\theoremindent5pt
+	\newtheorem{example}[theorem]{Beispiel} 
+	\newtheorem{examples}[theorem]{Beispiele}
+	\newtheorem{examp}[theorem]{Beispiel} 
+ 	\newtheorem{examps}[theorem]{Beispiele}
+	\newtheorem{definition}[theorem]{Definition}
+ 	\newtheorem{defn}[theorem]{Definition}
+	%% -------------------------------------------------
+	\theorembodyfont{\small}
+	\theoremindent5pt
+	\newtheorem{remark}[theorem]{Anmerkung}
+	\newtheorem{remarks}[theorem]{Anmerkungen}	
+	\newtheorem{anmerkung}[theorem]{Anmerkung}
+	\newtheorem{anmerkungen}[theorem]{Anmerkungen}
+ 	\newtheorem{rem}[theorem]{Anmerkung}
+ 	\newtheorem{rems}[theorem]{Anmerkungen}
+
+%% -- Theoremumgebungen mit Nummer
+%% -- 
+%% 	\theoremstyle{plain}
+%% 	\theoremnumbering{arabic}
+%%	\newtheorem{theorem}[theorem]{Theorem} 
+%%	\newtheorem{proposition}[theorem]{Satz}
+%%	\newtheorem{lemma}[theorem]{Lemma}
+%%	\newtheorem{corollary}[theorem]{Korollar}
+%%	%% -------------------------------------------------	
+%% 	\newtheorem{thm}[theorem]{Theorem}
+%% 	\newtheorem{lem}[theorem]{Lemma}
+%% 	\newtheorem{cor}[theorem]{Korollar}
+%% 	\newtheorem{prop}[theorem]{Satz}
 %%	%% -------------------------------------------------	
 %%	\theorembodyfont{\upshape}
 %%	\theoremindent5pt
 %%	\newtheorem{example}[theorem]{Beispiel} 
 %%	\newtheorem{examples}[theorem]{Beispiele}
 %%	\newtheorem{definition}[theorem]{Definition}
- 	\newtheorem{examp}[theorem]{Beispiel} 
- 	\newtheorem{examps}[theorem]{Beispiele}
- 	\newtheorem{defn}[theorem]{Definition}
+%% 	\newtheorem{examp}[theorem]{Beispiel} 
+%% 	\newtheorem{examps}[theorem]{Beispiele}
+%% 	\newtheorem{defn}[theorem]{Definition}
 %%	%% -------------------------------------------------	
 %%	\theorembodyfont{\small}
 %%	\theoremindent5pt
@@ -86,8 +89,8 @@
 %%	\newtheorem*{remarks*}[theorem]{Anmerkungen}	
 %%	\newtheorem*{anmerkung*}[theorem]{Anmerkung}
 %%	\newtheorem*{anmerkungen*}[theorem]{Anmerkungen}
- 	\newtheorem*{rem}[theorem]{Anmerkung}
- 	\newtheorem*{rems}[theorem]{Anmerkungen}
+%% 	\newtheorem*{rem}[theorem]{Anmerkung}
+%% 	\newtheorem*{rems}[theorem]{Anmerkungen}
 
 %% -------------------------------------------------
 	\theoremstyle{nonumberplain}  
