@@ -188,7 +188,7 @@ Text \ldots
 \subsubsection{}
 Die richtigen Gänsefüßchen erzeugen wir mit \cs{enquote}, etwa so:
 %%
-\begin{tcblisting}{title=Gänsefüchen, breakable,  lower separated = false}
+\begin{tcblisting}{title=Gänsefüßchen}
 Ein Text und \enquote{einer in Gänsefüßchen}. 
 Und es wird auch richtig, \enquote{wenn man mal \enquote{einen in einem} hat}. 
 \end{tcblisting}
@@ -196,7 +196,7 @@ Und es wird auch richtig, \enquote{wenn man mal \enquote{einen in einem} hat}.
 Und dies gilt dann auch, wenn mal eine andere Sprache hat, etwa USenglisch.
 %%
 %%
-\begin{tcblisting}{title=Gänsefüchen, breakable,  lower separated = false}
+\begin{tcblisting}{title=Anführungszeichen, breakable,  lower separated = false}
 {\selectlanguage{english} \enquote{The quick brown \enquote{fox jumps over the lazy} old dog}}
 \end{tcblisting}
 %%
@@ -231,68 +231,37 @@ Die Eingabe mathematischer Umgebungen erfolgt durch
 \begin{docEnvironment}{THM-Umgebung}{}
 \end{docEnvironment}
 %
-oder
-%
-\begin{docEnvironment}{THM-Umgebung*}{}
-\end{docEnvironment}
-%
-Für diese Umgebungen habe ich eine Variante ohne Nummerierung gewählt, da für diese Art von Beiträgen eine Nummerierung nicht erforderlich ist. 
+Für diese Umgebungen habe ich eine zwei Variante: einmal mit und einmal ohne Nummerierung eingerichtet.
+Da es sich um kleinere Arbeiten handelt, ist aus meiner Sicht eine Nummerierung nicht erforderlich, aber eine Alternative ist vorhanden (für den Fall-der-Fälle). 
+
+Immer ohne Nummerierung sind die 
 %%
-\begin{theorem}
-Theorem
-\end{theorem}
-%%
-%\begin{center}
-%\begin{table}
-%\caption{Die Theoremumgebungen}\label{table:thm-umgebung}
-%\begin{tabular}{lcl}\toprule
-%THM-Umgebung	&   & Ersetzung  \\ \hline 
-%\multicolumn{2}{c}{{Immer ohne Nummer: } }\\ 
-%theorem oder thm 	&   & Theorem \\
-%proposition	oder prop	&   & Satz   \\ 
-%lemma	&   & Lemma \\ 
-%corollary oder cor	&   & Korollar   \\ 
-%definition	oder defn &   & Definition \\
-%remark oder rem &   & Anmerkung   \\
-%proof	&   & Beweis   \\
-%\multicolumn{3}{c}{{Immer mit Nummer } }\\ 
-%ntheorem oder nthm 	&   & Theorem \\
-%\ldots \\
-%\bottomrule
-%\end{tabular}
-%\end{table}
-%\end{center}
-%%
-Einige Beispiele (in den Klammern eine Kurzversion):
-%%
-%\tcbset{enhanced,fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,
-%          colback=yellow!10!white,colframe=red!50!black,colbacktitle=Salmon!30!white,
-%          coltitle=black,center title}
-\begin{tcolorbox}[tabulars={ll |ll},
-          boxrule=0.5pt,title=Theoremumgebungen, breakable]Umgebung & Ersetzung  & Umgebung & Ersetzung   \\\hline\hline
-\multicolumn{2}{c}{{Immer ohne Nummer: } }\\ \hline
-theorem (thm) 	    & Theorem   &  proposition	(prop)	    & Satz   \\\hline
-%thm 	&   & Theorem   &  prop	&   & Satz  \\ \hline
-%proposition	oder prop	&   & Satz   \\ \hline
-%lemma	&   & Lemma \\ \hline
-%corollary oder cor	&   & Korollar   \\ \hline
-%definition	oder defn &   & Definition \\\hline
-%remark oder rem &   & Anmerkung   \\\hline
-%proof	&   & Beweis   \\\hline
-%\multicolumn{3}{c}{{Immer mit Nummer } }\\ \hline
-%ntheorem oder nthm 	&   & Theorem \\\hline
-%\ldots \\    
+\begin{tcolorbox}[tabulars={ll |ll},   boxrule=0.5pt,title=Theoremumgebungen, breakable]
+Ohne Nummer: & 				& Mit Nummer: 				\\ \hline
+Umgebung 	& Ersetzung  	& Umgebung 	& Ersetzung   	\\\hline \hline
+Theorem		& Theorem   		& thm		& Theorem 		\\ \hline
+proposition	& Satz			& prop	   	& Satz			\\ \hline
+lemma		& Lemma			& lem		& Lemma			\\ \hline
+corollary 	& Korollar		& cor		& Korollar		\\ \hline
+definition	& Definition 	& defn		& Definition	\\ \hline
+remark 		& Anmerkung		& rem		& Anmerkung   	\\ \hline
+remarks 	& Anmerkungen	& rems		& Anmerkung   	\\ \hline
+example 	& Beispiel		& examp		& Beispiel   	\\ \hline
+proof		& Beweis 									\\ \hline
+summary		& Zusammenfassung							\\ \hline
+question	& Frage										\\ \hline\hline
 \end{tcolorbox}
 %%
-\begin{tcblisting}{title= Mathematische Umgebungen , breakable,  lower separated = false}
-\begin{theorem}
-Dies ist ein Theorem ohne Nummer
-\end{theorem}
+\bigskip
 %%
-\begin{theorem*}
-Dies ist ein Theorem mit NUmmer
-\end{theorem*}
-\end{tcblisting}
+\begin{example}
+Dies ist ein Theorem ohne Nummer
+\end{example}
+%%
+\begin{examp}
+Dies ist ein Theorem ohne Nummer
+\end{examp}
+%\end{tcblisting}
 %%
 %\subsection*{Mathematische Symbole}
 \subsubsection{}
