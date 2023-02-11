@@ -40,7 +40,7 @@
 
 %% -- Die Referenzen werden am Ende des jeweiligen Beitrags ausgegeben
 %% -- 
-\begin{refsection}
+%\begin{refsection}
 \dictum[\href{https://de.wikipedia.org/wiki/Winston_Churchill}{Winston Churchill}]{Ein kluger Mann macht nicht alle Fehler selbst. Er gibt auch anderen eine Chance.}
 %%
 \begin{quote}
@@ -56,8 +56,7 @@ Sehr bekannt ist dieser: {\selectlanguage{english} The quick brown fox jumps ove
 \footnote{Für den Dummy-Text siehe \href{https://www.blindtextgenerator.de}{Blindtextgenerator›}}
 \end{quote}
 %% 
-%\subsection*{Definitionen für die Erstellung der Beiträge}[
-\subsection*{Die Eingabe des reinen Textes}
+\subsection*{Einiges vorab}
 \subsubsection{}
 \LaTeX{} ist eine \href{https://de.wikipedia.org/wiki/Auszeichnungssprache}{Markup-Sprache}, die auf dem \href{https://de.wikipedia.org/wiki/Satz_(Druck)}{Textsatzsystem} \TeX{} basiert und ist, vor allem im naturwissenschaftlichen Bereich, zu einem \emph{de facto} Standard geworden.
 Im Gegensatz zu den \href{https://de.wikipedia.org/wiki/WYSIWYG}{\emph{What You See is What You Get}} Systemen wie etwa Word, wird hier mittels Steuerelemente die Gestalt (Layout) des Dokuments festgelegt 
@@ -95,13 +94,11 @@ Tipps zur begleitenden Literatur:
 	\item
 	Wer keine Installation auf einem PC hat oder haben will -- das Online-System \href{https://www.overleaf.com}{Overleaf} ist bestens für den Einstieg geeignet und hat überdies ein hervorragendes Hilfesystem. 
 	
-	\item
-	Rechtschreibung, Kommasetzung und typografische Regeln unterstützen (nachtragen)
-	
 \end{enumerate}
 %%
-
+Weiteres findet sich im \emph{README.pdf} im Stammverzeichnis.
 %%
+\subsection*{Die Eingabe des reinen Textes}
 \subsubsection{}
 Hierfür stehen einmal die Befehle für die Überschriften zur Verfügung.
 Da ich der Meinung bin, dass für die Beiträge kein \cs{subsubsection} erforderlich ist, habe ich diesen Befehl so umdefiniert, dass bei einer Nutzung nur die Nummer angegeben wird -- siehe hierzu auch den zweiten Abschnitt in dieser Zusammenstellung.
@@ -230,33 +227,63 @@ Hier eine Übersicht über die Definitionen.
 \subsection*{Die Eingabe der Mathematik}
 \subsubsection{}
 Zunächst zu den mathematischen Umgebungen wie \texttt{Theorem} sind folgende Definitionen vorhanden.
-
-
-Definiert sind
-\begin{verbatim}
-\begin{theorem} \ldots \end{theorem}
-\begin{thm} \ldots \end{thm}
-\begin{proposition} \ldots \end{proposition}
-\begin{prop} \ldots \end{prop}
-\begin{corollary} \ldots \end{corollary}
-\begin{cor} \ldots \end{cor}
-\end{verbatim}
 %%
-
-\begin{theorem} 
-	\ldots 
+%\begin{center}
+%\begin{table}
+%\caption{Die Theoremumgebungen}\label{table:thm-umgebung}
+%\begin{tabular}{lcl}\toprule
+%THM-Umgebung	&   & Ersetzung  \\ \hline 
+%\multicolumn{2}{c}{{Immer ohne Nummer: } }\\ 
+%theorem oder thm 	&   & Theorem \\
+%proposition	oder prop	&   & Satz   \\ 
+%lemma	&   & Lemma \\ 
+%corollary oder cor	&   & Korollar   \\ 
+%definition	oder defn &   & Definition \\
+%remark oder rem &   & Anmerkung   \\
+%proof	&   & Beweis   \\
+%\multicolumn{3}{c}{{Immer mit Nummer } }\\ 
+%ntheorem oder nthm 	&   & Theorem \\
+%\ldots \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
+%\end{center}
+%%
+Einige Beispiele (in den Klammern eine Kurzversion):
+%%
+%\tcbset{enhanced,fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,
+%          colback=yellow!10!white,colframe=red!50!black,colbacktitle=Salmon!30!white,
+%          coltitle=black,center title}
+\begin{tcolorbox}[tabulars={ll |ll},
+          boxrule=0.5pt,title=Theoremumgebungen, breakable]Umgebung & Ersetzung  & Umgebung & Ersetzung   \\\hline\hline
+\multicolumn{2}{c}{{Immer ohne Nummer: } }\\ \hline
+theorem (thm) 	    & Theorem   &  proposition	(prop)	    & Satz   \\\hline
+%thm 	&   & Theorem   &  prop	&   & Satz  \\ \hline
+%proposition	oder prop	&   & Satz   \\ \hline
+%lemma	&   & Lemma \\ \hline
+%corollary oder cor	&   & Korollar   \\ \hline
+%definition	oder defn &   & Definition \\\hline
+%remark oder rem &   & Anmerkung   \\\hline
+%proof	&   & Beweis   \\\hline
+%\multicolumn{3}{c}{{Immer mit Nummer } }\\ \hline
+%ntheorem oder nthm 	&   & Theorem \\\hline
+%\ldots \\    
+\end{tcolorbox}
+%%
+\begin{tcblisting}{title= Mathematische Umgebungen , breakable,  lower separated = false}
+\begin{theorem}
+Dies ist ein Theorem ohne Nummer
 \end{theorem}
+\begin{ntheorem}
 %%
-\begin{proposition} 
-	\ldots 
-\end{proposition}
-%%
-\begin{thm} 
-	\ldots 
-\end{thm}
+Dies ist ein Theorem mit NUmmer
+\end{ntheorem}
+\end{tcblisting}
 %%
 \subsection*{Mathematische Symbole}
-%
+\subsubsection{}
+Um die lästige Eingabe von \cs{varphi} für ein $ \phi $ zu vermeiden, sind alle
+
 \begin{verbatim}
 \N, \Z, \Q, \R, \C
 \end{verbatim}
@@ -269,5 +296,5 @@ $ \N $, $ \Z $, $ \Q $, $ \R $, $ \C $.
 %% --
 \RaggedRight
 \printbibliography
-\end{refsection}
+%\end{refsection}
 
