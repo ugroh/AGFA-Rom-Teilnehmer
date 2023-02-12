@@ -186,8 +186,6 @@ Text \ldots
 \end{tcblisting}
 %% --
 %%
-
-
 \subsubsection{}
 Die richtigen Gänsefüßchen erzeugen wir mit \cs{enquote}, etwa so:
 %%
@@ -218,15 +216,29 @@ Aber auch nicht vergessen:
 Für die Regeln des \enquote{Gedankenstrichs} -- siehe etwa \href{https://www.annika-lamer.de/beliebte-rechtschreibfehler-der-gedankenstrich/}{\enquote{Der Gedankenstrich}}.
 %%
 \subsubsection{}
-Mittels \verb|\dh| bekommt man korrekt \dh und nicht d.h. -- gilt für \ua auch.
-Wichtig zum Verständnis iet es, das \TeX{} stets einen Punkt als Satzende interpretiert.
-Dieses kann man mit Hilfe des Pakets \lpkg{xspace} umgehen und dieses ist in der Vorlage berücksichtig.
-Hier eine Übersicht über die Definitionen.
-%%
+Mittels \verb|\dh| bekommt man korrekt \dh und nicht d.h., was nicht korrekt ist.
+Wichtig zum Verständnis ist, dass \TeX{} stets einen Punkt als Satzende interpretiert.
+Dieses kann man mithilfe des Pakets \lpkg{xspace} umgehen und dieses ist in der Vorlage berücksichtigt.
 
-\texttt{dh einfügen}
+
+Ein Beispiel für eine soclhe Definition -- falls man mal eine eigene machen will:
 %%
-%% --
+\begin{tcblisting}{title= Eine Definition, listing only}
+\newcommand{\zB}{\mbox{z.\,B.}\xspace}
+\end{tcblisting}
+%%
+Der Befehl \cs{mbox\{ .. \}} ist erforderlich, damit nicht umgebrochen wird, falls das \zB am Zeilenende steht.
+%%
+\begin{tcolorbox}[tabulars={llllll},
+          boxrule=0.5pt,title=Abkürzungen, breakable]
+\cs{dh}	& \dh & \cs{zB} & \zB & \cs{og} & \og  	\\
+\cs{iA}	& \iA & \cs{ua} & \ua & \cs{inkl} & \inkl 	\\
+\cs{sog}	& \sog & \cs{bzgl} & \bzgl & \cs{vs} & \vs 	\\
+\cs{bzw}	& \bzw & \cs{etc} & \etc & \cs{etc} & \etc 	\\
+\cs{evtl}	& \evtl \\ \hline
+%%
+\end{tcolorbox}
+%%
 \subsection*{Die Eingabe des mathematischen Textes}
 \subsubsection{}
 Die Eingabe mathematischer Umgebungen erfolgt durch
@@ -234,8 +246,7 @@ Die Eingabe mathematischer Umgebungen erfolgt durch
 \begin{docEnvironment}{THM-Umgebung}{}
 \end{docEnvironment}
 %
-Für diese Umgebungen habe ohne Nummerierung der Umgebungen eingerichtet.
-Da es sich um kleinere Arbeiten handelt, ist aus meiner Sicht eine Nummerierung nicht erforderlich.
+Da es sich um kleinere Arbeiten handelt, ist aus meiner Sicht eine Nummerierung hier nicht erforderlich.
 Der Nachteil: Man kann nicht darauf verweisen, was aber auch nicht so schlimm ist.
 %%
 \begin{tcolorbox}[tabulars={ll |ll},   boxrule=0.5pt,title=Theoremumgebungen, breakable]
@@ -382,7 +393,7 @@ Ein Beispiel dazu::
 %
 \end{dispExample*}
 %
-Nun zum entsprechenden Beispiel für en Absolutbetrag: 
+Nun zum entsprechenden Beispiel für den Absolutbetrag: 
 %%
 \begin{docCommands}[%
 % 	,doc description = Absolutbetrag
@@ -404,9 +415,26 @@ Text $ \int_{ \R } \abs{f(t)} \dt $ Text \ldots
 \end{dispExample*}
 %%
 \subsubsection{}
-Soweit zu den Beispielen und Erläuterungen.
-Alles andere verbleibt dem Üben.
-
+Soweit zu den Beispielen und Erläuterungen -- alles andere verbleibt dem Üben.
+%%
+\subsection*{Eine Schlussbemerkung}
+Das Schreiben eines mathematischen Textes ist ein Lernprozess, für den man aber gute Unterstützung hat.
+%%
+\begin{enumerate}[--]
+	\item
+	P. Halmos: \emph{How to Write Mathematics} \cite{halmos:how}.
+	
+	\item
+	D. Knuth: \emph{Mathematical Writing} \cite{knuth:writing}.
+	Die zugehörige Vorlesung findet man auf YouTube.
+	
+	\item
+	Beutelsbacher: \emph{Das ist o.B.d.A. trivial!} \cite{beutelsbacher:2009}.
+	
+	\item
+	B. Kümmerer: \emph{Wie man mathematisch schreibt} \cite{kuemmerer-2016}, wobei ich mit seinen \LaTeX{}-Empfehlungen nicht immer einverstanden bin.
+	
+\end{enumerate}
 %% -- Literaturverzeichnis
 %% --
 \RaggedRight
