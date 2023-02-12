@@ -1,0 +1,39 @@
+% !TEX TS-program = pdflatexmk
+%% ---------------------------------------------------
+%% -- Stand: 2023/02/08
+%% -- Datei für die Erstellung des Beitrags 
+%% -- Wir nutzen KOMA-Script  
+%% ---------------------------------------------------
+\documentclass[%
+	,ngerman					 
+	,bibliography 	= leveldown  
+%	,parskip = half+			 
+	]{scrbook}
+
+
+%% -- Hier finden sich die wesentlichen Definitionen
+%% --
+\usepackage{./preamble/Rom-Beitrag}	
+
+%% -- Literaturverzeichnis
+%% --
+\addbibresource{./content-abcd/bib-abcd/Biblio-abcd.bib}	
+
+%% -- Eigene, zusätzliche Definitionen
+%% -- 
+\input{./content-abcd/Defn-abcd}
+
+%% -- Einstellungen Dictum; siehe KOMA Seite 138-140
+%% --
+\renewcommand{\dictumwidth}{0.45\textwidth}
+
+%% -- Wir starten nun
+%% --
+\begin{document}
+
+%% -- Der Beitrag in separater Datei
+%% --
+\input{./content-abcd/Beitrag-abcd}
+
+%% --
+\end{document} 
