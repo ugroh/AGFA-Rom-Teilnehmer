@@ -1,6 +1,0 @@
-Text $ \int_{ \R } \abs{f(t)} \dt $ Text \ldots
-%
-\[
-	g(t) = \abs*{\frac{ 1 }{ 1 - t^{ 2 } } } \, , \quad t \in \R \, .
-\]
-%

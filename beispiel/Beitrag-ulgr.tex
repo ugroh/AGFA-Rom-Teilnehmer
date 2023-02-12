@@ -37,18 +37,16 @@
 \begin{center}
 \includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./beispiel/autor1}
 \end{center}
-
+\medskip
 %% -- Die Referenzen werden am Ende des jeweiligen Beitrags ausgegeben
 %% -- 
 \begin{refsection}
 \dictum[\href{https://de.wikipedia.org/wiki/Winston_Churchill}{Winston Churchill}]{Ein kluger Mann macht nicht alle Fehler selbst. Er gibt auch anderen eine Chance.}
 %%
 \begin{quote}
-Dies ist eine Testdatei, mit Hilfe deren wir die Makros überprüft haben.
-Daher kann dieses nicht direkt genutzt werden.
-Und ich habe hier aber alle Definitionen zusammengestellt und erläutert, wie diese in dem README.pdf \bzw README.md beschrieben sind.
+Hier sind alle  alle Definitionen zusammengestellt und erläutert, wie diese in dem README.pdf \bzw README.md beschrieben sind. 
 
-Dies ist ein Typoblindtext. 
+Dies ist ein Typoblindtext als Textfüller.
 An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. 
 Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. 
 Manchmal Sätze, die alle Buchstaben des Alphabets enthalten -- man nennt diese Sätze \enquote{Pangrams}. 
@@ -303,22 +301,22 @@ Entsprechend auch bei den anderen aufgeführten Zeichensätze, die eine \cs{var}
 Die Eingabe von mathematischen Formeln hat zwei Modi: %Den \emph{Zeilenmodus} eingeleitet durch 
 %%
 \begin{tcblisting}{title= Zeilenmodus}
-Den \emph{Zeilenmodus} eingeleitet durch $ \sin(x) $ und den 
+Den \emph{Zeilenmodus} eingeleitet durch $ \sin(x) $ und den \ldots 
 \end{tcblisting}
 %
-und den abgesetzten Modus.
-Hierfür gibt es zwei Varianten
+\ldots abgesetzten Modus.
+Hierfür gibt es zwei Varianten: 
 
 \begin{enumerate}[(i)]
 \item
-den, ohne Nummerierung mittels \verb|\[ ... \]|
+Einmal ohne Nummerierung mittels \verb|\[ ... \]| 
 
 \item
 und den mit Nummerierung, also  
 \verb|\begin{equation} ... \end{equation}|.
 \end{enumerate} 
 %
-In dieser Vorlage verzichten wir auf die zweite Variante.
+In dieser Vorlage verzichten wir auf die zweite Variante, da die Überschriften der Abschnitte ohne Nummerierung gesetzt sind.
 Also stets:
 %%
 \begin{tcblisting}{title= Abgesetzter Modus}
@@ -336,27 +334,23 @@ Also stets:
 %	\sin(x) = \sum_{j=1}^{\infty} \sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (sn+1)! } .
 %\]
 %%
-%In dieser Vorlage verzichten wir auf die Nummerierung von abgesetzten Formeln, wie man diese 
+Man kann hier auf die Nummerierung von abgesetzten Formeln, verzichten. 
+Wer es aber unbedingt braucht: Man diese folgendermaßen ein 
 %%
-%\begin{tcblisting}{title= Abgesetzter Modus, listing only}
-%.. folgendermaßen bekommt und auch diese man auch verweisen kann
-%\begin{equation}\label{eq:eq1}
-%	\sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (sn+1)! } .
-%\end{equation}
+\begin{tcblisting}{title= Abgesetzter Modus mit Nummer, listing only}
+\begin{equation}\label{eq:eq1}
+	\sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (2n+1)! } .
+\end{equation}
+\end{tcblisting}
+%%%
+und bekommt dann 
+%
+\begin{equation}\label{eq:eq1}
+	\sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (2n+1)! } .
+\end{equation}
 %%
-%\end{tcblisting}
-%%%
-%\begin{example}
-%%%
-%\ldots folgendermaßen bekommt und auch diese man auch verweisen kann
-%%
-%\begin{equation}\label{eq:eq1}
-%	\sin(x) = \sum_{j=1}^{\infty} (-1)^{n} \frac{ x^{2n+1} }{ (sn+1)! } .
-%\end{equation}
-%%%
-%\end{example}
+kann darauf verweisen -- siehe \vref{eq:eq1} (\verb|siehe \vref{eq:eq1}|).
 
-%%
 Weiteres zur Eingabe im abgesetzten Modus -- etwa mehrzeilige Formeln -- findet man in \textcite{short-math-guide}.
 Bitte \textbf{niemals} obiges durch die \verb|align|-Umgebung ersetzten -- dies ist falsch. Und auch nicht mit \verb|$$ ... $$|, dies ist verboten.% -- siehe hierzu nachmals \vref{eq:eq1}.
 %%
