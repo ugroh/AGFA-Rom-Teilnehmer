@@ -1,10 +1,12 @@
-## AGFA-Rom Vorlage (Stand 2023/02/13)
+%% README.md
+
+# AGFA-Rom Vorlage (Stand 2023/02/13)
 
 Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hierfür ist [KOMA-Script](https://www.ctan.org/pkg/koma-script), da dieses Paket auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. Alle notwendigen Definition sind in der Datei `./preamble/Rom-Beitrag.sty` enthalten bzw. diese ruft weitere Dateien auf. 
 
 Die Vorlage findet man auf GitHub unter [ugroh/AGFA-Rom-Teilnehmer](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, kann dieses ZIP-File als neues Projekt in Overleaf installieren.
 
-### Der Aufbau der Vorlage
+## Der Aufbau der Vorlage
 
 Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an erster Stelle kommt.
 
@@ -15,6 +17,8 @@ Beim Installieren wird das Verzeichnis __`AGFA-Rom-Teilnehmer`__ angelegtund dar
 * `Rom-Muster.pdf` ist ein Beispiel und enthält die Details zu den Makros und einige Ratschläge. Diese Datei ist auch ein »Muster« für einen Beitrag.
 	
 * `Rom-abcd.tex` : Diese ist  die Datei für die Erstellung des eigenen Beitrags.
+
+* `Rom-Beamer.tex`: Eine Beamer-Vorlage zur Erstellung der eigenen Präsentation
 	
 und die Unterverzeichnisse
 
@@ -54,7 +58,7 @@ und die Unterverzeichnisse
 	
 	- __`Rom-Pakete.tex`__:  Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder in das Buch von H. Voss: _Einführung in LaTeX_ reinsehen. Wichtig: _Learning-by-Doing_ ist dann angesagt. 
 
-### Die Erstellung eines Beitrags mit LaTeX 
+## Die Erstellung eines Beitrags mit LaTeX 
 
 LaTeX ist ein sog. [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System und kein Textverarbeitungsprogramm, mit dem man einen Fließtext schreibt, wie bei Word. Es basiert auf [TeX](https://de.wikipedia.org/wiki/TeX), das ein Programm ist, mithilfe dessen  man Texte, die auf einem Computer geschrieben wurden, in eine druckbare Version umwandelt. Dies sollte man bei der Erstellung eines Textes berücksichtigen, d. h. man _programmiert_ den Inhalt seines Textes, um ein _schönes_ Ergebnis zu bekommen. 
 
@@ -70,10 +74,10 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 * Wer mehr verstehen oder lernen will – einfach mal auf [_Dante – Literatur und mehr_](https://www.dante.de/dante-e-v/literatur/) nachsehen. Ein schöner Artikel zu TeX findet man  [_etwa hier_](https://www.ams.org/publications/authors/Communication_of_Mathematics_with_TEX.pdf).
 
-* Regeln zur Verfassung eines mathematischen Artikels findet man bei [P. Halmos: _How to Write Mathematics](https://www2.cs.duke.edu/donaldlab/Teaching/add/2011/resources/halmos.pdf) und [D. Knuth: _Mathematical Writing](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf). Letztere ist eine Vorlesung, die man auch auf [YouTube](https://www.youtube.com/watch?v=mert0kmZvVM&list=PLABJEFgj0PWV22nvw3YKXvR_n1NB6fn5D) findet, auch [P. Halmos kann man da erleben](https://www.youtube.com/watch?v=Cy_1JgYfKmE). 
+* Regeln zur Verfassung eines mathematischen Artikels findet man bei [P. Halmos: _How to Write Mathematics](https://www2.cs.duke.edu/donaldlab/Teaching/add/2011/resources/halmos.pdf) und [D. Knuth: _Mathematical Writing](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf). Letzteres ist eine Vorlesung, die man auch auf [YouTube](https://www.youtube.com/watch?v=mert0kmZvVM&list=PLABJEFgj0PWV22nvw3YKXvR_n1NB6fn5D) findet, [mit P. Halmos](https://www.youtube.com/watch?v=Cy_1JgYfKmE). 
 
 
-### Sonstiges 
+## Sonstiges 
 
 * Wünsche, etwaige Fehler etc. bitte an <ulgr@math.uni-tuebingen.de> melden.
 
