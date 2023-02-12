@@ -1,7 +1,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Theorem.sty 
 %% -- Theorem-Umgebungen
-%% -- Stand: 2023/02/07
+%% -- Stand: 2023/02/12
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Kenndaten
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,6 +21,7 @@
 
 % Notwendige Pakete
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{amssymb}
 \RequirePackage[ntheorem]{empheq}	%
 \RequirePackage[amsmath,thmmarks]{ntheorem}
 %%\RequirePackage{thmtools}
@@ -42,23 +43,27 @@
  	\newtheorem{cor}[theorem]{Korollar}
  	\newtheorem{prop}[theorem]{Satz}
 	%% ------------------------------------------------
-	\theorembodyfont{\upshape}
-	\theoremindent5pt
+ 	{\theorembodyfont{\upshape}
+ 	\theoremindent5pt
 	\newtheorem{example}[theorem]{Beispiel} 
 	\newtheorem{examples}[theorem]{Beispiele}
 	\newtheorem{examp}[theorem]{Beispiel} 
  	\newtheorem{examps}[theorem]{Beispiele}
 	\newtheorem{definition}[theorem]{Definition}
- 	\newtheorem{defn}[theorem]{Definition}
+ 	\newtheorem{defn}[theorem]{Definition}}
 	%% -------------------------------------------------
-	\theorembodyfont{\small}
-	\theoremindent5pt
+ 	{\theorembodyfont{\small}
+ 	\theoremindent5pt
 	\newtheorem{remark}[theorem]{Anmerkung}
 	\newtheorem{remarks}[theorem]{Anmerkungen}	
 	\newtheorem{anmerkung}[theorem]{Anmerkung}
 	\newtheorem{anmerkungen}[theorem]{Anmerkungen}
  	\newtheorem{rem}[theorem]{Anmerkung}
- 	\newtheorem{rems}[theorem]{Anmerkungen}
+ 	\newtheorem{rems}[theorem]{Anmerkungen}}
+ 	%% -------------------------------------------------
+ 	\theoremstyle{nonumberplain}
+	\theoremsymbol{\ensuremath{\square}}
+	\newtheorem{proof}{Beweis}
 
 %% -- Theoremumgebungen mit Nummer
 %% -- 
@@ -73,26 +78,25 @@
  	\newtheorem{ncor}[ntheorem]{Korollar}
  	\newtheorem{nprop}[ntheorem]{Satz}
 	%% -------------------------------------------------	
-	\theorembodyfont{\upshape}
+	{\theorembodyfont{\upshape}
 	\theoremindent5pt
 	\newtheorem{nexample}[ntheorem]{Beispiel} 
 	\newtheorem{nexamples}[ntheorem]{Beispiele}
 	\newtheorem{ndefinition}[ntheorem]{Definition}
  	\newtheorem{nexamp}[ntheorem]{Beispiel} 
  	\newtheorem{nexamps}[ntheorem]{Beispiele}
- 	\newtheorem{ndefn}[ntheorem]{Definition}
-	%% -------------------------------------------------		
-	\theorembodyfont{\small}
-	\theoremindent5pt
+ 	\newtheorem{ndefn}[ntheorem]{Definition}}
+ 	%% -------------------------------------------------		
+ 	{\theorembodyfont{\small}
+ 	\theoremindent5pt
 	\newtheorem{nremark}[ntheorem]{Anmerkung}
 	\newtheorem{nremarks}[ntheorem]{Anmerkungen}	
 	\newtheorem{nanmerkung}[ntheorem]{Anmerkung}
 	\newtheorem{nanmerkungen}[ntheorem]{Anmerkungen}
  	\newtheorem{nrem}[ntheorem]{Anmerkung}
- 	\newtheorem{nrems}[ntheorem]{Anmerkungen}
-
-%% -------------------------------------------------
-	\theoremstyle{nonumberplain}  
+ 	\newtheorem{nrems}[ntheorem]{Anmerkungen}}
+	%% -------------------------------------------------
+	{\theoremstyle{nonumberplain}  
 	\theoremindent5pt
 	\theoremheaderfont{\itshape}
 	\theoremseparator{}
@@ -100,14 +104,9 @@
 	\newtheorem{summary}{Zusammenfassung}	
 	\newtheorem{zusammenfassung}{Zusammenfassung}
 	\newtheorem{question}{Frage}
-	\newtheorem{frage}{Frage}
+	\newtheorem{frage}{Frage}}
+	%% ----------------------------------------------
 	
-%\theoremsymbol{\fbox}
-%\theoremsymbol{\rule{1ex}{1ex}} 
-%\newtheorem{proof}{Beweis}
-%% -- Halmosgrabstein bei Beweis
-%% -- 
-\theoremsymbol{\ensuremath{\square}}
-\newtheorem{proof}{Beweis}
+
 %% -------------------------------------------------
 \endinput	
