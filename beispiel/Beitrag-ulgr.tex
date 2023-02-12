@@ -236,10 +236,7 @@ Die Eingabe mathematischer Umgebungen erfolgt durch
 %
 Für diese Umgebungen habe ohne Nummerierung der Umgebungen eingerichtet.
 Da es sich um kleinere Arbeiten handelt, ist aus meiner Sicht eine Nummerierung nicht erforderlich.
-Der nachteil: Man kann nicht darauf verweisen, was aber auch nicht so schlimm ist.
-Falls dennoch der Wunsch besteht stest nummeriert zu haben, so kann man dieses einfach ändern. 
-
-Hier eine Übersicht zu den Definitionen: 
+Der Nachteil: Man kann nicht darauf verweisen, was aber auch nicht so schlimm ist.
 %%
 \begin{tcolorbox}[tabulars={ll |ll},   boxrule=0.5pt,title=Theoremumgebungen, breakable]
 %Ohne Nummer: & 				& Mit Nummer: 				\\ \hline
@@ -257,16 +254,16 @@ summary		& Zusammenfassung	& Stets ohne Nummer		\\ \hline
 question	& Frage				& Stets ohne Nummer		\\ \hline\hline
 \end{tcolorbox}
 %%
-\bigskip
+Falls dennoch nummerierte Umgebungen erforderlich sind: einfach ein \enquote{n} vor die jeweilige THM-Umgebung setzen, also \texttt{nthm} gibt eine Nummer aus:
 
-\begin{tcblisting}{title=example}
+\begin{tcblisting}{title=Zwei Beispiele}
 \begin{theorem}
-Dies ist ein Theorem.
+Dies ist ein Theorem ohne Nummer
 \end{theorem}
 %%%
-\begin{remark}
-Dies ist eine Anmerkung.
-\end{remark}
+\begin{nthm}
+Dies ist ein Theorem mit Nummer
+\end{nthm}
 \end{tcblisting}
 %%
 \subsubsection{}
