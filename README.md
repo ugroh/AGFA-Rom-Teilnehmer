@@ -1,8 +1,6 @@
-%% README.md
+# AGFA-Rom Vorlage (Stand 2023/03/09)
 
-# AGFA-Rom Vorlage (Stand 2023/02/13)
-
-Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hierfür ist [KOMA-Script](https://www.ctan.org/pkg/koma-script), da dieses Paket auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. Alle notwendigen Definition sind in der Datei `./preamble/Rom-Beitrag.sty` enthalten bzw. diese ruft weitere Dateien auf. 
+Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hierfür ist [KOMA-Script](https://www.ctan.org/pkg/koma-script), da dieses Paket auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. Alle weitergehenden Definition sind in der Datei `./preamble/Rom-Beitrag.sty` enthalten und diese Datei ruft weitere Dateien auf. 
 
 Die Vorlage findet man auf GitHub unter [ugroh/AGFA-Rom-Teilnehmer](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, kann dieses ZIP-File als neues Projekt in Overleaf installieren.
 
@@ -10,7 +8,7 @@ Die Vorlage findet man auf GitHub unter [ugroh/AGFA-Rom-Teilnehmer](https://gith
 
 Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an erster Stelle kommt.
 
-Beim Installieren wird das Verzeichnis __`AGFA-Rom-Teilnehmer`__ angelegtund darinnen enthalten sind die Dateien 
+Beim Installieren wird das Verzeichnis __`AGFA-Rom-Teilnehmer`__ angelegt und darinnen enthalten sind die Dateien 
 
 * `README.md` bzw. `README.pdf`: Diese enthält einige Erläuterungen zur Installation und was es sonst noch gibt.
 	
@@ -22,11 +20,11 @@ Beim Installieren wird das Verzeichnis __`AGFA-Rom-Teilnehmer`__ angelegtund dar
 	
 und die Unterverzeichnisse
 
-* __`beispiel`__: Hier finden sich meine LaTeX-Tipps für die Literaturverwaltung und die TeX-Dateien zur Erstellung von `Rom-Muster.pdf`. Wer Interesse hat diese zum Laufen zu bringen – Mail an mich. 
+* __`beispiel`__: Hier finden sich meine LaTeX-Tipps für die Literaturverwaltung und die TeX-Dateien zur Erstellung von `Rom-Muster.pdf`. Wer Interesse hat diese zum Laufen zu bringen – bitte Mail an mich und ich erkläre es. 
 
 * __`bib-abcd`__: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in LaTeX. Eine kleine Anleitung dazu findet man in den LaTeX-Tipps.
 	
-* __`content-abcd`__: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `Beitrag-abcd.tex` für den Beitrag, eventuelle Bilder etc. Hierzu gehören auch die zusätzlichen eigenen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `Defn-abcd.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt. Diese Datei ist bereits mittels `\input{Defn-abcd}` eingebunden. 
+* __`content-abcd`__: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `Beitrag-abcd.tex` für den Beitrag, eventuelle Bilder etc. Hierzu gehören auch die zusätzlichen eigenen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `Defn-abcd.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt - im Zweifel nachfragen, wenn etwas nicht funktioniert. Diese Datei ist bereits mittels `\input{Defn-abcd}` eingebunden. 
 
 * Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eigenen Beitrags verwendet wird. Also: Schreiben des Textes in  die Datei `./content-abcd/Beitrag-abcd.tex` und dann kompilieren der Datei `Rom-abcd.tex`. 	
 
@@ -34,7 +32,7 @@ und die Unterverzeichnisse
 		
 			% !TEX root = ../Rom-abcd.tex  
 	
-	Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder  entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. 
+	Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. Wer es aber komfortabler haben will und eine längere Einarbeitungszeit nicht scheut: [TeXstudio]https://www.texstudio.org) nutzen.
 
 * __`preamble`__: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dies mitzuteilen.
 
@@ -44,11 +42,8 @@ und die Unterverzeichnisse
 
 	- __`Rom-Abkuerzungen.sty`__: Hier finden sich die Abkürzungen für die richtige Schreibweise etwa für d.h. 
 			
-	- __`Rom-BibLaTeX.sty`__:  Diese Datei ist für die Darstellung der Referenzen im Literaturverzeichnis zuständig. Bitte darauf achten, dass man einen zusätzlichen Lauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. Mithilfe von 
-		
-				% !TEX TS-program = pdflatexmk
-		
-		in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd` und heißt `Biblio-abcd.bib`. In diese Datei werden die Referenzen eingetragen und gepflegt. Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [JabRef](https://www.jabref.org) zu empfehlen. In meinen LaTeX-Tipps habe ich hierzu etwas zusammengestellt, dass man im Unterverzeichnis `beispiel` findet – [LasTeX-Tipp5]{https://github.com/ugroh/AGFA-Rom-Teilnehmer/blob/main/beispiel/LaTeX-Tipp5.pdf}.
+	- __`Rom-BibLaTeX.sty`__:  Diese Datei ist für die Darstellung der Referenzen im Literaturverzeichnis zuständig. Bitte darauf achten, dass man eventuell mindestens einen zusätzlichen Kompilierungslauf benötigt – einmal mit `biber` und dann nochmals mit `latex`. 
+	Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd` und heißt `Biblio-abcd.bib`. In diese Datei werden die Referenzen eingetragen und gepflegt. Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [JabRef](https://www.jabref.org) zu empfehlen. In meinen LaTeX-Tipps habe ich hierzu etwas zusammengestellt, dass man im Unterverzeichnis `beispiel` findet – [LasTeX-Tipp5]{https://github.com/ugroh/AGFA-Rom-Teilnehmer/beispiel/LaTeX-Tipp5.pdf}.
 	
 	- __`Rom-Layout.sty`__:  Alles, was für das Layout zuständig ist. Dabei funktioniert `\section` und `\subsection` wie üblich. Meiner Meinung nach ist  `\subsubsection` entbehrlich und es wird bei der Nutzung eine Nummer ausgegeben – kann man relativ gut nutzen, um etwas besser zu untergliedern. Auch sollen die erstgenannten Befehle mit ihrer *-Variante genutzt werden. Eine Nummerierung ist nicht erforderlich.
 	
