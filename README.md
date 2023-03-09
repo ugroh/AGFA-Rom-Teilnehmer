@@ -32,7 +32,7 @@ und die Unterverzeichnisse
 		
 			% !TEX root = ../Rom-abcd.tex  
 	
-	Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen. Wer es aber komfortabler haben will und eine längere Einarbeitungszeit nicht scheut: [TeXstudio]https://www.texstudio.org) nutzen.
+	Dadurch ist es möglich, diese Datei direkt mit LaTeX zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit _TeXShop_ als Editor (für Apple OS) oder entsprechend auch mit [TeXworks](https://tug.org/texworks/) und [TeXstudio](https://www.texstudio.org). Dies findet man dort unter `magic comments` und vereinfacht die Bearbeitung der Dateien. 
 
 * __`preamble`__: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dies mitzuteilen.
 
