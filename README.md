@@ -4,6 +4,8 @@ Dies ist die Vorlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis hi
 
 Die Vorlage findet man auf GitHub unter [ugroh/AGFA-Rom-Teilnehmer](https://github.com/ugroh/AGFA-Rom-Teilnehmer) und man kann sich dieses als ein ZIP-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter und öffnet diesen. Der Rest sollte klar sein: Als ZIP-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, kann dieses ZIP-File als neues Projekt in Overleaf installieren.
 
+Noch etwas: Bitte [Tex Live](https://tug.org/texlive/) installieren, egal ob Windows oder Linux. Auf Mac OSX bitte [Mac TeX](https://tug.org/mactex/) nutzen. Alle anderen Varianten machen keinen Sinn.
+
 ## Der Aufbau der Vorlage
 
 Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an erster Stelle kommt.
@@ -75,4 +77,6 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 ## Sonstiges 
 
 * Wünsche, etwaige Fehler etc. bitte an <ulgr@math.uni-tuebingen.de> melden.
+
+
 
