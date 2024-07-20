@@ -1,0 +1,141 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Muster für Beamer
+%% --  Rom-Beamer.tex
+%% --  Definitionen etc. in ./preamble/Beamer-defn.tex
+%% --  Stand:  2024/03/10
+%% --  Mustervorlage
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[%
+	,ngerman
+	,hyperref={%
+		,bookmarks
+		,colorlinks=true
+		,citecolor=blue
+		,linkcolor=blue
+		,urlcolor=blue
+			}
+	,smaller
+	]{beamer}
+
+%% -- Beamer Definitionen 
+%% --
+\usepackage{./preamble/Rom-Beamer} 	% nicht alle üblichen Makros kann man nutzen
+
+%% -- mit \begin{frame}[allowframebreaks] und dann \framebreak kann man ein
+%% -- Thema über mehrere "Seiten" behandeln; siehe unten
+%% --
+\renewcommand{\insertcontinuationtext}{(Forts.)} % 
+
+%% --
+\begin{document}
+%
+\title{Titel Vortrag}
+\author{Name}
+\date{Datum Vortrag} 
+
+%% -- Titelseite
+%% --
+\frame{\titlepage}
+
+%% --
+\begin{frame} 		
+	\frametitle{Vorbemerkungen}
+	
+	\begin{enumerate}[(i)]
+		\item 
+		Wir betrachten nur \ldots
+		
+		\item
+		\enquote{usw.}
+		
+		\item
+		\ldots
+		
+	\end{enumerate}
+\end{frame}
+% --
+\begin{frame}
+	\frametitle{Der Hauptsatz}
+
+\begin{theorem}\label{prop:hauptsatz}
+	
+Ist $ f $ eine stetige reellwertige Funktion auf dem Intervall $ \left[ 0,1 \right] $, so ist
+%
+\[
+  	F( t ) = \int_{ 0 }^{ t } f(s) \ds
+\]
+%
+differenzierbar auf diesem Intervall und $ F'(t) = f(t) $ für alle $ t \in \left[ 0,1 \right] $.
+\end{theorem}
+
+\end{frame}
+
+%% --
+\begin{frame}[allowframebreaks]
+	\frametitle{Aufzählungen}
+%
+\begin{block}{Itemize}
+	\begin{itemize}
+
+		\item 
+		Erstes item
+		
+		\item
+		Unteraufzählung
+		
+		\begin{itemize}
+		
+		\item
+		Unterpunkt
+		
+		\end{itemize}
+		
+		\item
+		Zweites item
+		
+	\end{itemize}
+%
+\end{block}	
+
+%%--
+\framebreak
+%%--
+
+\begin{block}{Äquivalenz}
+	\begin{enumerate}[(a)]
+		\item 
+		$ \norm{ T } = r(T) $.
+		
+		\item
+		B
+	\end{enumerate}
+\end{block}
+
+\begin{block}{Nummeriert}
+	\begin{enumerate}[(i)]
+		\item 
+		Erstes $ \abs{a} $
+		
+		\item
+		Zweites
+	\end{enumerate}
+\end{block}
+%
+\end{frame}
+
+% --
+\begin{frame}
+	\frametitle{Theorem und Folgerung}
+	
+	\begin{theorem}
+		Theorem
+	\end{theorem}
+	
+	\begin{corollary}
+		Korollar
+	\end{corollary}
+\end{frame}
+
+% --
+\end{document}
+

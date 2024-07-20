@@ -1,0 +1,161 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Makros für biblatex
+%% -- Rom-BibLaTeX.sty
+%% -- Stand: 2024/07/19
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}	%
+\ProvidesPackage{./preamble/Rom-BibLaTeX}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[%
+  	,style 			= numeric	
+   	,sorting		= nyt
+	,hyperref		= true  
+ 	,maxcitenames  	=  1 	% viele Autoren -> nur der erste erscheint 
+    ,maxbibnames   	= 10 	% im Verzeichnis tauchen alles auf
+    ,mincitenames	=  1
+   	,giveninits		= true	% Vornamen als Initiale Ulrich -> U.
+	,backend		= biber
+ 	,uniquename		= false
+]{biblatex}  	
+%%
+\ExecuteBibliographyOptions{%
+ 	,url		= true		% true: URL werden angezeigt
+ 	,doi		= false		% DOI werden im Titel hinterlegt 
+	,eprint		= false		% true  - ” -
+	}
+%% --
+%% --
+\AtEveryBibitem{\clearfield{issn}}%
+\AtEveryBibitem{\clearlist{language}}%
+\AtEveryBibitem{\clearlist{location}}%
+\AtEveryBibitem{\clearfield{pagetotal}}%
+\AtEveryBibitem{\clearfield{month}}%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kein Komma nach Verlag bei Büchern
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewbibmacro*{publisher+location+date}{%
+  \printlist{publisher}%
+  \setunit*{\addspace}%
+%  \printlist{location}%
+%  \setunit*{\addsemicolon\space}%
+  \usebibmacro{date}%
+  \newunit%
+	} % ende makro
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ausgabe Journal-Band(Nummer)-Jahr-Seiten
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\renewbibmacro*{journal+issuetitle}{% 
+  \usebibmacro{journal}% 
+  \setunit*{\addspace}% 
+  \iffieldundef{series} 
+    {} 
+    {\newunit 
+     \printfield{series}% 
+     \setunit{\addspace}}% 
+  \printfield{volume}% 
+  \iffieldundef{number} 
+     {} 
+      {\kern1pt\mkbibparens{\printfield{number}}}% \addspace
+  \setunit{\addcomma\space}% 
+  \printfield{eid}% 
+  \setunit{\addspace}% 
+  \usebibmacro{issue+date}% 
+  \setunit{\addcolon\space}% 
+  \usebibmacro{issue}% 
+  \newunit}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Felder bei Typ -- article --
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareFieldFormat[article]{number}{#1} 
+\DeclareFieldFormat[article]{volume}{\textbf{#1}} 
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[article]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat{journaltitle}{#1}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Felder bei Typ -- book --
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareFieldFormat[book]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[book]{date}{\mkbibparens{#1}}
+\DeclareFieldFormat[book]{pages}{} 
+\DeclareFieldFormat[book]{pagetotal}{} 
+\DeclareFieldFormat[book]{url}{} 
+\DeclareFieldFormat[book]{language}{}
+\DeclareFieldFormat[book]{isbn}{} 
+\DeclareFieldFormat[book]{series}{} 
+\DeclareFieldFormat[book]{number}{} 
+\DeclareFieldFormat[book]{edition}{} 
+\DeclareFieldFormat[book]{address}{} 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Felder bei Typ -- manual --
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareFieldFormat[manual]{title}{\mkbibemph{#1}\addspace}
+\DeclareFieldFormat[manual]{date}{}
+\DeclareFieldFormat[manual]{version}{}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+%%%
+\renewcommand*{\labelnamepunct}{\addcolon\space}%
+\renewcommand*{\finalnamedelim}{\addspace\&\addspace}% 	
+\renewcommand*{\bibpagespunct}{\addspace} %\addcomma
+%%\renewcommand*{\newunitpunct}{\addspace}
+%%\renewcommand*{\finentrypunct}{}
+\renewcommand{\mkbibnamegiven}{\textsc}
+\renewcommand{\mkbibnamefamily}{\textsc}
+%%%
+\renewcommand*{\intitlepunct}{}
+\renewbibmacro{in:}{}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% URL 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DefineBibliographyStrings{german}{%
+	andothers = {et al. },
+	and     = {u\adddot},
+  	urlseen = {aufgerufen am },
+  	urlfrom = {URL },
+	}
+\DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\url{#1}}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% URL auf neuer Zeile
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newbibmacro*{bbx:parunit}{%
+  \ifbibliography
+    {\setunit{\bibpagerefpunct}\newblock
+     \usebibmacro{pageref}%
+     \clearlist{pageref}%
+     \setunit{\par\nobreak}}
+    {}}
+
+\renewbibmacro*{doi+eprint+url}{%
+  \usebibmacro{bbx:parunit}% Added
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \iftoggle{bbx:url}
+    {\usebibmacro{url+urldate}}
+    {}}
+  
+\renewbibmacro*{eprint}{%
+  \usebibmacro{bbx:parunit}% Added
+  \iffieldundef{eprinttype}
+    {\printfield{eprint}}
+    {\printfield[eprint:\strfield{eprinttype}]{eprint}}}
+%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Url und DOI an Titel binden Voss 4.10.10, S. 200
+%% und https://bit.ly/2YghEHH
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat{title}{% Titel+Formatierung an das Makro weiterreichen
+  \usebibmacro{string+doi}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article,manual]{title}{\usebibmacro{string+doi}%
+	{\mkbibemph{#1}}}
+	
+\endinput
+

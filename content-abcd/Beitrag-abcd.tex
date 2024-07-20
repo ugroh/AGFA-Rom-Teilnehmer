@@ -1,0 +1,78 @@
+% !TEX root = ../Rom-abcd.tex
+%% -----------------------------------------------------
+%% -- Musterdatei für die Erstellung des Beitrags
+%% -- zum Romseminar. Um ein einheitliches Aussehen zu ermöglichen:
+%% -- Bitte die Definitionen nicht ändern. 
+%% -- Stand: 2024/03/12
+%% -----------------------------------------------------
+
+%% -- Definitionen, damit die Eingabe einfacher wird
+%% -- Bitte \renewcommand belassen und die entsprechenden Angaben
+%% -- eintragen.
+%% --
+\renewcommand{\LongTitel}{Langform des Titels}
+\renewcommand{\ShortTitel}{Kurzform des Titel}
+\renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
+
+%% -- Kapitelüberschrift und Eintrag in TOC
+%% -- Bitte hier nichts ändern
+%% --
+\addchap[\ShortTitel]{\LongTitel}
+\addtocontents{toc}{\textsc{\AutorenBeitrag}}
+\addtocontents{toc}{}
+
+%% -- Kopfzeile 
+%% -- Gerade Seiten : Autoren
+%% -- Ungerade Seiten: Kurztitel
+%% -- Bitte hier nichts ändern
+%% --
+\markleft{\textsc{\AutorenBeitrag}}	
+\markright{\textsc{\ShortTitel}}	
+
+%% -- Titelseite des Beitrags inkl. Bild
+%% -- des/der Vortragenden. Bitte autor1 entsprechend anpassen
+%% --
+\begin{center}
+	\textsc{\Large \AutorenBeitrag}\\[1.5em]
+	\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content-abcd/autor1.jpg}
+\end{center}
+
+%% -- Wer einen sinnvollen Spruch nutzen will
+%% -- dann bitte mit \dictum[]{}; Größe kann man anpassen
+%% -- falls es unschön aussieht
+%% --
+\renewcommand{\dictumwidth}{0.45\textwidth}
+\dictum[\href{https://de.wikipedia.org/wiki/Albert_Einstein}{Albert Einstein}]{Wahnsinn ist, dasselbe immer  \mbox{wieder} zu tun und andere Ergebnisse zu erwarten.}
+%%
+\begin{quote}
+Für eine kurze Zusammenfassung des Beitrags -- sollte schon sein.
+\end{quote}
+
+%% -- Referenzen des Beitrags am Ende des Artikels
+%% -- und keine Überschneidung mit den Literaturzitaten 
+%% -- andere Beiträge
+%% --
+\begin{refsection}
+%% --
+\section*{Erster Hauptabschnitt}		%% 
+\subsection*{Erster Unterabschnitt}		%% 
+\blindtext								
+%%				
+\subsection*{Zweiter Unterabschnitt}
+\blindtext	
+%% --
+\section*{Zweiter Hauptabschnitt}		%% 
+\subsection*{Erster Unterabschnitt}		%% 
+\blindtext	
+%% -- etc.
+%% --
+
+%% -- Literaturverzeichnis
+%% --
+\RaggedRight
+\nocite{*}
+\printbibliography
+\end{refsection}
+%% -- Ende des Beitrags
+%% --
+

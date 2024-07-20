@@ -1,0 +1,162 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Paket für die Erstellung des Buchs zum Rom-Seminar
+%% -- Rom-Buch.sty
+%% -- Stand: 2024/07/18
+%% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kenndaten
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}											
+\ProvidesPackage{./preamble/Rom-Buch}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Initialisierungen
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{ifthen}
+	\provideboolean{review}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Deklaration von Optionen
+%% -- Wir verwenden KOMA-Script
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareOption*{\expandafter\PassOptionsToClass\expandafter{\CurrentOption}{scrartcl}}
+
+%% -- KOMA Otions
+%% -- 
+\KOMAoptions{%
+	,paper 		= a4
+	,pagesize
+	,BCOR		= 15mm		% siehe KOMA-Script 2.6, S. 39
+	,twoside	= true		% siehe KOMA-Script 2.6, S. 47
+	,fontsize	= 12pt		% Standard ist 11pt
+	,headings 	= small		% siehe KOMA-Script 3.16, S. 113
+	,open = any
+	}
+
+%% -- 
+\DeclareRobustCommand{\LongTitel}{}
+\DeclareRobustCommand{\ShortTitel}{}
+\DeclareRobustCommand{\AutorenBeitrag}{}
+
+%% -- mathematische Umgebungen mit / ohne Nummer
+%\DeclareOption{ThmNummer}{\PassOptionsToPackage{ThmNummer}{Rom-Theorem}}
+
+%% -- Zeilenabstand verdoppelt
+\DeclareOption{review}{\setboolean{review}{true}} 
+
+\ProcessOptions\relax
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Laden von Paketen 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{scrhack}
+\RequirePackage{./preamble/Rom-Layout}
+\RequirePackage{./preamble/Rom-BibLaTeX}
+\RequirePackage{./preamble/Rom-Pakete}
+
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Abarbeiten
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% -- LuaLaTeX oder PDFLaTeX
+%% -- 
+\ifluatex
+	\RequirePackage{% wegen LuaLaTeX Problem hier
+		,amsmath
+		,amssymb
+		} 
+   \RequirePackage{libertinus-otf}
+   \unimathsetup{partial=upright}
+   \unimathsetup{math-style=ISO}
+   \setmathfont[range=\mathcal, Scale=MatchUppercase]{LatinModernMath-Regular}
+   \setmathfont[range={\mathfrak},Scale=MatchUppercase]{LatinModernMath-Regular}
+\else
+%	%\RequirePackage[T1]{fontenc}	
+	\RequirePackage{libertinus}	
+	\let\digamma\relax
+	%\let\eth\relax
+	%\let\smallsetminus\relax
+	\RequirePackage{%
+		,amsmath
+		,amssymb
+	} 
+\fi
+
+%% -- Sprache und Anführungszeichen richtig
+%% -- Andere Sprache via \selectlanguage{sprache}; siehe Manual
+%% -- 
+\RequirePackage[%
+	,english
+	,italian
+	,french
+	,main=ngerman]{babel} 
+
+%% -- Richtige Trennung
+%% --
+\babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
+
+%% -- Hochkomma: Eingabe mittels \enquote{text}; dann wird alles richtig
+%% --
+\RequirePackage[%
+	,autostyle
+	,italian = guillemets
+	,french  = guillemets
+	,german  = guillemets
+	,english = american]{csquotes}
+
+%% --	
+%\let\digamma\relax
+%\RequirePackage{%
+%	,amsmath
+%	,amssymb} 
+
+%% --
+\RequirePackage[tbtags]{mathtools}	
+
+%% -- Querverweise und hyperref
+%% -- 
+\RequirePackage{nameref}
+\RequirePackage[nospace]{varioref}	% \vref
+%% -- hyperref
+\RequirePackage[%  
+	,breaklinks= true                                                     
+	]{hyperref}     %% \href{xterner-Link}{Bezeichnung-in-Doku}
+%
+\hypersetup{%
+	,colorlinks	= true                                                          
+	,urlcolor	= blue  %                                                              
+	,citecolor	= blue  %                                                          
+	,linkcolor	= blue	% 
+%  	,hidelinks 			% Vor dem Druck % entfernen
+	}
+\RequirePackage{cleveref}
+
+
+%% -- Abkürzungen
+%% --
+\RequirePackage{./preamble/Rom-Abkuerzungen}
+
+%% -- Mathematik
+%% -- 
+\RequirePackage{./preamble/Rom-Mathematik}
+
+%% -- Mathematik Theoreme
+%% -- 
+\RequirePackage{./preamble/Rom-Theorem}
+
+%% -- Zeilenabstand für review
+%% --
+\ifthenelse{\boolean{review}}
+{%% -- if
+	\RequirePackage[doublespacing]{setspace}
+ }
+ {%% -- else
+ }
+ 
+ \endinput
+
+
+
+
+

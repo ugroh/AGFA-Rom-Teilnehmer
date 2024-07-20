@@ -1,0 +1,69 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Die Pakete für RomSeminar
+%% -- Literatur: H. Voss, Einführung in LaTeX (7. Auflage) 2022 
+%% -- Rom-Pakete.sty
+%% -- Stand: 2024/06/17
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}	 
+\ProvidesPackage{./preamble/Rom-Pakete}
+%%
+
+%% -- Aufzählungen
+%% -- für Aufzählungen im Text = Sternvariante
+%% -- damit \begin{enumerate}[(i)] funktioniert
+%% --
+\RequirePackage[inline,shortlabels]{enumitem}
+	
+%% -- tikz
+%% -- Siehe https://texample.net/tikz/examples/all/
+%% -- für Beispiele
+%% --
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,arrows}
+
+%% -- Weitere Pakete
+%% -- 
+\RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
+	
+\RequirePackage{% Voss, LaTeX - 6.3 - Seite 227ff					
+	,array 			   	
+	,booktabs
+	,tabularx
+	,wrapfig
+	,longtable}
+	
+\RequirePackage{% Voss, LaTeX - 8.6 - Seite 340ff					
+	,caption 			   	
+	,floatrow
+	,subcaption}
+
+\RequirePackage{% 						
+	,multicol	% Voss, LaTeX - 5.15.1 - Seite 215	
+	,parallel	% Voss, LaTeX - 5.15.2 - Seite 216
+	}
+	 	   	
+\RequirePackage{%
+	,graphicx	% Voss, LaTeX - 5.10.2 - Seite 174
+	,wrapfig	% Voss, LaTeX - 5.10.3 - Seite 177
+	,cutwin		% Voss, LaTeX - 5.10.3 - Seite 178
+	}
+
+%% -- Wenn schon, dann muss man es auch definieren
+%% -- 
+\RequirePackage{nicefrac}
+%% -- E/F
+\newcommand{\tfrac}[2]{\raisebox{0.5ex}{#1}\big/\raisebox{-0.5ex}{#2}}
+
+
+%% -- Zum Testen
+%% -- 
+\RequirePackage{blindtext,lipsum}
+
+%% -- Für Rahmen
+%% -- 
+\RequirePackage{mdframed}
+%% -- infobox
+\newmdenv{infobox} %% \begin{infobox} .. \end{infobox}
+
+\endinput
