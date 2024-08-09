@@ -24,8 +24,6 @@ Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, muss dann dieses `Z
 
 Wer `LaTeX` lokal verwenden will: Bitte entweder [MaCTeX](https://www.tug.org/mactex/) nutzen, wenn man einen Apple-PC hat oder die aktuelle [TeX Live-Version](https://tug.org/texlive/) für Linux oder Windows. Die Installation ist auf den jeweiligen Webseiten beschrieben (siehe auch [https://www.latex-project.org/get/](https://www.latex-project.org/get/)). Wer hierzu weitere Informationen benötigt – etwa zur Nutzung eines lokalen `texmf`-Verzeichnisses – bitte mich anschreiben. 
 
-
-
 <a name="latex"></a>
 
 ### Was wird genutzt
