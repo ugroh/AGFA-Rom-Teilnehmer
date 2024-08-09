@@ -24,6 +24,8 @@ Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, muss dann dieses `Z
 
 Wer `LaTeX` lokal verwenden will: Bitte entweder [MaCTeX](https://www.tug.org/mactex/) nutzen, wenn man einen Apple-PC hat oder die aktuelle [TeX Live-Version](https://tug.org/texlive/) für Linux oder Windows. Die Installation ist auf den jeweiligen Webseiten beschrieben (siehe auch [https://www.latex-project.org/get/](https://www.latex-project.org/get/)). Wer hierzu weitere Informationen benötigt – etwa zur Nutzung eines lokalen `texmf`-Verzeichnisses – bitte mich anschreiben. 
 
+
+
 <a name="latex"></a>
 
 ### Was wird genutzt
@@ -55,9 +57,9 @@ Beim Installieren wird das Hauptverzeichnis __`Rom-Seminar-Teilnehmer`__ angeleg
 
 Des Weiteren finden sich die Unterverzeichnisse:
 	
-* __`beispiel`__: Hier findet sich mein Beitrag zu einem virtuellen Rom-Seminar als `Rom-ulgr.pdf`, in dem sich alles zur Nutzung der Vorlage findet.
+* __`beispiel`__: Hier findet sich mein Beitrag zu einem virtuellen Rom-Seminar als `Rom-ulgr.pdf`. In diesem finden sich Tipps zu `LaTeX`und alles zur Nutzung der Vorlage.
 
-* __`LaTeX-Tipps`__: Hier finden sich meine LaTeX-Tipps, insbesondere für die Literaturverwaltung. 
+* __`LaTeX-Tipps`__: Hier finden sich meine LaTeX-Tipps, insbesondere für die Literaturverwaltung und zu den Querverweisen. Diese ersteznen aber nicht die Nutzung weitergehender Literatur zu `LATeX`.
 
 * __`bib-abcd`__: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in `LaTeX`. Eine kleine Anleitung zur Erstellung eines eigenen Literaturverzeichnisses dazu findet man in den LaTeX-Tipps. Ich empfehle jedem, sich diesen Tipp anzusehen. Und noch etwas: Nutzt man alles nicht auf `Overleaf`, dann muss man im Editor einstellen, dass man `biber` für die Erstellung des Literaturverzeichnisses nutzt. Wie man diese `bib`-Datei pflegt, ist in den Tipps beschrieben. 
 	
@@ -76,7 +78,7 @@ Dadurch ist es möglich, diese Datei direkt mit `LaTeX` zu kompilieren, da dann 
 		\renewcommand{\ShortTitel}{Kurzform des Titel}
 		\renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
 
-vornehmen. Alles Weitere wird dann von `TeX` erledigt. Weiter unten dann die Angabe zum obligatorischen Bild und wer noch einen klugen Spruch hat – siehe das Zitat von Einstein und wie man dieses richtig eingibt.
+vornehmen. Alles Weitere wird dann von `TeX` erledigt. Weiter unten dann die Angabe zum obligatorischen Bild und wer noch einen klugen Spruch hat. Ein Beispiel dazu: Siehe `Betrag-abcd.pdf` und `./content-abcd/Beitrag-abcd.tex`. 
 
 * __`preamble`__: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dieses mitzuteilen. In dem Abschnitt [Was ist in der `preamble`](#preamble) ist dieses alles detailliert beschrieben. 
 
@@ -88,9 +90,9 @@ Weitere Literatur zur Erstellung eines Beitrags für das Rom-Seminar – und nic
 
 * Wer sich intensiver mit `LaTeX`beschäftigen will: [H. Voss, _Einführung in LaTeX_](https://www.lehmanns.de/shop/mathematik-informatik/33589289-9783865417985-einfuehrung-in-latex) und wer `KOMA-Script`verstehen will: [M. Kohm, KOMA-Script](https://www.lehmanns.de/shop/mathematik-informatik/51375541-9783965430976-koma-script) als Buch oder man verwendet das Manual, das man auf [CTAN](https://ctan.mirror.norbert-ruehl.de/macros/latex/contrib/koma-script/doc/scrguide-de.pdf) findet.
 
-* Da wir es mit einem Text auf Deutsch zu tun haben, sollte Rechtschreibung und die Zeichensetzung stimmen. Dabei hilft [_LanguageTool_](https://languagetool.org/de) und [_IDS-Mannheim_](https://grammis.ids-mannheim.de).
+* Da wir es mit einem Text auf Deutsch zu tun haben, sollte Rechtschreibung und die Zeichensetzung stimmen. Dabei hilft das [_LanguageTool_](https://languagetool.org/de) und [_IDS-Mannheim_](https://grammis.ids-mannheim.de): Einfach den Text Abschnittsweise in das `Langauge-Tool` kopieren, korrigieren und zurückkopieren. 
 
-* Natürlich sind auch einige typografische Regeln zu beachten, etwa der Unterschied zwischen Bindestrich, Gedankenstrich und Minuszeichen. Dabei hilft das [_TypoLexikon._](https://www.typolexikon.de)
+* Natürlich sind auch einige typografische Regeln zu beachten, etwa der Unterschied zwischen Bindestrich, Gedankenstrich und Minuszeichen:  Dabei hilft das [_TypoLexikon._](https://www.typolexikon.de bzw. in meinen Tipps.
 
 * Für einen Einstieg in die Umsetzung mathematischer Formeln empfiehlt sich der [_AMS ShortMathGuide_](https://ctan.org/pkg/short-math-guide), der vollkommen ausreichend ist. Auch hier sind einige typografische Regeln zu beachten, die man unter dem Stichwort [_Formelsatz_](http://www.moritz-nadler.de/formelsatz.pdf) findet.
 
