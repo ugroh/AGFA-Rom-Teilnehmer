@@ -18,11 +18,11 @@ Diese Vorlage dient als Grundlage für die Beiträge im Rahmen des Rom-Seminars.
 
 Ein Beispiel, das auch eine Übersicht über die wichtigsten typografischen Regeln enthält: [Rom-ulgr.pdf](https://github.com/ugroh/Rom-Seminar-Teilnehmer/blob/main/Rom-ulgr.pdf). Bitte dieses lesen und die Anregungen beherzigen. 
 
-Die Vorlage kann sowohl lokal auf einem eigenen Rechner genutzt werden als auch auf [_Overleaf_](https://www.overleaf.com). Für beides muss man sich die Voröage als ein `ZIP`-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter, geht auf __Local__ und öffnet diesen. Der Rest sollte klar sein: Als `ZIP`-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. 
+Die Vorlage kann sowohl lokal auf einem eigenen Rechner genutzt werden als auch auf [_Overleaf_](https://www.overleaf.com). Für beides muss man sich die Vorlage als ein `ZIP`-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter, geht auf __Local__ und öffnet diesen. Der Rest sollte klar sein: Als `ZIP`-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. 
 
 Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, muss dann dieses `ZIP`-File in Overleaf als neues Projekt installieren. Die Vorlage habe ich dort getestet und es hat alles funktioniert. Und bitte beachten: In dem Menüpunkt `Recompile` den Unterpunkt `Stop on first error` auswählen. Dann stoppt Overleaf bei einem Fehler und es wird angezeigt, in welcher Zeile sich dieser befindet. Um die Fehlersuche zu erleichtern, bitte jeden `neuen` Satz auf einer `neuen` Zeile beginnen, d.h. den Text nicht als Fließtext schreiben. Für die Endredaktion ist ein fehlerfreies Manuskript erforderlich.
 
-Wer `LaTeX` lokal verwenden will: Bitte entweder [MaCTeX](https://www.tug.org/mactex/) nutzen, wenn man einen Apple-PC hat oder die aktuelle [TeXLive-Version](https://tug.org/texlive/) für Linux oder Windows. Die Installation ist auf den jeweiligen Webseiten beschriebe (siehe auch [https://www.latex-project.org/get/](https://www.latex-project.org/get/)). Wer hierzu weitere Informationen benötigt – etwa zur Nutzung eines lokalen `texmf`-Verzeichnisses – bitte mich anschreiben. 
+Wer `LaTeX` lokal verwenden will: Bitte entweder [MaCTeX](https://www.tug.org/mactex/) nutzen, wenn man einen Apple-PC hat oder die aktuelle [TeX Live-Version](https://tug.org/texlive/) für Linux oder Windows. Die Installation ist auf den jeweiligen Webseiten beschrieben (siehe auch [https://www.latex-project.org/get/](https://www.latex-project.org/get/)). Wer hierzu weitere Informationen benötigt – etwa zur Nutzung eines lokalen `texmf`-Verzeichnisses – bitte mich anschreiben. 
 
 <a name="latex"></a>
 
@@ -127,7 +127,7 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 
 ### Aktualisierungen 
 
-* (2024/07/19) Bei mehreren Autoren erscheint im Text nur der erste Name die restlichen als `et al.`, also etwa `Engel et al.` Im Literaturverzeichnis dann aber alle, also `Engel, K. & Nagel, R.`
+* (2024/07/19) Bei mehreren Autoren erscheint im Text nur der erste Name, die restlichen als `et al.`, also etwa `Engel et al.` Im Literaturverzeichnis dann aber alle, also `Engel, K. & Nagel, R.`
 
 * (2024/07/18) Über `review`kann erreicht werden, dass im erzeugten PDF der Zeilenabstand verdoppelt ist. Dies erleichtert die schriftliche Bearbeitung und Korrektur des erzeugten PDFs. Für die finale Version bitte auskommentieren.
 
