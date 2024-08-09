@@ -40,7 +40,7 @@ Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [Erg
 
 ### Der Aufbau der Vorlage
 
-Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung \textbf{unbedingt} erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an erster Stelle kommt.
+Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung **unbedingt** erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an **erster** Stelle kommt.
 
 Beim Installieren wird das Hauptverzeichnis __`Rom-Seminar-Teilnehmer`__ angelegt. Dieses enthält folgende Dateien:  
 
