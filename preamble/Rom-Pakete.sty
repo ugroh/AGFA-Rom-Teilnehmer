@@ -2,12 +2,16 @@
 %% -- Die Pakete für RomSeminar
 %% -- Literatur: H. Voss, Einführung in LaTeX (7. Auflage) 2022 
 %% -- Rom-Pakete.sty
-%% -- Stand: 2024/06/17
+%% -- Stand: 2024/08/13
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}	 
 \ProvidesPackage{./preamble/Rom-Pakete}
 %%
+
+%% -- Finetuning der Räner
+%% --
+\RequirePackage{microtype}
 
 %% -- Aufzählungen
 %% -- für Aufzählungen im Text = Sternvariante
@@ -48,6 +52,10 @@
 	,wrapfig	% Voss, LaTeX - 5.10.3 - Seite 177
 	,cutwin		% Voss, LaTeX - 5.10.3 - Seite 178
 	}
+	
+%% -- Um PDF-Seiten eines Dokumentes einzubinden, etwa Sponsorenseiten
+%% --
+\RequirePackage{pdfpages}
 
 %% -- Wenn schon, dann muss man es auch definieren
 %% -- 
@@ -66,4 +74,5 @@
 %% -- infobox
 \newmdenv{infobox} %% \begin{infobox} .. \end{infobox}
 
-\endinput
+
+
