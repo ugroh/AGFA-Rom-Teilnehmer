@@ -1,21 +1,21 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Makros für biblatex
 %% -- Rom-BibLaTeX.sty
-%% -- Stand: 2024/07/19
+%% Stand: 2024/08/13
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}	%
 \ProvidesPackage{./preamble/Rom-BibLaTeX}
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[%
-  	,style 			= numeric	
-   	,sorting		= nyt
-	,hyperref		= true  
- 	,maxcitenames  	=  1 	% viele Autoren -> nur der erste erscheint 
-    ,maxbibnames   	= 10 	% im Verzeichnis tauchen alles auf
-    ,mincitenames	=  1
-   	,giveninits		= true	% Vornamen als Initiale Ulrich -> U.
+  	,style 		= numeric	
+   	,sorting	= nyt
+	,hyperref	= true  
+	,maxcitenames  = 1 		% viele Autoren -> nur der erste erscheint  
+	,mincitenames  = 1		% Muss sein
+    ,maxbibnames   = 3 		% im Verzeichnis tauchen max 3 auf
+   	,giveninits	= true		% Vornamen als Initiale Ulrich -> U.
 	,backend		= biber
- 	,uniquename		= false
+ 	,uniquename	= false
 ]{biblatex}  	
 %%
 \ExecuteBibliographyOptions{%
@@ -157,5 +157,5 @@
 \DeclareFieldFormat[article,manual]{title}{\usebibmacro{string+doi}%
 	{\mkbibemph{#1}}}
 	
-\endinput
+
 

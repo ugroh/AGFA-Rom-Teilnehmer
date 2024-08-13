@@ -1,7 +1,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rombuch Layout
 %% -- Rom-Layout.sty
-%% -- Stand: 2024/06/17
+%% -- Stand 2024/08/13
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}	%
 \ProvidesPackage{./preamble/Rom-Layout}
@@ -27,8 +27,8 @@
 	%
 \RedeclareSectionCommand[%
   ,beforeskip	= -1.5\baselineskip
-  ,afterskip		= 2.5\baselineskip
-  ,innerskip		= 0.75ex
+  ,afterskip	= 2.5\baselineskip
+  ,innerskip	= 0.75ex
   ,tocnumwidth	= 7em
 ]{chapter}
 %
@@ -48,34 +48,18 @@
 %% --
 \renewcommand*{\thesection}{\arabic{section}} 
 
-\RedeclareSectionCommand[tocnumwidth=2em]{section} % TOC
-\renewcommand*{\addsectiontocentry}[2]{% Eintrag in TOC
-  \addtocontents{toc}{\protect\addvspace{\protect.5\baselineskip}}% Halbe LZ
-  \Ifstr{#1}{}{%
-    \addtocentrydefault{section}{#1}{#2}%
-  }{%
-    \addtocentrydefault{section}{#1.}{\itshape #2}
-  }%
-}
+%% -- Kein Eintrag ins TOC für section, subsection und subsubsection
+%% -- Da die *-Variante benutzt wird
+%% --
+
 
 %% -- subsection
 %% --
-\renewcommand*{\thesubsection}{\arabic{subsection}}
-\renewcommand*{\subsectionformat}{\thesubsection.\enskip}% KOMA: Nummer in der Überschrift
+
 \RedeclareSectionCommand[%
-  ,beforeskip	= -1.75\baselineskip
-  ,afterskip		= 0.25\baselineskip
   ,font			= \itshape
-  ,tocnumwidth	= 1em
 ]{subsection}
-%% -- Eintrag in das TOC
-\renewcommand*{\addsubsectiontocentry}[2]{%
-  \Ifstr{#1}{}{%
-    \addtocentrydefault{subsection}{#1}{#2}%
-  }{%
-    \addtocentrydefault{subsection}{#1.}{#2}% Mit Punkt hinter der Nummer in TOC
-  }%
-}
+
 
 %% -- \subsubsection: Nur Nummer 1. etc; i.a. keine Überschrift sondern es 
 %% -- geht mit dem Text weiter. 
@@ -84,11 +68,11 @@
 %% -- Siehe hierzu das Musterfile für Beispiele
 %% --
 \setcounter{secnumdepth}{\subsubsectionnumdepth} 	% subsub-nummer
-\renewcommand*{\thesubsubsection}{\arabic{subsubsection}.\kern3pt} % 1.
+\renewcommand*{\thesubsubsection}{\arabic{subsubsection}.\kern2pt} % 1.
 \RedeclareSectionCommand[%
   	,beforeskip	=  	.25\baselineskip	% Skip vor dem Kommando + indent
 	,afterskip	= 	-0.1em				% Kein Skip aber Abstand
-	,font		=	\normalfont			% Falls Überschrift 
+	,font		=	\itshape			% Falls Überschrift oder \normalfont	
 %	,tocnumwidth=	1.25em				% Eintrag in TOC ist aber unterbunden
 %	,tocindent	= 1em					%  
 	]{subsubsection} 
@@ -104,7 +88,7 @@
 %% --
 \KOMAoptions{headsepline=0.8pt}
 \renewcommand*{\sectionmarkformat}{}		% keine Abschnittsnummer
-\renewcommand*{\subsectionmarkformat}{}	% keine UnterAbschnittsnummer
+\renewcommand*{\subsectionmarkformat}{}		% keine UnterAbschnittsnummer
 
 %% ---------------------------
 %% Zweiseitig
@@ -112,7 +96,7 @@
 \manualmark
 \ihead{\headmark} 	%% -- innen
 
-\rohead{%% außen gerade
+\rohead{%% -- außen gerade
   \makebox[0pt][l]{%
     \makebox[\marginparsep][r]{%
       \rule[-\dp\strutbox]{1pt}{\normalbaselineskip}\nobreakspace
@@ -132,9 +116,8 @@
 %% --Fußnoten Nach KOMA 3.14 
 %% --
 \RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
-\deffootnotemark{\kern1pt\raisebox{0.35ex}{\footnotesize\thefootnotemark)}}
+\deffootnotemark{\kern1pt(\raisebox{0.35ex}{\footnotesize\thefootnotemark)}}
 \deffootnote[1.5em]{1em}{2em}{(\raisebox{0.35ex}{\footnotesize\thefootnotemark})\kern5pt}
 \let\raggedfootnote\RaggedRight
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\endinput

@@ -1,7 +1,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Paket für die Erstellung des Buchs zum Rom-Seminar
 %% -- Rom-Buch.sty
-%% -- Stand: 2024/07/18
+%% -- Stand: 2024/08/13
 %% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Kenndaten
@@ -11,37 +11,44 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Initialisierungen
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{ifthen}
+\RequirePackage{ifthen, iftex}
+	\provideboolean{Rom2Buch}
+	\provideboolean{Rom2Online}
 	\provideboolean{review}
+
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Deklaration von Optionen
 %% -- Wir verwenden KOMA-Script
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\DeclareOption*{\expandafter\PassOptionsToClass\expandafter{\CurrentOption}{scrartcl}}
-
-%% -- KOMA Otions
-%% -- 
-\KOMAoptions{%
-	,paper 		= a4
-	,pagesize
-	,BCOR		= 15mm		% siehe KOMA-Script 2.6, S. 39
-	,twoside	= true		% siehe KOMA-Script 2.6, S. 47
-	,fontsize	= 12pt		% Standard ist 11pt
-	,headings 	= small		% siehe KOMA-Script 3.16, S. 113
-	,open = any
-	}
-
-%% -- 
-\DeclareRobustCommand{\LongTitel}{}
-\DeclareRobustCommand{\ShortTitel}{}
-\DeclareRobustCommand{\AutorenBeitrag}{}
-
-%% -- mathematische Umgebungen mit / ohne Nummer
-%\DeclareOption{ThmNummer}{\PassOptionsToPackage{ThmNummer}{Rom-Theorem}}
-
 %% -- Zeilenabstand verdoppelt
 \DeclareOption{review}{\setboolean{review}{true}} 
+
+\DeclareOption*{\expandafter\PassOptionsToClass\expandafter{\CurrentOption}{scrartcl}}
+
+\DeclareOption{Rom2Buch}{\setboolean{Rom2Buch}{true}} 
+\DeclareOption{Rom2Online}{\setboolean{Rom2Buch}{false}} 
+
+\ifthenelse{\boolean{Rom2Buch}}
+	{\KOMAoptions{open = right}} % für Buch
+	{\KOMAoptions{open = any}}	 % für online
+	
+%% -- Inhaltsverzeichnis -> Die Vorträge
+%% -- KOMA-Script 12.4
+%% --
+\renewcaptionname{ngerman}{\contentsname}{Die Vorträge}
+
+%% -- Keine ganze Zeile Abstand
+%% -- KOMA-Script 15.3; Abb. 15.1
+%% --
+\DeclareTOCStyleEntries[
+	raggedentrytext,
+	beforeskip=.8em plus 1pt
+]{tocline}{chapter}
+
+\newcommand{\LongTitel}{}
+\newcommand{\ShortTitel}{}
+\newcommand{\AutorenBeitrag}{}
 
 \ProcessOptions\relax
 
@@ -61,8 +68,9 @@
 
 %% -- LuaLaTeX oder PDFLaTeX
 %% -- 
+
 \ifluatex
-	\RequirePackage{% wegen LuaLaTeX Problem hier
+	\RequirePackage{% wegen \eth Fehler vorher
 		,amsmath
 		,amssymb
 		} 
@@ -75,14 +83,11 @@
 %	%\RequirePackage[T1]{fontenc}	
 	\RequirePackage{libertinus}	
 	\let\digamma\relax
-	%\let\eth\relax
-	%\let\smallsetminus\relax
 	\RequirePackage{%
 		,amsmath
 		,amssymb
 	} 
 \fi
-
 %% -- Sprache und Anführungszeichen richtig
 %% -- Andere Sprache via \selectlanguage{sprache}; siehe Manual
 %% -- 
@@ -111,7 +116,7 @@
 %	,amsmath
 %	,amssymb} 
 
-%% --
+
 \RequirePackage[tbtags]{mathtools}	
 
 %% -- Querverweise und hyperref
@@ -121,17 +126,9 @@
 %% -- hyperref
 \RequirePackage[%  
 	,breaklinks= true                                                     
-	]{hyperref}     %% \href{xterner-Link}{Bezeichnung-in-Doku}
-%
-\hypersetup{%
-	,colorlinks	= true                                                          
-	,urlcolor	= blue  %                                                              
-	,citecolor	= blue  %                                                          
-	,linkcolor	= blue	% 
-%  	,hidelinks 			% Vor dem Druck % entfernen
-	}
+	]{hyperref}          		%% \href{externer-Link}{Bezeichnung-in-Doku}
+%% --
 \RequirePackage{cleveref}
-
 
 %% -- Abkürzungen
 %% --
@@ -155,8 +152,3 @@
  }
  
  \endinput
-
-
-
-
-
