@@ -127,6 +127,8 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 
 ### Aktualisierungen 
 
+* (2024/08/13) `Issues` und `Discussion` eingerichtet. Dieses findet sich in der grauen Querleiste. 
+
 * (2024/07/19) Bei mehreren Autoren erscheint im Text nur der erste Name, die restlichen als `et al.`, also etwa `Engel et al.` Im Literaturverzeichnis dann aber alle, also `Engel, K. & Nagel, R.`
 
 * (2024/07/18) Über `review`kann erreicht werden, dass im erzeugten PDF der Zeilenabstand verdoppelt ist. Dies erleichtert die schriftliche Bearbeitung und Korrektur des erzeugten PDFs. Für die finale Version bitte auskommentieren.
