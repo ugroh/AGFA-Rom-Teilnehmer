@@ -57,7 +57,7 @@ Des Weiteren finden sich die Unterverzeichnisse:
 	
 * __`beispiel`__: Hier findet sich mein Beitrag zu einem virtuellen Rom-Seminar als `Rom-ulgr.pdf`. In diesem finden sich Tipps zu `LaTeX`und alles zur Nutzung der Vorlage.
 
-* __`LaTeX-Tipps`__: Hier finden sich meine LaTeX-Tipps, insbesondere für die Literaturverwaltung und zu den Querverweisen. Diese ersteznen aber nicht die Nutzung weitergehender Literatur zu `LATeX`.
+* __`LaTeX-Tipps`__: Hier finden sich meine LaTeX-Tipps, insbesondere für die Literaturverwaltung und zu den Querverweisen. Diese ersetzen aber nicht die Nutzung weitergehender Literatur zu `LaTeX`.
 
 * __`bib-abcd`__: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in `LaTeX`. Eine kleine Anleitung zur Erstellung eines eigenen Literaturverzeichnisses dazu findet man in den LaTeX-Tipps. Ich empfehle jedem, sich diesen Tipp anzusehen. Und noch etwas: Nutzt man alles nicht auf `Overleaf`, dann muss man im Editor einstellen, dass man `biber` für die Erstellung des Literaturverzeichnisses nutzt. Wie man diese `bib`-Datei pflegt, ist in den Tipps beschrieben. 
 	
