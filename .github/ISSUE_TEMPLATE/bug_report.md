@@ -7,23 +7,14 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-Was funktioniert nicht?
+**Was funktioniert nicht?**
+Kurze Beschreibung des Problems
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Wie kann man den Fehler reproduzieren?**
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+Wenn hilfreich, bitte soclhe hinzufügen
 
-** Welches Betriebssystem, Editor etc.
+**Welches Betriebssystem, Editor etc.**
+Welche TeX-Version, Overleaf etc.
 
-**Additional context**
-Add any other context about the problem here.
