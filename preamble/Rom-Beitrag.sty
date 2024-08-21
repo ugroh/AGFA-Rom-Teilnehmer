@@ -1,7 +1,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Paket für die Erstellung der Beiträge der Teilnehmer
 %% -- Rom-Beitrag.sty
-%% -- Stand: 2024/07/18
+%% -- Stand: 2024/08/21
 %% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Kenndaten
@@ -72,7 +72,7 @@
    \setmathfont[range=\mathcal, Scale=MatchUppercase]{LatinModernMath-Regular}
    \setmathfont[range={\mathfrak},Scale=MatchUppercase]{LatinModernMath-Regular}
 \else
-%	%\RequirePackage[T1]{fontenc}	
+	\RequirePackage[T1]{fontenc}	
 	\RequirePackage{libertinus}	
 	\let\digamma\relax
 	%\let\eth\relax
@@ -122,6 +122,8 @@
 \RequirePackage[%  
 	,breaklinks= true                                                     
 	]{hyperref}     %% \href{xterner-Link}{Bezeichnung-in-Doku}
+%
+\RequirePackage{bookmark}
 %
 \hypersetup{%
 	,colorlinks	= true                                                          
