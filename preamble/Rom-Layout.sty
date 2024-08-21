@@ -33,7 +33,7 @@
 ]{chapter}
 %
 \renewcommand*{\addchaptertocentry}[2]{%  Seite 584 / http://www.komascript.de/node/1780
-  \ifstr{#1}{}{% keine Nummer:
+  \Ifstr{#1}{}{% keine Nummer:
     \addtocentrydefault{chapter}{#1}{#2}% wie bisher
   }{% mit Nummer:
     \addtocentrydefault{chapter}{}{#2} %\chapapp\ #1.-
