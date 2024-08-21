@@ -127,7 +127,7 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 
 ### Aktualisierungen 
 
-* (2024/08/21) Korrektur von zwei Problemen, die bei der Nutzung von Overleaf aufgetreten sind. Bitte daher `Rom-abcd.tex` und `pramble/Rom-Lyout.sty` austauschen.
+* (2024/08/21) Korrektur von zwei Problemen, die bei der Nutzung von Overleaf aufgetreten sind. Bitte daher `preamble/Rom-Lyout.sty` und `Rom-Beitrag.sty` austauschen.
 
 * (2024/08/13) `Issues` und `Discussion` eingerichtet. Dieses findet sich in der grauen Querleiste. 
 
