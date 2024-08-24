@@ -14,8 +14,8 @@
 \RequirePackage{microtype}
 
 %% -- Aufzählungen
-%% -- für Aufzählungen im Text = Sternvariante
 %% -- damit \begin{enumerate}[(i)] funktioniert
+%% -- für Aufzählungen im Text = Sternvariante
 %% --
 \RequirePackage[inline,shortlabels]{enumitem}
 	
@@ -23,12 +23,16 @@
 %% -- Siehe https://texample.net/tikz/examples/all/
 %% -- für Beispiele
 %% --
+
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,arrows}
 
-%% -- Weitere Pakete
+%% -- Footnote
 %% -- 
 \RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
+
+%% -- Weitere Pakete
+%% -- 
 	
 \RequirePackage{% Voss, LaTeX - 6.3 - Seite 227ff					
 	,array 			   	
@@ -39,8 +43,9 @@
 	
 \RequirePackage{% Voss, LaTeX - 8.6 - Seite 340ff					
 	,caption 			   	
-	,floatrow
-	,subcaption}
+%	,floatrow
+%	,subcaption
+	}
 
 \RequirePackage{% 						
 	,multicol	% Voss, LaTeX - 5.15.1 - Seite 215	
