@@ -80,6 +80,8 @@ vornehmen. Alles Weitere wird dann von `TeX` erledigt. Weiter unten dann die Ang
 
 * __`preamble`__: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dieses mitzuteilen. In dem Abschnitt [Was ist in der `preamble`](#preamble) ist dieses alles detailliert beschrieben. 
 
+Wen alles bearbeitet ist, bitte ich darum, das Verzeichnis __`Rom-Seminar-Teilnehmer`__ als `zip`-Datei mir zu schicken (vorher aber `abcd` anpassen) oder, wer Overleaf nutzt, mich als Teilnehmer zu benennen. 
+
 <a name="lit-latex"></a> 
 
 ### Ergänzende Literatur
