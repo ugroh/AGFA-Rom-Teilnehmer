@@ -1,4 +1,4 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/08/28)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/08/29)
 
 ### Inhaltsverzeichnis
 
@@ -126,6 +126,8 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 <a name="sonstiges"></a> 
 
 ### Aktualisierungen 
+
+* (2028/08/29) Korrektur der Fußnoten: Klammern im Text waren unterschiedlich. Bitte `Rom-Layout.sty` ersetzen. 
 
 * (2028/08/27) Kleine Korrektur im `Biblio-abcd.bib` (`@url` war falsch, muss `@online` heißen) und an der Mustervorlage. 
 
