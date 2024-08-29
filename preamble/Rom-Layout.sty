@@ -115,9 +115,17 @@
 
 %% --Fußnoten Nach KOMA 3.14 
 %% --
+
 \RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
-\deffootnotemark{\kern1pt(\raisebox{0.35ex}{\footnotesize\thefootnotemark)}}
-\deffootnote[1.5em]{1em}{2em}{(\raisebox{0.35ex}{\footnotesize\thefootnotemark})\kern5pt}
-\let\raggedfootnote\RaggedRight
+%% 
+\deffootnote[1.5em]{1em}{1em}{%
+\textsuperscript{\footnotesize(\thefootnotemark)\kern5pt}
+	}
+%% 
+\deffootnotemark{%
+\textsuperscript{\footnotesize(\thefootnotemark)}
+	}
+\let\raggedfootnote\raggedright
+
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
