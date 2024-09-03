@@ -1,4 +1,4 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/08/29)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/09/03)
 
 ### Inhaltsverzeichnis
 
@@ -128,6 +128,8 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 <a name="sonstiges"></a> 
 
 ### Aktualisierungen 
+
+* (2028/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. September 2024`.
 
 * (2028/08/29) Korrektur der Fußnoten: Klammern im Text waren unterschiedlich. Bitte `Rom-Layout.sty` ersetzen. 
 
