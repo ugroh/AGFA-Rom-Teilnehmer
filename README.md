@@ -16,7 +16,7 @@
 
 Diese Vorlage dient als Grundlage für die Beiträge im Rahmen des Rom-Seminars. Basis ist KOMA-Script, da es auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. Alle für die Erstellung und Integration des Rom-Buches benötigten Pakete sind in der Datei `./preamble/Rom-Beitrag.sty` enthalten. Bitte daher in dieser und in den weiteren Dateien des Unterverzeichnisses `./preamble/...` **keine** eigenständigen Änderungen vornehmen. Wenn etwas zusätzlich gebraucht wird, dann dieses bitte mir, <ulgr@math.uni-tuebingen.de>, mitteilen.
 
-Ein Beispiel, das auch eine Übersicht über die wichtigsten typografischen Regeln enthält: [Rom-ulgr.pdf](https://github.com/ugroh/Rom-Seminar-Teilnehmer/blob/main/Rom-ulgr.pdf). Bitte dieses lesen und die Anregungen beherzigen. 
+Ein Beispiel, das auch eine Übersicht über die wichtigsten typografischen Regeln enthält: [Rom-ulgr.pdf](https://github.com/ugroh/AGFA-Rom-Teilnehmer/blob/main/beispiel/Rom-ulgr.pdf) – bitte dieses lesen und die Anregungen beherzigen. 
 
 Die Vorlage kann sowohl lokal auf einem eigenen Rechner genutzt werden als auch auf [_Overleaf_](https://www.overleaf.com). Für beides muss man sich die Vorlage als ein `ZIP`-File herunterladen. Dazu geht man auf den grünen, mit __Code__ bezeichneten Schalter, geht auf __Local__ und öffnet diesen. Der Rest sollte klar sein: Als `ZIP`-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. 
 
@@ -40,7 +40,7 @@ Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [Erg
 
 ### Der Aufbau der Vorlage
 
-Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung **unbedingt** erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an **erster** Stelle kommt.
+Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung **unbedingt** erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten  `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an **erster** Stelle kommt. Bitte **alle** Dateien, die dieses `abcd` enthalten entsprechd ändern, bevor mir diese Dateien zugeschickt werden.
 
 Beim Installieren wird das Hauptverzeichnis __`Rom-Seminar-Teilnehmer`__ angelegt. Dieses enthält folgende Dateien:  
 
@@ -131,7 +131,7 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 
 * (2028/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. Sep. 2024`.
 
-* (2028/08/29) Korrektur der Fußnoten: Klammern im Text waren unterschiedlich. Bitte `Rom-Layout.sty` ersetzen. 
+* (2028/08/29) Korrektur der Fußnoten – Bitte `Rom-Layout.sty` ersetzen. 
 
 * (2028/08/27) Kleine Korrektur im `Biblio-abcd.bib` (`@url` war falsch, muss `@online` heißen) und an der Mustervorlage. 
 
