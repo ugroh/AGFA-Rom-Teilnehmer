@@ -118,15 +118,11 @@
 
 \RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
 %% 
-\deffootnote[1.5em]{1em}{1em}{%
-\textsuperscript{\footnotesize(\thefootnotemark)\kern1pt}
-	}
-%% 
-\deffootnotemark{%
-\textsuperscript{\footnotesize(\thefootnotemark)}
-	}
+
+\deffootnote[1.5em]{1em}{1em}{\makebox[1.5em][l]\thefootnotemark}
+\deffootnotemark{\textsuperscript{\footnotesize\thefootnotemark}\,}
 \let\raggedfootnote\raggedright
+
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \endinput
-
