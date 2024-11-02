@@ -1,4 +1,4 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/09/03)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/11/02)
 
 ### Inhaltsverzeichnis
 
@@ -24,6 +24,8 @@ Wer das System [_Overleaf_](https://www.overleaf.com) nutzt, muss dann dieses `Z
 
 Wer `LaTeX` lokal verwenden will: Bitte entweder [MaCTeX](https://www.tug.org/mactex/) nutzen, wenn man einen Apple-PC hat oder die aktuelle [TeX Live-Version](https://tug.org/texlive/) für Linux oder Windows. Die Installation ist auf den jeweiligen Webseiten beschrieben (siehe auch [https://www.latex-project.org/get/](https://www.latex-project.org/get/)). 
 
+Zu guter letzt noch ein Hinweis: Der Beitrag sollte frei von Fehlern sind – Rechtschreibfehler, Tippfehler, sprachliche Fehler u.a. Um dieses zu erreichen empfehle ich das [LanguageTool](https://languagetool.org/de). 
+
 <a name="latex"></a>
 
 ### Was wird genutzt
@@ -32,7 +34,7 @@ Basis ist das `LaTeX`-System und man sollte sich, zumindest rudimentär, etwas d
 
 Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksichtigen. Meine Empfehlungen für das Lernen und einem ersten Verstehen:
 
-* [_lsshort_](https://ctan.org/pkg/lshort-german): Eine kleine, aber übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX.
+* [_lsshort_](https://ctan.org/pkg/lshort-german): Eine übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX.
 
 Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [Ergänzende Literatur](#lit-latex). 
 
@@ -46,9 +48,9 @@ Beim Installieren wird das Hauptverzeichnis __`Rom-Seminar-Teilnehmer`__ angeleg
 
 * `README.md` und `README.pdf`: Diese enthält einige Erläuterungen zur Installation und was es sonst noch gibt.
 	
-* `Rom-Muster.pdf` ist ein Beispiel und enthält die Details zu den Makros und einige Ratschläge. Diese Datei ist auch ein »Muster« für einen Beitrag.
-	
-* `Rom-abcd.tex` : Diese ist die Master-Datei für die Erstellung des eigenen Beitrags. Diese Datei benötigt man nur zur Erstellung des `PDF` des Beitrags. Und bitte: in dieser nichts ändern, es sei denn, man muss einiges ergänzen, was aber in dieser Datei explizit angegeben ist.  
+* `Rom-abcd.tex`: Diese ist die Master-Datei für die Erstellung des eigenen Beitrags. Diese Datei benötigt man nur zur Erstellung des `PDF` des Beitrags. Und bitte: An der Struktur dieser Datei nichts ändern, es sei denn, man muss einiges ergänzen – dafür aber eine Info an mich.  
+
+* `Rom-abcd.pdf`: Die kompilierte Version des Beispiels `Rom-abcd.tex`, die wiederum die Datei `./content-abcd/Beitrag-abcd.tex` aufruft. Diese Datei ist die Basis für den eigenen Beitrag. Und auch hier gilt:  An der Struktur dieser Datei nichts ändern
 
 * `Rom-Beamer.tex`: Eine Beamer-Vorlage zur Erstellung der eigenen Präsentation. Diese ist bewusst schlicht gehalten, da viel Farbe nichts mit der Qualität eines Beitrags zu tun hat.
 	
@@ -129,11 +131,13 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 
 ### Aktualisierungen 
 
-* (2028/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. Sep. 2024`.
+* (2024/11/02) Ergänzungen
 
-* (2028/08/29) Korrektur der Fußnoten – Bitte `Rom-Layout.sty` ersetzen. 
+* (2024/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. Sep. 2024`.
 
-* (2028/08/27) Kleine Korrektur im `Biblio-abcd.bib` (`@url` war falsch, muss `@online` heißen) und an der Mustervorlage. 
+* (2024/08/29) Korrektur der Fußnoten – Bitte `Rom-Layout.sty` ersetzen. 
+
+* (2024/08/27) Kleine Korrektur im `Biblio-abcd.bib` (`@url` war falsch, muss `@online` heißen) und an der Mustervorlage. 
 
 * (2024/08/21) Korrektur von zwei Meldungen, die bei der Nutzung von Overleaf angezeigt werden und irritieren können. Bitte daher `preamble/Rom-Layout.sty` und `preamble/Rom-Beitrag.sty` austauschen.
 
