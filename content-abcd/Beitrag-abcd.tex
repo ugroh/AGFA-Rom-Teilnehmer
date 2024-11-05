@@ -10,14 +10,15 @@
 %% -- Bitte \renewcommand belassen und die entsprechenden Angaben
 %% -- eintragen.
 %% --
-\renewcommand{\LongTitel}{Langform des Titels}
-\renewcommand{\ShortTitel}{Kurzform des Titel}
+\renewcommand{\LongTitel}{Langform des Titels für die Überschrift des Beitrags}
+\renewcommand{\ShortTitelTOC}{Kurzform des Titel für Inhaltsverzeichnis}
+\renewcommand{\ShortTitelKopfzeile}{Kurzform des Titel für die Kopfzeile}
 \renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
 
 %% -- Kapitelüberschrift und Eintrag in TOC
 %% -- Bitte hier nichts ändern
 %% --
-\addchap[\ShortTitel]{\LongTitel}
+\addchap[\ShortTitelTOC]{\LongTitel}
 \addtocontents{toc}{\textsc{\AutorenBeitrag}}
 \addtocontents{toc}{}
 
@@ -27,7 +28,7 @@
 %% -- Bitte hier nichts ändern
 %% --
 \markleft{\textsc{\AutorenBeitrag}}	
-\markright{\textsc{\ShortTitel}}	
+\markright{\textsc{\ShortTitelKopfzeile}}	
 
 %% -- Titelseite des Beitrags 
 %% -- Bild: Bitte hier eins vom Vortrag nutzen --> autor-abcd.jpg
