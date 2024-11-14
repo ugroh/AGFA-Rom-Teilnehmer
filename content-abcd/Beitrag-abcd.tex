@@ -10,10 +10,20 @@
 %% -- Bitte \renewcommand belassen und die entsprechenden Angaben
 %% -- eintragen.
 %% --
+
+%% -- Titel des Beitrags
+%% --
 \renewcommand{\LongTitel}{Langform des Titels für die Überschrift des Beitrags}
-\renewcommand{\ShortTitelTOC}{Kurzform des Titel für Inhaltsverzeichnis}
-\renewcommand{\ShortTitelKopfzeile}{Kurzform des Titel für die Kopfzeile}
 \renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
+
+%% -- Für das Inhaltsverzeichnis den Titel anpassen
+%% -- 
+\renewcommand{\ShortTitelTOC}{Kurzform des Titel für Inhaltsverzeichnis}
+
+%% -- Für die Kopfzeile den Titel anpassen
+%% -- 
+\renewcommand{\ShortTitelKopfzeile}{Kurzform des Titel für die Kopfzeile}
+
 
 %% -- Kapitelüberschrift und Eintrag in TOC
 %% -- Bitte hier nichts ändern
@@ -32,7 +42,6 @@
 
 %% -- Titelseite des Beitrags 
 %% -- Bild: Bitte hier eins vom Vortrag nutzen --> autor-abcd.jpg
-%% -- Namen der Vortragenden --> Autor1 etc. entsprechend anpassen
 %% --
 \begin{center}
 	\textsc{\Large \AutorenBeitrag}\\[1.5em]
@@ -40,7 +49,7 @@
 \end{center}
 
 %% -- Wer einen sinnvollen Spruch nutzen will
-%% -- dann bitte mit \dictum[]{}; 
+%% -- dann bitte mit \dictum[]{}  
 %% -- Anpassen der Breite: 
 \renewcommand{\dictumwidth}{0.45\textwidth}
 %% --
@@ -49,8 +58,8 @@
 
 %%
 \begin{quote}
-Für eine kurze Zusammenfassung des Beitrags, damit man diesen unbedingt lesen will.
-Aber lesen \emph{muss jeder} das README!!
+Für eine kurze Zusammenfassung des Beitrags, damit man weiß, warum man diesen unbedingt lesen will.
+Aber lesen \textbf{muss jeder} das \emph{README.pdf} und das Beispiel \emph{Rom-ulgr.pdf}
 \end{quote}
 
 %% -- Literaturreferenzen des Beitrags am Ende des Artikels
@@ -63,7 +72,7 @@ Aber lesen \emph{muss jeder} das README!!
 \subsection*{Erster Unterabschnitt}		%% 
 
 Eingabe von Text beginnt hier.
-Jeden neuen Satz auf einer neuen Zeile beginnen -- macht das Lesen und die Fehlersuche einfacher.
+Jeden neue Satz auf einer neuen Zeile beginnen -- macht das Lesen und die Fehlersuche einfacher.
 
 Und einen neuen Absatz beginnt man, indem man eine Leerzeile einfügt. 
 Bitte nicht \verb|\newline| oder \verb|\\| oder ähnliches dazu verwenden -- dies ist eine Todsünde in \LaTeX{}.
