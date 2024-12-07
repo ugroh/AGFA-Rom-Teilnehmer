@@ -1,5 +1,5 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/11/02)
-
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/12)
+/04
 ### Inhaltsverzeichnis
 
 - [Worum geht es](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#einstieg) 
@@ -41,9 +41,9 @@ Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [erg
 
 ### Der Aufbau der Vorlage
 
-Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung **unbedingt** erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten `Rainer Nagel`, so ist `abcd = rana` (sollte klar sein, wie es geht). Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an **erster** Stelle kommt. Bitte **alle** Dateien, die dieses `abcd` enthalten entsprechend ändern, bevor mir diese Dateien zugeschickt werden.
+Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar unterscheiden zu können, ist folgende Namensgebung **unbedingt** erforderlich: Das `abcd` wird abgeändert in die in der AGFA üblichen Abkürzung für die E-Mail-Adresse. Ist also der Name des Referenten `Ulrich Groh`, so ist `abcd = ulgr`. Sind es mehrere Autoren, so bitte den Namen dafür nehmen, der alphabetisch an **erster** Stelle kommt. Bitte **alle** Dateien, die dieses `abcd` enthalten entsprechend ändern, bevor mir diese Dateien zugeschickt werden.
 
-Beim Installieren wird das Hauptverzeichnis **`Rom-Seminar-Teilnehmer`** angelegt. Dieses enthält folgende Dateien:  
+Beim Installieren wird das Hauptverzeichnis `Rom-Seminar-Teilnehmer` angelegt. Dieses enthält folgende Dateien:  
 
 - `README.md` und `README.pdf`: Diese enthält einige Erläuterungen zur Installation und was es sonst noch gibt.
 - `Rom-abcd.tex`: Diese ist die Master-Datei für die Erstellung des eigenen Beitrags. Diese Datei benötigt man nur zur Erstellung des `PDF` des Beitrags. Und bitte: An der Struktur dieser Datei nichts ändern, es sei denn, man muss einiges ergänzen – dafür aber eine Information an mich.  
@@ -66,15 +66,16 @@ Des Weiteren finden sich die Unterverzeichnisse:
   % !TEX root = ../Rom-abcd.tex  
   ```
 
-Dadurch ist es möglich, diese Datei direkt mit `LaTeX` zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit [TeXShop](https://pages.uoregon.edu/koch/texshop/obtaining.html) als Tool auf Apple OS oder entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen, wenn man keinen Apple-Computer hat.   **Wichtig**: Bitte in dieser Datei die entsprechenden Ergänzungen bei 
+Dadurch ist es möglich, diese Datei direkt mit `LaTeX` zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit [TeXShop](https://pages.uoregon.edu/koch/texshop/obtaining.html) als Tool auf Apple OS oder entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen, wenn man keinen Apple-Computer hat.   **Wichtig**: Bitte in dieser Datei die entsprechenden Ergänzungen vornehmen bei 
 
 ```
-  \renewcommand{\LongTitel}{Langform des Titels}
-  \renewcommand{\ShortTitel}{Kurzform des Titel}
-  \renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
+\renewcommand{\LongTitel}{Langform des Titels für die Überschrift des Beitrags}
+\renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
+\renewcommand{\ShortTitelTOC}{Kurzform des Titels für das Inhaltsverzeichnis}
+\renewcommand{\ShortTitelKopfzeile}{Kurzform des Titels für die Kopfzeile}
 ```
 
-vornehmen. Alles Weitere wird dann von `TeX` erledigt. Weiter unten dann die Angabe zum obligatorischen Bild und wer noch einen klugen Spruch hat. Ein Beispiel dazu: Siehe `Betrag-abcd.pdf` und `./content-abcd/Beitrag-abcd.tex`. 
+Alles Weitere wird dann von `TeX` erledigt. Weiter unten dann die Angabe zum obligatorischen Bild und wer noch einen klugen Spruch hat. Ein Beispiel dazu: Siehe `Betrag-abcd.pdf` und `./content-abcd/Beitrag-abcd.tex`. 
 
 - **`preamble`**: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dieses mitzuteilen. In dem Abschnitt [Was ist in der `preamble`](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#preamble) ist dieses alles detailliert beschrieben. 
 
@@ -120,7 +121,7 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 
 ### Aktualisierungen 
 
-- (2024/11/02) Ergänzungen
+- (2024/12/07) Überarbeitung
 - (2024/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. Sep. 2024`.
 - (2024/08/29) Korrektur der Fußnoten – Bitte `Rom-Layout.sty` ersetzen. 
 - (2024/08/27) Kleine Korrektur im `Biblio-abcd.bib` (`@url` war falsch, muss `@online` heißen) und an der Mustervorlage. 
