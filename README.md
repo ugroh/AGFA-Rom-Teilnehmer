@@ -35,7 +35,7 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 - [*lsshort*](https://ctan.org/pkg/lshort-german): Eine übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX.
 
-Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [ergänzende Literatur](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#lit-latex). 
+Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [ergänzende Literatur](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#lit-latex). Und bitte unbedingt in die _Zehn Tipps_ reinsehen.
 
 <a name="aufbau"></a> 
 
@@ -121,7 +121,7 @@ in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehör
 
 ### Aktualisierungen 
 
-- (2024/12/07) Überarbeitung
+- (2024/12/07) Überarbeitung und _Zehn Tipps_ beigefügt.
 - (2024/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. Sep. 2024`.
 - (2024/08/29) Korrektur der Fußnoten – Bitte `Rom-Layout.sty` ersetzen. 
 - (2024/08/27) Kleine Korrektur im `Biblio-abcd.bib` (`@url` war falsch, muss `@online` heißen) und an der Mustervorlage. 
