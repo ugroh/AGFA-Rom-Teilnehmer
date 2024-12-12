@@ -1,5 +1,5 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/12)
-/04
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/12/12)
+
 ### Inhaltsverzeichnis
 
 - [Worum geht es](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#einstieg) 
