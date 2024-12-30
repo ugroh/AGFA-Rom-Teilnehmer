@@ -33,3 +33,5 @@
   - Querverweise: bitte `\vref{link}` nutzen – dann wird auch die korrekte Seite angezeigt. Zu Querverweisen u.ä. findet man weiteres in den `LaTeX-Tipps`. Bitte die `links` sinnvoll benennen (siehe `./beispiel/Rom-ulgr.pdf`  für Beispiele).
 
   - Zitieren von Literatur: `\textcite[wo-steht-etwas]{link}`. Einiges Weitere dazu finden sich in den `LaTeX-Tipps`⁣. Für die `links` empfehle ich einheitlich `verfasser:jahr` zu verwenden (siehe die beigefügte `bib`-Datei). Vereinfacht das Suchen nach den Literaturstellen (wenn man mal etwas verbessern muss).
+  
+  - Beim Verwenden von URL-Links bitte ich darum, diese abzukürzen. Dazu nutzen wir einheitlich [https://tinyurl.com](https://tinyurl.com) – dies gilt auch für die URL-Links für Referenzen (Literaturzitate).
