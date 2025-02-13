@@ -1,4 +1,4 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2024/12/12)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2025/02/13)
 
 ### Inhaltsverzeichnis
 
@@ -35,7 +35,7 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 - [*lsshort*](https://ctan.org/pkg/lshort-german): Eine übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX.
 
-Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [ergänzende Literatur](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#lit-latex). Und bitte unbedingt in die _Zehn Tipps_ reinsehen.
+Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [ergänzende Literatur](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#lit-latex). Und bitte unbedingt in die _Zehn Tipps_ reinsehen. Und es lohnt sich, einen Blick auf  [https://tex.social](https://tex.social) zu werfen.
 
 <a name="aufbau"></a> 
 
