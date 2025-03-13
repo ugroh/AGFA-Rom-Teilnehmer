@@ -15,9 +15,9 @@
 
 Diese Vorlage dient als Grundlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis ist KOMA-Script, da es auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. Alle für die Erstellung und Integration des Rom-Buches benötigten Pakete sind in der Datei `./preamble/Rom-Beitrag.sty` enthalten. Bitte daher in dieser und in den weiteren Dateien des Unterverzeichnisses `./preamble/...` **keine** eigenständigen Änderungen vornehmen. Wenn etwas zusätzlich gebraucht wird, dann dieses bitte mir, [ulgr@math.uni-tuebingen.de](mailto:ulgr@math.uni-tuebingen.de), mitteilen.
 
-Ein Beispiel, das auch eine Übersicht über die wichtigsten typografischen Regeln enthält: [Rom-ulgr.pdf](https://github.com/ugroh/AGFA-Rom-Teilnehmer/blob/main/beispiel/Rom-ulgr.pdf) – bitte dieses lesen und die Anregungen beherzigen. 
+Ein Beispiel, das auch eine Übersicht über die wichtigsten typografischen Regeln enthält: [beispiel/Rom-ulgr.pdf](https://github.com/ugroh/AGFA-Rom-Teilnehmer/blob/main/beispiel/Rom-ulgr.pdf) – bitte die enthalten Anregeungen nutzen.. 
 
-Die Vorlage kann sowohl lokal auf einem eigenen Rechner genutzt werden als auch auf [*Overleaf*](https://www.overleaf.com/). Für beides muss man sich die Vorlage als ein `ZIP`-File herunterladen. Dazu geht man auf den grünen, mit **Code** bezeichneten Schalter, geht auf **Local** und öffnet diesen. Der Rest sollte klar sein: Als `ZIP`-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. 
+Die Vorlage kann sowohl lokal auf einem eigenen Rechner genutzt werden als auch auf [*Overleaf*](https://www.overleaf.com/). Für beides muss man sich die Vorlage als ein `ZIP`-File herunterladen. Dazu geht man in GitHub auf den grünen, mit **Code** bezeichneten Schalter, geht auf **Local** und öffnet diesen. Der Rest sollte klar sein: Als `ZIP`-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. 
 
 Wer das System [*Overleaf*](https://www.overleaf.com/) nutzt, muss dann dieses `ZIP`-File in Overleaf als neues Projekt installieren. Die Vorlage habe ich dort getestet und es hat alles funktioniert. Und bitte beachten: In dem Menüpunkt `Recompile` den Unterpunkt `Stop on first error` auswählen. Dann stoppt Overleaf bei einem Fehler und es wird angezeigt, in welcher Zeile sich dieser befindet. Um die Fehlersuche zu erleichtern, bitte jeden `neuen` Satz auf einer `neuen` Zeile beginnen, d.h. den Text nicht als Fließtext schreiben. Für die Endredaktion ist ein fehlerfreies Manuskript erforderlich.
 
@@ -35,7 +35,7 @@ Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksich
 
 - [*lsshort*](https://ctan.org/pkg/lshort-german): Eine übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX.
 
-Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [ergänzende Literatur](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#lit-latex). Und bitte unbedingt in die _Zehn Tipps_ reinsehen. Und es lohnt sich, einen Blick auf  [https://tex.social](https://tex.social) zu werfen.
+Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [ergänzende Literatur](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#lit-latex). Und bitte unbedingt in die _Zehn Tipps_ reinsehen. Wer mehr wissen will: es lohnt, einen Blick auf  [https://tex.social](https://tex.social) zu werfen.
 
 <a name="aufbau"></a> 
 
@@ -46,7 +46,7 @@ Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar untersc
 Beim Installieren wird das Hauptverzeichnis `Rom-Seminar-Teilnehmer` angelegt. Dieses enthält folgende Dateien:  
 
 - `README.md` und `README.pdf`: Diese enthält einige Erläuterungen zur Installation und was es sonst noch gibt.
-- `Rom-abcd.tex`: Diese ist die Master-Datei für die Erstellung des eigenen Beitrags. Diese Datei benötigt man nur zur Erstellung des `PDF` des Beitrags. Und bitte: An der Struktur dieser Datei nichts ändern, es sei denn, man muss einiges ergänzen – dafür aber eine Information an mich.  
+- `Rom-abcd.tex`: Diese ist die Master-Datei für die Erstellung des eigenen Beitrags. Diese Datei nutzt man zur Erstellung und zum Testen des eigenen Beitrags. Und bitte: An der Struktur dieser Datei nichts ändern, es sei denn, man muss einiges ergänzen – dafür aber eine Information an mich.  
 - `Rom-abcd.pdf`: Die kompilierte Version des Beispiels `Rom-abcd.tex`, die wiederum die Datei `./content-abcd/Beitrag-abcd.tex` aufruft. Diese Datei ist die Basis für den eigenen Beitrag. Und auch hier gilt: An der Struktur dieser Datei nichts ändern.
 - `Rom-Beamer.tex`: Eine Beamer-Vorlage zur Erstellung der eigenen Präsentation. Diese ist bewusst schlicht gehalten, da viel Farbe nichts mit der Qualität eines Beitrags zu tun hat.
 
@@ -66,7 +66,9 @@ Des Weiteren finden sich die Unterverzeichnisse:
   % !TEX root = ../Rom-abcd.tex  
   ```
 
-Dadurch ist es möglich, diese Datei direkt mit `LaTeX` zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit [TeXShop](https://pages.uoregon.edu/koch/texshop/obtaining.html) als Tool auf Apple OS oder entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen, wenn man keinen Apple-Computer hat.   **Wichtig**: Bitte in dieser Datei die entsprechenden Ergänzungen vornehmen bei 
+Dadurch ist es möglich, diese Datei direkt mit `LaTeX` zu kompilieren, da dann die Stammdatei aufgerufen wird. Dies geht mit [TeXShop](https://pages.uoregon.edu/koch/texshop/obtaining.html) als Tool auf Apple OS oder entsprechend auch mit [TeXworks](https://tug.org/texworks/), der Linux und Windows unterstützt. Meine generelle Empfehlung ist es, diesen Editor für die TeX-Welt zu nutzen, wenn man keinen Apple-Computer hat.  
+
+**Wichtig**: Bitte in dieser Datei die entsprechenden Ergänzungen vornehmen bei 
 
 ```
 \renewcommand{\LongTitel}{Langform des Titels für die Überschrift des Beitrags}
@@ -79,7 +81,7 @@ Alles Weitere wird dann von `TeX` erledigt. Weiter unten dann die Angabe zum obl
 
 - **`preamble`**: Hier befinden sich alle Dateien, die zur Erstellung des Dokuments mithilfe von LaTeX erforderlich sind. An diesen Dateien bitte **nichts** verändern. Sollte mal etwas nicht funktionieren oder spezielle Wünsche vorhanden sein, so bitte ich darum, mir dieses mitzuteilen. In dem Abschnitt [Was ist in der `preamble`](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#preamble) ist dieses alles detailliert beschrieben. 
 
-Wenn alles bearbeitet ist, bitte ich darum, das Verzeichnis **`Rom-Seminar-Teilnehmer`** als `zip`-Datei mir zu schicken (vorher aber `abcd` anpassen) oder, wer Overleaf nutzt, mich als Teilnehmer zu benennen. 
+Wenn alles bearbeitet ist, bitte das Verzeichnis **`Rom-Seminar-Teilnehmer`** als `zip`-Datei mir zu schicken (vorher aber `abcd` anpassen) oder, wer Overleaf nutzt, mich als Teilnehmer zu benennen. 
 
 <a name="lit-latex"></a> 
 
@@ -108,12 +110,14 @@ Weitere Literatur zur Erstellung eines Beitrags für das Rom-Seminar – und nic
   % !TEX TS-program = pdflatexmk
   ```
 
-in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd` und heißt `Biblio-abcd.bib`. In diese Datei werden die Referenzen eingetragen und gepflegt. Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [JabRef](https://www.jabref.org/) zu empfehlen. In meinen LaTeX-Tipps habe ich hierzu etwas zusammengestellt, das man im Unterverzeichnis `beispiel` findet – [LasTeX-Tipp5](https://github.com/ugroh/Rom-Seminar-Teilnehmer/tree/main/beispiel). Diesen Tipp kann man sich online ansehen oder herunterladen (kleines Download-Symbol rechts in der grauen Leiste). Wer Hilfe benötigt: Mail an mich. 
+in der ersten Zeile ist dies sichergestellt (`magic command line`). Das zugehörige `bib`-File findet sich in `content-abcd/bib-abcd` und heißt `Biblio-abcd.bib`. In diese Datei werden die Referenzen eingetragen und gepflegt. 
+
+Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [JabRef](https://www.jabref.org/) zu empfehlen. In meinen LaTeX-Tipps habe ich hierzu etwas zusammengestellt, das man im Unterverzeichnis `beispiel` findet – [LasTeX-Tipp5](https://github.com/ugroh/Rom-Seminar-Teilnehmer/tree/main/beispiel). Diesen Tipp kann man sich online ansehen oder herunterladen (kleines Download-Symbol rechts in der grauen Leiste). Wer Hilfe benötigt: Mail an mich. 
 
 **Wichtig:** Bitte im Editor prüfen, ob `biber` als Tool für die Erstellung des Literaturverzeichnisses eingestellt ist. In Overleaf ist dies bereits der Fall.  
 
-- **`Rom-Layout.sty`**:  Alles, was für das Layout zuständig ist. Dabei funktioniert `\section` und `\subsection` wie üblich. Meiner Meinung nach ist  `\subsubsection` entbehrlich und es wird bei der Nutzung eine Nummer ausgegeben – kann man relativ gut nutzen, um etwas besser zu untergliedern. Auch sollen die erstgenannten Befehle mit ihrer *-Variante genutzt werden. Eine Nummerierung ist nicht erforderlich.
-- **`Rom-Mathematik.sty`**: Enthält Definitionen, etwa `\N` für den Blackboard-Stil für die Darstellung der natürlichen Zahlen. Alle Definitionen habe ich separat zusammengestellt und die Übersicht findet sich auch in dem Unterverzeichnis `beispiel`.
+- **`Rom-Layout.sty`**:  Alles, was für das Layout zuständig ist. Dabei funktioniert `\section` und `\subsection` wie üblich. Meiner Meinung nach ist  `\subsubsection`  entbehrlich und es wird bei der Nutzung eine Nummer ausgegeben – kann man relativ gut nutzen, um etwas besser zu untergliedern. Auch sollen die erstgenannten Befehle mit ihrer *-Variante genutzt werden. Eine Nummerierung ist nicht erforderlich.
+- **`Rom-Mathematik.sty`**: Enthält Definitionen, etwa `\N` für den Blackboard-Stil für die Darstellung der natürlichen Zahlen. Alle Definitionen habe ich separat zusammengestellt und die Übersicht findet sich auch in dem Unterverzeichnis `beispiel`. 
 - **`Rom-Theorem.sty`**: Wie der Name schon sagt: In dieser Datei finden sich die Definitionen der mathematischen Umgebungen für Theoreme etc. Da gibt es zwei Varianten: Einmal nicht nummeriert, was ich für die Beiträge sinnvoll halte und die Möglichkeit, diese auch zu nummerieren. Alles Weitere in der oben erwähnten Übersicht.
 - **`Rom-Pakete.tex`**:  Aus meiner Sicht nützliche Pakete, die die Möglichkeiten von LaTeX ergänzen. Wer mehr zu den Paketen wissen will, der kann einmal auf [ctan.org](https://ctan.org/) nach diesen suchen und sich das Manual ansehen, oder `texdoc name-des-pakets` am PC aufrufen oder mal H. Voss: *Einführung in LaTeX* nutzen. Wichtig: *Learning-by-Doing* ist dann angesagt. 
 
