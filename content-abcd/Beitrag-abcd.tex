@@ -14,38 +14,29 @@
 %% -- Titel des Beitrags
 %% --
 \renewcommand{\LongTitel}{Langform des Titels für die Überschrift des Beitrags}
+\renewcommand{\ShortTitel}{Kurzform des Titel} % falls es ein langer Titel ist
 \renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
 
-%% -- Für das Inhaltsverzeichnis den Titel anpassen
-%% -- 
-\renewcommand{\ShortTitelTOC}{Kurzform des Titels für das Inhaltsverzeichnis}
-
-%% -- Für die Kopfzeile den Titel anpassen
-%% -- 
-\renewcommand{\ShortTitelKopfzeile}{Kurzform des Titels für die Kopfzeile}
-
-
 %% -- Kapitelüberschrift und Eintrag in TOC
-%% -- Bitte hier nichts ändern
 %% --
-\addchap[\ShortTitelTOC]{\LongTitel}
+\addchap[\ShortTitel]{\LongTitel}
 \addtocontents{toc}{\textsc{\AutorenBeitrag}}
 \addtocontents{toc}{}
 
 %% -- Kopfzeile 
 %% -- Gerade Seiten : Autoren
 %% -- Ungerade Seiten: Kurztitel
-%% -- Bitte hier nichts ändern
 %% --
 \markleft{\textsc{\AutorenBeitrag}}	
-\markright{\textsc{\ShortTitelKopfzeile}}	
+\markright{\textsc{\ShortTitel}}	
 
-%% -- Titelseite des Beitrags 
-%% -- Bild: Bitte hier eins vom Vortrag nutzen --> autor-abcd.jpg
+%% -- Titelseite des Beitrags inkl. Bild
+%% -- des/der Vortragenden
 %% --
 \begin{center}
 	\textsc{\Large \AutorenBeitrag}\\[1.5em]
-	\includegraphics[width=8cm, height=8cm, keepaspectratio=true]{./content-abcd/autor-abcd.jpg}
+	\includegraphics[width=8cm, height=8cm, keepaspectratio=true]
+		{./content/content-abcd/autor-abcd}
 \end{center}
 
 %% -- Wer einen sinnvollen Spruch nutzen will
