@@ -113,15 +113,30 @@
 
 \pagestyle{scrheadings}
 
+%%% --Fußnoten Nach KOMA 3.14 
+%%% --
+%
+%\RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
+%%% 
+%
+%\deffootnote[1.5em]{1em}{1em}{\makebox[1.5em][l]\thefootnotemark}
+%\deffootnotemark{\textsuperscript{\footnotesize\thefootnotemark}\,}
+%\let\raggedfootnote\raggedright
+
 %% --Fußnoten Nach KOMA 3.14 
 %% --
 
 \RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
 %% 
 
-\deffootnote[1.5em]{1em}{1em}{\makebox[1.5em][l]\thefootnotemark}
-\deffootnotemark{\textsuperscript{\footnotesize\thefootnotemark}\,}
-\let\raggedfootnote\raggedright
+\deffootnote[1.5em]{1em}{1em}{%
+\textsuperscript{\footnotesize(\thefootnotemark)\kern1pt}
+	}
+%% 
+\deffootnotemark{%
+\textsuperscript{\footnotesize(\thefootnotemark)}
+	}
+\let\raggedfootnote\raggedrigh
 
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
