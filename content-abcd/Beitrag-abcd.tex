@@ -95,6 +95,11 @@ In dem Unterverzeichnis \texttt{LaTeX-Tipps} findet sich alles, was für die Ein
 \RaggedRight
 \printbibliography
 \end{refsection}
+
+%% -- Damit der nächste Beitrag auf einer rechten Seite beginnt
+%% -- Bitte nicht löschen
+\Ifthispageodd{\cleardoubleoddemptypage}%
+ 			{\relax}
+			
 %% -- Ende des Beitrags
 %% --
-
