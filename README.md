@@ -33,7 +33,7 @@ Die Basis ist das `LaTeX`⁣-System, und man sollte sich, zumindest rudimentär,
 
 Daher muss man die Möglichkeiten und Grenzen des Systems lernen und berücksichtigen. Meine Empfehlungen für das Lernen und ein erstes Verstehen:
 
-- [*lsshort*](https://ctan.org/pkg/lshort-german): Eine übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX.
+- [*lshort*](https://ctan.org/pkg/lshort-german): Eine übersichtliche Einführung in LaTeX mit sinnvollen Tipps und einer kleinen Übersicht zur Entwicklung von TeX und LaTeX.
 
 Weitere Literatur zur Erstellung eines Beitrags findet man in dem Abschnitt [ergänzende Literatur](file:///Users/ugroh/GitHub/AGFA-Rom-Teilnehmer/README.md#lit-latex). Und bitte unbedingt in die _Zehn Tipps_ reinsehen. Wer mehr wissen will: es lohnt, einen Blick auf  [https://tex.social](https://tex.social) zu werfen.
 
