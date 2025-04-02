@@ -1,4 +1,4 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2025/02/13)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2025/04/02)
 
 ### Inhaltsverzeichnis
 
@@ -48,7 +48,7 @@ Beim Installieren wird das Hauptverzeichnis `Rom-Seminar-Teilnehmer` angelegt. D
 - `README.md` und `README.pdf`: Diese enthält einige Erläuterungen zur Installation und was es sonst noch gibt.
 - `Rom-abcd.tex`: Diese ist die Master-Datei für die Erstellung des eigenen Beitrags. Diese Datei nutzt man zur Erstellung und zum Testen des eigenen Beitrags. Und bitte: An der Struktur dieser Datei nichts ändern, es sei denn, man muss einiges ergänzen – dafür aber eine Information an mich.  
 - `Rom-abcd.pdf`: Die kompilierte Version des Beispiels `Rom-abcd.tex`, die wiederum die Datei `./content-abcd/Beitrag-abcd.tex` aufruft. Diese Datei ist die Basis für den eigenen Beitrag. Und auch hier gilt: An der Struktur dieser Datei nichts ändern.
-- `Rom-abcd-Beamer.tex`: Eine Beamer-Vorlage zur Erstellung der eigenen Präsentation. Diese ist bewusst schlicht gehalten, da viel Farbe nichts mit der Qualität eines Beitrags zu tun hat.
+- `Rom-Beamer.tex`: Eine Beamer-Vorlage zur Erstellung der eigenen Präsentation. Diese ist bewusst schlicht gehalten, da viel Farbe nichts mit der Qualität eines Beitrags zu tun hat.
 
 Des Weiteren finden sich die Unterverzeichnisse: 
 
@@ -56,9 +56,9 @@ Des Weiteren finden sich die Unterverzeichnisse:
 
 - **`LaTeX-Tipps`**: Hier finden sich meine LaTeX-Tipps, insbesondere für die Literaturverwaltung und zu den Querverweisen. Diese ersetzen aber nicht die Nutzung weitergehender Literatur zu `LaTeX`.
 
-- **`content-abcd`**: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `Beitrag-abcd.tex` für den Beitrag, eventuelle Bilder etc. Hierzu gehören auch die zusätzlichen eigenen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `Defn-abcd.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt. Diese Datei ist bereits mittels `\input{Defn-abcd}` eingebunden. 
+- **`bib-abcd`**: Hier findet dich die Datei mit der benutzten Literatur, `Biblio-abcd.bib`. Der Aufbau dieser genügt den Regeln für die Nutzung in `LaTeX`. Eine kleine Anleitung zur Erstellung eines eigenen Literaturverzeichnisses dazu findet man in den LaTeX-Tipps. Ich empfehle jedem, diesen Tipp anzusehen. Und noch etwas: Nutzt man alles nicht auf `Overleaf`, dann muss man im Editor einstellen, dass man `biber` für die Erstellung des Literaturverzeichnisses nutzt. Wie man diese `bib`-Datei pflegt, ist in den Tipps beschrieben. 
 
-- **`bib-abcd`**: Dies ist die Datei mit der Literatur, die zitiert wurde. Der Aufbau dieser genügt den Regeln von `bibTeX` für die Nutzung in `LaTeX` mit `bibLaTeX`. Eine kleine Anleitung zur Erstellung eines eigenen Literaturverzeichnisses dazu findet man in den LaTeX-Tipps. Und noch etwas: Nutzt man alles nicht auf `Overleaf`, dann muss man im Editor einstellen, dass man `biber` für die Erstellung des Literaturverzeichnisses nutzt. Wie man diese `bib`-Datei pflegt, ist in den Tipps beschrieben. 
+- **`content-abcd`**: In diesem Unterverzeichnis finden sich alle genutzten Dateien des Vortrags, also `Beitrag-abcd.tex` für den Beitrag, eventuelle Bilder etc. Hierzu gehören auch die zusätzlichen eigenen Definitionen, die man eventuell benötigt. Bitte diese in die Datei `Defn-abcd.tex` schreiben, dabei aber darauf achten, dass man nichts definiert, was bereits vorhanden ist oder Fehler erzeugt. Diese Datei ist bereits mittels `\input{Defn-abcd}` eingebunden. 
 
 - Im Stammverzeichnis befindet sich die Datei `Rom-abcd.tex`, die für die Erstellung des eigenen Beitrags verwendet wird. Also: Schreiben des Textes erfolgt in die Datei `./content-abcd/Beitrag-abcd.tex`. Diese ergibt dann nach dem Setzen mit der Datei `Rom-abcd.tex` den Beitrag als `PDF`-Datei. Die Datei `Beitrag-abcd.tex` enthält als erste Zeile  
 
