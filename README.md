@@ -125,6 +125,7 @@ Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [Ja
 
 ### Aktualisierungen 
 
+- (2025/04/02) `bib` nach `content-abcd`
 - (2025/03/16) Kleinere Korrekturen
 - (2024/12/07) Überarbeitung und _Zehn Tipps_ beigefügt.
 - (2024/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. Sep. 2024`.
