@@ -128,7 +128,6 @@
 
 \RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
 %% 
-
 \deffootnote[1.5em]{1em}{1em}{%
 \textsuperscript{\footnotesize(\thefootnotemark)\kern1pt}
 	}
@@ -137,6 +136,11 @@
 \textsuperscript{\footnotesize(\thefootnotemark)}
 	}
 \let\raggedfootnote\raggedright
+
+%% -- Für Abbildungen siehe hierzu KOMA-Script Buch
+%% --
+\renewcommand*{\figureformat}{Abb.~\thefigure\autodot}
+\setcapindent{1em}
 
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
