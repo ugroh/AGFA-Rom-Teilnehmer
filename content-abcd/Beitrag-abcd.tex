@@ -98,8 +98,16 @@ In dem Unterverzeichnis \texttt{LaTeX-Tipps} findet sich alles, was für die Ein
 
 %% -- Damit der nächste Beitrag auf einer rechten Seite beginnt
 %% -- Bitte nicht löschen
-\Ifthispageodd{\cleardoubleoddemptypage}%
- 			{\relax}
+%% --
+\ifthenelse{\boolean{Rom2Buch}}{%% -- Hardcopy
+    \clearpage%
+    \ifodd\value{page}%
+        \relax% Schon auf ungerader Seite
+    \else%
+        \null\clearpage% Leere Seite einfügen
+    \fi%
+}{}	%% -- für Online nicht erforderlich
+
 			
 %% -- Ende des Beitrags
 %% --
