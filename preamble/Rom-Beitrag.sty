@@ -159,7 +159,38 @@
  {%% -- else
  }
  
- \endinput
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Automatische Klammergrößenanpassung
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% WARNUNG: Macht (), [] zu aktiven Zeichen!
+%% Kann in TikZ, Beamer oder anderen Paketen zu Problemen führen.
+%% Quelle: DTK 1/2011 & Herbert Voß
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\gdef\resetMathstrut@{%
+    \setbox\z@\hbox{%
+        \mathchardef\@tempa\mathcode`\!\relax%
+        \def\@tempb##1"##2##3{\the\textfont"##3\char"}%
+        \expandafter\@tempb\meaning\@tempa \relax
+    }%
+    \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}
+\makeatother
+
+\begingroup
+    \catcode`(\active \xdef({\left\string(}
+    \catcode`)\active \xdef){\right\string)}
+    \catcode`[\active \xdef[{\left\string[}
+    \catcode`]\active \xdef]{\right\string]}
+\endgroup
+\mathcode`(="8000 \mathcode`)="8000
+\mathcode`[="8000 \mathcode`]="8000
+
+%% Geschweifte Klammern: Funktionieren sowohl in Mathe als auch Text
+\DeclareRobustCommand{\{}{\ifmmode\left\lbrace\else\textbraceleft\fi}
+\DeclareRobustCommand{\}}{\ifmmode\right\rbrace\else\textbraceright\fi}
+
+\endinput
 
 
 

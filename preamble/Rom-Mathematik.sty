@@ -1,7 +1,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Mathematik.sty 
 %% -- Sinnvolle mathematische Definitionen
-%% -- Stand: 2024/08/13
+%% -- Stand: 2025-11-12
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kenndaten
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,43 +37,53 @@
 \newcommand*{\dr}{\mathop{}\!\mathrm{d}{r}}       	% \dx = dr
 
 %% -- Eulersche Zahl und imaginäre Einheit
-%% --
 \newcommand{\im}{\ensuremath{\mathrm{i}}}
-\newcommand{\eu}{\ensuremath{\mathrm{e\;\!}}}
+\newcommand{\eu}{\ensuremath{\mathrm{e}}}
+\newcommand{\iu}{\ensuremath{\mathrm{i}}}
 
-%% -- var-Symbole für griechisches Alphabet
+%% -- var-Symbole  
 %% --
-\let\ORGvarepsilon=\varepsilon
-\let\varepsilon=\epsilon
-\let\epsilon=\ORGvarepsilon
-%
-\let\ORGvarrho=\varrho
-\let\varrho=\rho
-\let\rho=\ORGvarrho
-%
-\let\ORGvartheta=\vartheta
-\let\vartheta=\theta
-\let\theta=\ORGvartheta
-%
-\let\ORGvarphi=\varphi
-\let\varphi=\phi
-\let\phi=\ORGvarphi
-%
-\let\ORGvarleq=\leqslant
-\let\leqslant=\leq
-\let\leq=\ORGvarleq
-%
-\let\ORGvargeq=\geqslant
-\let\geqslant=\geq
-\let\geq=\ORGvargeq
-%
-\let\ORGvarpreccurlyeq=\preccurlyeq
-\let\preccurlyeq=\preceq
-\let\preceq=\ORGvarpreccurlyeq
-%
-\AtBeginDocument{
-\let\setminus\smallsetminus			% A - B fuer Mengen
-\renewcommand{\P}{\mathfrak{P}}		% Achtung: \P hat andere Bedeutung in LaTeX
+\AtBeginDocument{%
+%% -- Griechische Buchstaben
+
+\let\ORGvarepsilon\varepsilon
+\let\varepsilon\epsilon
+\let\epsilon\ORGvarepsilon
+
+\let\ORGvarrho\varrho
+\let\varrho\rho
+\let\rho\ORGvarrho
+
+\let\ORGvartheta\vartheta
+\let\vartheta\theta
+\let\theta\ORGvartheta
+
+\let\ORGvarphi\varphi
+\let\varphi\phi
+\let\phi\ORGvarphi
+
+%% -- Vergleichsoperatoren
+
+\let\ORGvarleq\leqslant
+\let\leqslant\leq
+\let\leq\ORGvarleq
+
+\let\ORGvargeq\geqslant
+\let\geqslant\geq
+\let\geq\ORGvargeq
+
+\let\ORGvarpreccurlyeq\preccurlyeq
+\let\preccurlyeq\preceq
+\let\preceq\ORGvarpreccurlyeq
+
+%% -- Mengenoperationen
+
+\let\setminus\smallsetminus
+\renewcommand{\P}{\mathfrak{P}}
+
+%% -- Operator L(E,F)
+\let\ORGL\L
+\DeclareRobustCommand{\L}[1]{\mathcal{L}(#1)}%
 }
 
 %% -- Norm, Absolutbetrag mathtools sec 3.6
@@ -81,33 +91,33 @@
 \DeclarePairedDelimiterX{\norm}[1]{\lVert}{\rVert}{\ifblank{#1}{\:\cdot\:}{#1}}
 \DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{\ifblank{#1}{\:\cdot\:}{#1}}
 
-%% -- Tippfaul DTK 1/2011 & Mail H Voss
-%% -- Die Greosse der Klammern werden automatisch angepasst
-%% -- 
-\makeatletter
-\gdef\resetMathstrut@{%
- \setbox\z@\hbox{%
-   \mathchardef\@tempa\mathcode`\!\relax%
-   \def\@tempb##1"##2##3{\the\textfont"##3\char"}%
-   \expandafter\@tempb\meaning\@tempa \relax
- }%
-\ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}
-\makeatother
+%%% -- Tippfaul DTK 1/2011 & Mail H Voss
+%%% -- Die Greosse der Klammern werden automatisch angepasst
+%%% -- 
+%\makeatletter
+%\gdef\resetMathstrut@{%
+% \setbox\z@\hbox{%
+%   \mathchardef\@tempa\mathcode`\!\relax%
+%   \def\@tempb##1"##2##3{\the\textfont"##3\char"}%
+%   \expandafter\@tempb\meaning\@tempa \relax
+% }%
+%\ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}
+%\makeatother
+%%
+%\begingroup
+% \catcode`(\active \xdef({\left\string(}
+% \catcode`)\active \xdef){\right\string)}
+% \catcode`[\active \xdef[{\left\string[}
+% \catcode`]\active \xdef]{\right\string]}
+%% \catcode`|\active \xdef|{\middle\string|}
+%\endgroup
+%\mathcode`(="8000 \mathcode`)="8000
+%\mathcode`[="8000 \mathcode`]="8000
 %
-\begingroup
- \catcode`(\active \xdef({\left\string(}
- \catcode`)\active \xdef){\right\string)}
- \catcode`[\active \xdef[{\left\string[}
- \catcode`]\active \xdef]{\right\string]}
-% \catcode`|\active \xdef|{\middle\string|}
-\endgroup
-\mathcode`(="8000 \mathcode`)="8000
-\mathcode`[="8000 \mathcode`]="8000
-
-%% -- sonst gehen Klammern nicht
-%% -- 
-\DeclareRobustCommand{\{}{\ifmmode\left\lbrace\else\textbraceleft\fi}
-\DeclareRobustCommand{\}}{\ifmmode\right\rbrace\else\textbraceright\fi}
+%%% -- sonst gehen Klammern nicht
+%%% -- 
+%\DeclareRobustCommand{\{}{\ifmmode\left\lbrace\else\textbraceleft\fi}
+%\DeclareRobustCommand{\}}{\ifmmode\right\rbrace\else\textbraceright\fi}
 
 
 \endinput

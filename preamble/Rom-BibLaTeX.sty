@@ -1,27 +1,27 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Makros für biblatex
 %% -- Rom-BibLaTeX.sty
-%% -- Stand: 2024/09/03
+%% -- Stand: 2025-11-12
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}	%
 \ProvidesPackage{./preamble/Rom-BibLaTeX}
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[%
-  	,style 		= numeric	
-   	,sorting	= nyt
-	,hyperref	= true  
-	,maxcitenames  = 1 		% viele Autoren -> nur der erste erscheint  
-	,mincitenames  = 1		% Muss sein
-    ,maxbibnames   = 3 		% im Verzeichnis tauchen max 3 auf
-   	,giveninits	= true		% Vornamen als Initiale Ulrich -> U.
-	,backend		= biber
- 	,uniquename	= false
+  	,style 			= numeric	
+   	,sorting		= nyt
+	,hyperref		= true  
+	,maxcitenames  	= 2 	% viele Autoren -> nur die ersten beiden erscheinen  
+	,mincitenames  	= 1		% Muss sein
+    ,maxbibnames   	= 10	% im Verzeichnis tauchen alle auf
+   	,giveninits		= true	% Vornamen als Initiale Ulrich -> U.
+	,backend		= biber % wichtig
+ 	,uniquename		= false
 ]{biblatex}  	
 %%
 \ExecuteBibliographyOptions{%
  	,url		= true		% true: URL werden angezeigt
  	,doi		= false		% DOI werden im Titel hinterlegt 
-	,eprint		= false		% true  - ” -
+	,eprint		= false		% werden in der bib entfernt
 	}
 %% --
 %% --

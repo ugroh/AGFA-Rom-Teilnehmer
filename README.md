@@ -1,4 +1,4 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2025/04/02)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2025-11-12)
 
 ### Inhaltsverzeichnis
 
