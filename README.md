@@ -11,6 +11,9 @@
 
 <a name="einstieg"></a>
 
+**Overleaf funktioniert mit der Vorlage nicht mehr, wollen Geld verdienen** Wenn jemand **unbedingt** dieses System nutzen muss (will): Bitte mich anschreiben!
+[ulgr@math.uni-tuebingen.de](mailto:ulgr@math.uni-tuebingen.de)
+
 ### Worum geht es
 
 Diese Vorlage dient als Grundlage für die Beiträge im Rahmen des Rom-Seminars. Die Basis ist KOMA-Script, da es auf den deutschen Sprachraum und dessen Eigenheiten abgestimmt ist. Alle für die Erstellung und Integration des Rom-Buches benötigten Pakete sind in der Datei `./preamble/Rom-Beitrag.sty` enthalten. Bitte daher in dieser und in den weiteren Dateien des Unterverzeichnisses `./preamble/...` **keine** eigenständigen Änderungen vornehmen. Wenn etwas zusätzlich gebraucht wird, dann dieses bitte mir, [ulgr@math.uni-tuebingen.de](mailto:ulgr@math.uni-tuebingen.de), mitteilen.
@@ -18,6 +21,8 @@ Diese Vorlage dient als Grundlage für die Beiträge im Rahmen des Rom-Seminars.
 Ein Beispiel, das auch eine Übersicht über die wichtigsten typografischen Regeln enthält: [beispiel/Rom-ulgr.pdf](https://github.com/ugroh/AGFA-Rom-Teilnehmer/blob/main/beispiel/Rom-ulgr.pdf) – bitte die enthalten Anregeungen nutzen.. 
 
 Die Vorlage kann sowohl lokal auf einem eigenen Rechner genutzt werden als auch auf [*Overleaf*](https://www.overleaf.com/). Für beides muss man sich die Vorlage als ein `ZIP`-File herunterladen. Dazu geht man in GitHub auf den grünen, mit **Code** bezeichneten Schalter, geht auf **Local** und öffnet diesen. Der Rest sollte klar sein: Als `ZIP`-File herunterladen und durch Entpacken in einem geeigneten Unterverzeichnis auf dem PC installieren. 
+
+
 
 Wer das System [*Overleaf*](https://www.overleaf.com/) nutzt, muss dann dieses `ZIP`-File in Overleaf als neues Projekt installieren. Die Vorlage habe ich dort getestet und es hat alles funktioniert. Und bitte beachten: In dem Menüpunkt `Recompile` den Unterpunkt `Stop on first error` auswählen. Dann stoppt Overleaf bei einem Fehler und es wird angezeigt, in welcher Zeile sich dieser befindet. Um die Fehlersuche zu erleichtern, bitte jeden `neuen` Satz auf einer `neuen` Zeile beginnen, d.h. den Text nicht als Fließtext schreiben. Für die Endredaktion ist ein fehlerfreies Manuskript erforderlich.
 
