@@ -1,4 +1,4 @@
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2025-11-12)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2026-03-06)
 
 ### Inhaltsverzeichnis
 
@@ -45,7 +45,7 @@ Um die verschiedenen Beiträge bei der Erstellung des Buches zum Seminar untersc
 
 Beim Installieren wird das Hauptverzeichnis `Rom-Seminar-Teilnehmer` angelegt. Dieses enthält folgende Dateien:  
 
-- `README.md` und `README.pdf`: Diese enthält einige Erläuterungen zur Installation und was es sonst noch gibt.
+- `README.md`: Diese enthält einige Erläuterungen zur Installation und was es sonst noch gibt.
 - `Rom-abcd.tex`: Diese ist die Master-Datei für die Erstellung des eigenen Beitrags. Diese Datei nutzt man zur Erstellung und zum Testen des eigenen Beitrags. Und bitte: An der Struktur dieser Datei nichts ändern, es sei denn, man muss einiges ergänzen – dafür aber eine Information an mich.  
 - `Rom-abcd.pdf`: Die kompilierte Version des Beispiels `Rom-abcd.tex`, die wiederum die Datei `./content-abcd/Beitrag-abcd.tex` aufruft. Diese Datei ist die Basis für den eigenen Beitrag. Und auch hier gilt: An der Struktur dieser Datei nichts ändern.
 - `Rom-Beamer.tex`: Eine Beamer-Vorlage zur Erstellung der eigenen Präsentation. Diese ist bewusst schlicht gehalten, da viel Farbe nichts mit der Qualität eines Beitrags zu tun hat.
@@ -98,6 +98,8 @@ Weitere Literatur zur Erstellung eines Beitrags für das Rom-Seminar – und nic
 
 <a name="preamble"></a> 
 
+## Wer es genauer wissen will
+
 ### Was ist in `preamble`
 
 - **`Rom-Beitrag.sty`**: Dies ist das Hauptpaket, mithilfe dessen alle anderen Dateien, die zur Formatierung erforderlich sind, aufgerufen werden. Diese Datei wird mittels `\usepackage{Rom-Beitrag}` eingebunden (siehe hierzu  `Rom-abcd.tex`), 
@@ -125,15 +127,5 @@ Tipp hierzu: Auf einem Mac das Programm `BibDesk` nutzen. Ansonsten ist etwa [Ja
 
 ### Aktualisierungen 
 
-- (2025/04/02) `bib` nach `content-abcd`
-- (2025/03/16) Kleinere Korrekturen
-- (2024/12/07) Überarbeitung und _Zehn Tipps_ beigefügt.
-- (2024/09/03) Korrektur in `Rom-BibLaTeX.sty`, damit bei der Eingabe von `date={JJJJ-MM-DD}` das Datum korrekt angezeigt wird, also etwa für `2024-09-03` dann `3. Sep. 2024`.
-- (2024/08/29) Korrektur der Fußnoten – Bitte `Rom-Layout.sty` ersetzen. 
-- (2024/08/27) Kleine Korrektur im `Biblio-abcd.bib` (`@url` war falsch, muss `@online` heißen) und an der Mustervorlage. 
-- (2024/08/21) Korrektur von zwei Meldungen, die bei der Nutzung von Overleaf angezeigt werden und irritieren können. Bitte daher `preamble/Rom-Layout.sty` und `preamble/Rom-Beitrag.sty` austauschen.
-- (2024/08/13) `Issues` und `Discussion` eingerichtet. Dieses findet sich in der grauen Querleiste. 
-- (2024/07/19) Bei mehreren Autoren erscheint im Text nur der erste Name, die restlichen als `et al.`, also etwa `Engel et al.` Im Literaturverzeichnis dann aber alle, also `Engel, K. & Nagel, R.`
-- (2024/07/18) Über `review`kann erreicht werden, dass im erzeugten PDF der Zeilenabstand verdoppelt ist. Dies erleichtert die schriftliche Bearbeitung und Korrektur des erzeugten PDFs. Für die finale Version bitte auskommentieren. Dazu das `Rom-Beitrag.sty` austauschen.
-- (2024/06/17) `LuaLaTeX` funktioniert jetzt korrekt. Bitte auch hier darauf achten, dass man mehrere Kompilierungen benötigt. 
+ 
 - Wünsche, etwaige Fehler etc. bitte an [ulgr@math.uni-tuebingen.de](mailto:ulgr@math.uni-tuebingen.de) melden.
