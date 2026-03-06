@@ -11,7 +11,7 @@
 
 <a name="einstieg"></a>
 
-**Overleaf funktioniert mit der Vorlage nicht mehr – Time Out. Wollen halt Geld verdienen** Wenn jemand **unbedingt** dieses System nutzen muss (will): Bitte mich anschreiben!
+**Overleaf funktioniert mit der Vorlage nicht mehr – Time Out. Wollen halt Geld verdienen.** Wenn jemand **unbedingt** dieses System nutzen muss (will): Bitte mich anschreiben!
 [ulgr@math.uni-tuebingen.de](mailto:ulgr@math.uni-tuebingen.de)
 
 ### Worum geht es
