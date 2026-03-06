@@ -98,8 +98,6 @@ Weitere Literatur zur Erstellung eines Beitrags für das Rom-Seminar – und nic
 
 <a name="preamble"></a> 
 
-## Wer es genauer wissen will
-
 ### Was ist in `preamble`
 
 - **`Rom-Beitrag.sty`**: Dies ist das Hauptpaket, mithilfe dessen alle anderen Dateien, die zur Formatierung erforderlich sind, aufgerufen werden. Diese Datei wird mittels `\usepackage{Rom-Beitrag}` eingebunden (siehe hierzu  `Rom-abcd.tex`), 
