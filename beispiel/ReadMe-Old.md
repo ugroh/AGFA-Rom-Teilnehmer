@@ -1,20 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand 2026-03-06)
+## Rom-Seminar: Die `LaTeX`-Vorlage für die Teilnehmer (Stand Old)
 
 ### Inhaltsverzeichnis
 
