@@ -61,7 +61,7 @@ Unterverzeichnisse:
 - **`content-abcd`** – 
   - Dateien des Beitrags: `Beitrag-abcd.tex`, Bilder, 
   -  `Defn-abcd.tex` für eigene Definitionen (bereits via `\input{Defn-abcd}` eingebunden). 
-  - Literaturdatei `bib-abcd.bib` mit Mustereinträgen. Für die Erstellung des Literaturverzeichnisses wird `biber` benötigt – bitte im Editor einstellen.
+  - Literaturdatei `Biblio-abcd.bib` mit Mustereinträgen. Für die Erstellung des Literaturverzeichnisses wird `biber` benötigt – bitte im Editor einstellen.
 - **`preamble`** – alle Formatierungsdateien; bitte **nicht** verändern
 
 **Workflow**: Text in `./content-abcd/Beitrag-abcd.tex` schreiben, kompilieren mit `Rom-abcd.tex`.
