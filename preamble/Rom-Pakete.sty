@@ -1,86 +1,63 @@
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% -- Die Pakete für RomSeminar
-%% -- Literatur: H. Voss, Einführung in LaTeX (7. Auflage) 2022 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Pakete.sty
-%% -- Stand: 2025-11-25
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Stand: 2026-03-07
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\NeedsTeXFormat{LaTeX2e}	 
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-Pakete}
-%%
 
-%% -- Finetuning der Ränder
+%% -- Mikrotypographie
 %% --
+
 \RequirePackage{microtype}
 
 %% -- Aufzählungen
-%% -- für Aufzählungen im Text = Sternvariante
-%% -- damit \begin{enumerate}[(i)] funktioniert
 %% --
+
 \RequirePackage[inline,shortlabels]{enumitem}
-\setlist{parsep=0.0em}	
-	
-%% -- tikz
-%% -- Siehe https://texample.net/tikz/examples/all/
-%% -- für Beispiele
+\setlist{parsep=0.0em}
+
+%% -- Grafik
 %% --
+
+\RequirePackage{graphicx}
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,arrows}
 
-%% -- Weitere Pakete
-%% -- 
-\RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
-
-%% -- Für Abbildungen und Tabellen
+%% -- Tabellen
 %% --
-\RequirePackage{hvfloat}
-\captionsetup{hypcap=false}
-	
-\RequirePackage{% Voss, LaTeX - 6.3 - Seite 227ff					
-	,array 			   	
-	,booktabs
-	,tabularx
-	,wrapfig
-	,longtable}
-	
-\RequirePackage{verse}
-	
-\RequirePackage{% Voss, LaTeX - 8.6 - Seite 340ff					
-	,caption 			   	
-	,floatrow
-	,subcaption}
 
-\RequirePackage{% 						
-	,multicol	% Voss, LaTeX - 5.15.1 - Seite 215	
-	,parallel	% Voss, LaTeX - 5.15.2 - Seite 216
-	}
-	 	   	
 \RequirePackage{%
-	,graphicx	% Voss, LaTeX - 5.10.2 - Seite 174
-	,wrapfig	% Voss, LaTeX - 5.10.3 - Seite 177
-	,cutwin		% Voss, LaTeX - 5.10.3 - Seite 178
-	}
-	
-%% -- Um PDF-Seiten eines Dokumentes einzubinden, etwa Sponsorenseiten
+     array
+    ,booktabs
+    ,tabularx
+    ,longtable}
+
+%% -- Abbildungen und Captions
 %% --
+
+\RequirePackage{%
+     caption
+    ,subcaption
+    ,floatrow}
+\captionsetup{hypcap=false}
+
+%% -- Mehrspaltiger Text
+%% --
+
+\RequirePackage{multicol}
+
+%% -- PDF-Seiten einbinden
+%% --
+
 \RequirePackage{pdfpages}
 
-%% -- Wenn schon, dann muss man es auch definieren
-%% -- 
-\RequirePackage{nicefrac}
-%% -- E/F
-\newcommand{\tfrac}[2]{\raisebox{0.5ex}{#1}\big/\raisebox{-0.5ex}{#2}}
+%% -- Rahmen
+%% --
 
-
-%% -- Zum Testen
-%% -- 
-\RequirePackage{blindtext,lipsum}
-
-%% -- Für Rahmen
-%% -- 
 \RequirePackage{mdframed}
-%% -- infobox
-\newmdenv{infobox} %% \begin{infobox} .. \end{infobox}
+\newmdenv{infobox}
 
+%% --
 
-
+\endinput

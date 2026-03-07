@@ -1,36 +1,27 @@
 % !TEX TS-program = pdflatexmk
-%% ---------------------------------------------------
-%% -- Stand: 2025-11-13
-%% -- Bitte Datum jeweils anpassen
-%% -- Datei für die Erstellung des Beitrags 
-%% -- Wir nutzen KOMA-Script  
-%% ---------------------------------------------------
-\documentclass[%
-	,ngerman					 
-	,bibliography 	 = leveldown   
-%	,review		% zum Korrekturlesen des PDF --> % wegmachen		 
-	]{scrbook}
+% !TEX encoding   = UTF-8
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Stand: 2026-03-07
+%% -- Datei für die Erstellung des Beitrags (KOMA-Script)
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\documentclass[% 
+     ngerman
+    ,bibliography = leveldown
+%   ,review                    % Korrekturlesen: % entfernen
+]{scrbook} 
 
-%% -- Hier finden sich die wesentlichen Definitionen
-%% --
-\usepackage{./preamble/Rom-Beitrag}	
+%% -- Wesentliche Definitionen
+\usepackage{./preamble/Rom-Beitrag} 
 
 %% -- Literaturverzeichnis
-%% --
-\addbibresource{./content-abcd/Biblio-abcd.bib}	
+\addbibresource{./content-abcd/Biblio-abcd.bib}
 
-%% -- Eigene, zusätzliche Definitionen
-%% -- 
-\input{./content-abcd/Defn-abcd}
-
-%% -- Wir starten nun
-%% --
+%% -- Eigene Definitionen
+%\input{./content-abcd/Defn-abcd}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%% -- Der Beitrag in separater Datei
-%% --
 \input{./content-abcd/Beitrag-abcd}
 
-%% --
-\end{document} 
+\end{document}

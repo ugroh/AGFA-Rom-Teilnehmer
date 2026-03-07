@@ -1,147 +1,118 @@
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% -- Rombuch Layout
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Layout.sty
-%% -- Stand 2025-11-12
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\NeedsTeXFormat{LaTeX2e}	%
+%% -- Stand: 2026-03-07
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-Layout}
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% -- Schriftgrößen
 %% --
-%% -- Alles etwas kleiner
-%% --
+
 \setkomafont{chapter}{\LARGE}
 \setkomafont{section}{\large}
 \setkomafont{subsection}{\normalsize}
 
 %% -- Keine section etc. im TOC
 %% --
-\addtocounter{tocdepth}{-2}% Keine \section im TOC
+
+\addtocounter{tocdepth}{-2}
 
 %% -- chapter
 %% --
-%\addtokomafont{chapterentrypagenumber}{\color{white}}
 \renewcommand*{\chapterformat}
- {\chapappifchapterprefix{\ }\thechapter\autodot\enskip}
+    {\chapappifchapterprefix{\ }\thechapter\autodot\enskip}
+\renewcommand*\raggedchapter{\centering}
 
-\renewcommand*\raggedchapter{\centering}	% KOMA: Kapitelüberschriften zentrieren
-	%
-\RedeclareSectionCommand[%
-  ,beforeskip	= -1.5\baselineskip
-  ,afterskip	= 2.5\baselineskip
-  ,innerskip	= 0.75ex
-  ,tocnumwidth	= 7em
-]{chapter}
-%
-\renewcommand*{\addchaptertocentry}[2]{%  Seite 584 / http://www.komascript.de/node/1780
-  \Ifstr{#1}{}{% keine Nummer:
-    \addtocentrydefault{chapter}{#1}{#2}% wie bisher
-  }{% mit Nummer:
-    \addtocentrydefault{chapter}{}{#2} %\chapapp\ #1.-
-  }%
-}
-%% -- Lange Zeilen zulasssen
-%% -- KOMA-Script 15.3. 
+%% -- section
 %% --
+
+\RedeclareSectionCommand[%
+     beforeskip = -1.5\baselineskip
+    ,afterskip  =  2.5\baselineskip
+    ,innerskip  =  0.75ex
+    ,tocnumwidth=  7em
+]{chapter}
+
+%
+\renewcommand*{\addchaptertocentry}[2]{%
+    \Ifstr{#1}{}{%
+        \addtocentrydefault{chapter}{#1}{#2}%
+    }{%
+        \addtocentrydefault{chapter}{}{#2}%
+    }%
+}
 \DeclareTOCStyleEntry{tocline}{chapter}
 
 %% -- section
 %% --
-\renewcommand*{\thesection}{\arabic{section}} 
 
-%% -- Kein Eintrag ins TOC für section, subsection und subsubsection
-%% -- Da die *-Variante benutzt wird
-%% --
-
+\renewcommand*{\thesection}{\arabic{section}}
 
 %% -- subsection
 %% --
+\RedeclareSectionCommand[font=\itshape]{subsection}
 
-\RedeclareSectionCommand[%
-  ,font			= \itshape
-]{subsection}
-
-
-%% -- \subsubsection: Nur Nummer 1. etc; i.a. keine Überschrift sondern es 
-%% -- geht mit dem Text weiter. 
-%% -- Wer es ohne die Nummer will, aber mit einer Überschrift, dann die 
-%% -- Sternvariante \subsubsection*{} nutzen. 
-%% -- Siehe hierzu das Musterfile für Beispiele
+%% -- subsubsection
 %% --
-\setcounter{secnumdepth}{\subsubsectionnumdepth} 	% subsub-nummer
-\renewcommand*{\thesubsubsection}{\arabic{subsubsection}.\kern2pt} % 1.
+
+\setcounter{secnumdepth}{\subsubsectionnumdepth}
+\renewcommand*{\thesubsubsection}{\arabic{subsubsection}.\kern2pt}
 \RedeclareSectionCommand[%
-  	,beforeskip	=  	.25\baselineskip	% Skip vor dem Kommando + indent
-	,afterskip	= 	-0.1em				% Kein Skip aber Abstand
-	,font		=	\itshape			% Falls Überschrift oder \normalfont	
-%	,tocnumwidth=	1.25em				% Eintrag in TOC ist aber unterbunden
-%	,tocindent	= 1em					%  
-	]{subsubsection} 
-	
+     beforeskip = .25\baselineskip
+    ,afterskip  = -0.1em
+    ,font       = \itshape
+]{subsubsection}
+
 %% -- Kopf- und Fußzeile
 %% --
+
 \RequirePackage[automark]{scrlayer-scrpage}
-
 \clearpairofpagestyles
-\renewcommand*{\chapterpagestyle}{empty}						% Nichts auf der Seite mit Kapitel
-
-%% -- Kopfzeile
-%% --
+\renewcommand*{\chapterpagestyle}{empty}
 \KOMAoptions{headsepline=0.8pt}
-\renewcommand*{\sectionmarkformat}{}		% keine Abschnittsnummer
-\renewcommand*{\subsectionmarkformat}{}		% keine UnterAbschnittsnummer
+\renewcommand*{\sectionmarkformat}{}
+\renewcommand*{\subsectionmarkformat}{}
 
-%% ---------------------------
-%% Zweiseitig
-%% --------------------------
+%% -- Zweiseitig
+%% --
+
 \manualmark
-\ihead{\headmark} 	%% -- innen
-
-\rohead{%% -- außen gerade
-  \makebox[0pt][l]{%
-    \makebox[\marginparsep][r]{%
-      \rule[-\dp\strutbox]{1pt}{\normalbaselineskip}\nobreakspace
-    }%
-    \makebox[\marginparwidth][l]{\pagemark}%
-  }}
-
-\lehead{%% außen ungerade
-  \makebox[0pt][r]{%
-    \makebox[\marginparwidth][r]{\pagemark}%
-    \makebox[\marginparsep][l]{%
-      \nobreakspace\rule[-\dp\strutbox]{1pt}{\normalbaselineskip}%
-    }}}
-
+\ihead{\headmark}
+\rohead{%
+    \makebox[0pt][l]{%
+        \makebox[\marginparsep][r]{%
+            \rule[-\dp\strutbox]{1pt}{\normalbaselineskip}\nobreakspace
+        }%
+        \makebox[\marginparwidth][l]{\pagemark}%
+    }}
+\lehead{%
+    \makebox[0pt][r]{%
+        \makebox[\marginparwidth][r]{\pagemark}%
+        \makebox[\marginparsep][l]{%
+            \nobreakspace\rule[-\dp\strutbox]{1pt}{\normalbaselineskip}%
+        }}}
 \pagestyle{scrheadings}
 
-%%% --Fußnoten Nach KOMA 3.14 
-%%% --
-%
-%\RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
-%%% 
-%
-%\deffootnote[1.5em]{1em}{1em}{\makebox[1.5em][l]\thefootnotemark}
-%\deffootnotemark{\textsuperscript{\footnotesize\thefootnotemark}\,}
-%\let\raggedfootnote\raggedright
-
-%% --Fußnoten Nach KOMA 3.14 
+%% -- Fußnoten
 %% --
 
 \RequirePackage[newcommands,footnotes,raggedrightboxes]{ragged2e}
-%% 
 \deffootnote[1.5em]{1em}{1em}{%
-\textsuperscript{\footnotesize(\thefootnotemark)\kern1pt}
-	}
-%% 
+    \textsuperscript{\footnotesize(\thefootnotemark)\kern1pt}
+}
 \deffootnotemark{%
-\textsuperscript{\footnotesize(\thefootnotemark)}
-	}
+    \textsuperscript{\footnotesize(\thefootnotemark)}
+}
 \let\raggedfootnote\raggedright
 
-%% -- Für Abbildungen siehe hierzu KOMA-Script Buch
+%% -- Abbildungen
 %% --
+
 \renewcommand*{\figureformat}{Abb.~\thefigure\autodot}
 \setcapindent{1em}
 
+%% --
 
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \endinput
+

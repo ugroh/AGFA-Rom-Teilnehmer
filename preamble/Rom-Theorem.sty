@@ -1,193 +1,129 @@
-%% Rom-Theorem.sty -- Theorem-Umgebungen
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Rom-Theorem.sty -- Theorem-Umgebungen
+%% -- Stand: 2026-03-07
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-Theorem}
 
 \RequirePackage{amsmath}
-\RequirePackage[amsmath,thmmarks]{ntheorem}
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
 
 %% Gleichungsnummerierung
-%% HINWEIS: numberwithin setzt Zähler pro Sektion UND Format (1.1, 1.2,...)
-%% renewcommand überschreibt nur das Format → Zähler reset bleibt, aber
-%% Anzeige ist 1, 2, ... (unüblich). Eines von beiden entfernen!
+%% --
+
 \numberwithin{equation}{section}
-%\renewcommand\theequation{\arabic{equation}}
 
-%% Theoremumgebungen MIT Nummer
-\theoremstyle{plain}
-\newtheorem{ntheorem}{Theorem}
-\newtheorem{nproposition}[ntheorem]{Satz}
-\newtheorem{nlemma}[ntheorem]{Lemma}
-\newtheorem{ncorollary}[ntheorem]{Korollar}
+%% -- Stile
+%% --
 
-\theorembodyfont{\upshape}
-\theoremindent5pt
-\newtheorem{nexample}[ntheorem]{Beispiel}
-\newtheorem{nexamples}[ntheorem]{Beispiele}
-\newtheorem{ndefinition}[ntheorem]{Definition}
+\declaretheoremstyle[
+  headfont=\bfseries, bodyfont=\itshape, headindent=5pt,
+]{plain-style}
+\declaretheoremstyle[
+  headfont=\bfseries, bodyfont=\upshape, headindent=5pt,
+]{upshape-style}
+\declaretheoremstyle[
+  headfont=\bfseries, bodyfont={\small\upshape}, headindent=5pt,
+]{small-style}
+\declaretheoremstyle[
+  headfont=\itshape, bodyfont=\upshape, headindent=5pt,
+]{special-style}
 
-\theorembodyfont{\small}
-\newtheorem{nremark}[ntheorem]{Anmerkung}
-\newtheorem{nremarks}[ntheorem]{Anmerkungen}
+%% -- Theoremumgebungen MIT Nummer
+%% --
 
-%% Theoremumgebungen OHNE Nummer
-\theoremstyle{nonumberplain}
-\theorembodyfont{\normalfont}
-\theoremindent5pt
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Satz}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Korollar}
+\declaretheorem[style=plain-style,   
+    name=Theorem,    
+    numberwithin=section]{ntheorem}
 
-\theorembodyfont{\upshape}
-\newtheorem{example}{Beispiel}
-\newtheorem{examples}{Beispiele}
-\newtheorem{definition}{Definition}
+\declaretheorem[style=plain-style,   
+    name=Satz,       
+    sibling=ntheorem]{nproposition}
 
-\theorembodyfont{\small}
-\newtheorem{remark}{Anmerkung}
-\newtheorem{remarks}{Anmerkungen}
+\declaretheorem[style=plain-style,   
+    name=Lemma,      
+    sibling=ntheorem]{nlemma}
 
-%% Spezielle Umgebungen
-\theoremheaderfont{\itshape}
-\theoremseparator{}
-\theorembodyfont{\upshape}
-\newtheorem{summary}{Zusammenfassung}
-\newtheorem{question}{Frage}
+\declaretheorem[style=plain-style,
+    name=Korollar,   
+    sibling=ntheorem]{ncorollary}
 
-%% Beweis mit Halmosstein
-\theoremsymbol{\ensuremath{\square}}
-\newtheorem{proof}{Beweis}
+\declaretheorem[style=upshape-style, 
+    name=Beispiel,   
+    sibling=ntheorem]{nexample}
 
+\declaretheorem[style=upshape-style, 
+    name=Beispiele,  
+    sibling=ntheorem]{nexamples}
+
+\declaretheorem[style=upshape-style, 
+    name=Definition, 
+    sibling=ntheorem]{ndefinition}
+    
+\declaretheorem[style=small-style,   
+    name=Anmerkung,  
+    sibling=ntheorem]{nremark}
+    
+\declaretheorem[style=small-style, 
+    name=Anmerkungen,
+    sibling=ntheorem]{nremarks}
+
+%% -- Theoremumgebungen OHNE Nummer
+%% --
+
+\declaretheorem[style=plain-style,   
+    name=Theorem,    
+    numbered=no]{theorem}
+
+\declaretheorem[style=plain-style,   
+    name=Satz,       
+    numbered=no]{proposition}
+
+\declaretheorem[style=plain-style,   
+    name=Lemma,      
+    numbered=no]{lemma}
+
+\declaretheorem[style=plain-style,   
+    name=Korollar,   
+    numbered=no]{corollary}
+
+\declaretheorem[style=upshape-style, 
+    name=Beispiel,   
+    numbered=no]{example}
+
+\declaretheorem[style=upshape-style, 
+    name=Beispiele,  
+    numbered=no]{examples}
+
+\declaretheorem[style=upshape-style, 
+    name=Definition, 
+    numbered=no]{definition}
+
+\declaretheorem[style=small-style,   
+    name=Anmerkung,  
+    numbered=no]{remark}
+
+\declaretheorem[style=small-style,   
+    name=Anmerkungen,
+    numbered=no]{remarks}
+
+%% -- Spezielle Umgebungen
+%% --
+\declaretheorem[style=special-style, 
+    name=Zusammenfassung, 
+    numbered=no]{summary}
+    
+\declaretheorem[style=special-style, 
+    name=Frage,           
+    numbered=no]{question}
+
+%% -- Beweis mit Halmosstein
+%% --
+
+\renewcommand\qedsymbol{\ensuremath{\square}}
+\addto\captionsgerman{\renewcommand{\proofname}{Beweis}}
+
+%% --
 \endinput
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% -- Rom-Theorem.sty 
-%%% -- Theorem-Umgebungen
-%%% -- Stand: 2024/08/13
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Kenndaten
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\NeedsTeXFormat{LaTeX2e}											
-%\ProvidesPackage{./preamble/Rom-Theorem}
-%
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Initialisierungen
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\RequirePackage{ifthen}
-%%	\provideboolean{ThmNummer}	
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Deklaration von Optionen
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\DeclareOption{ThmNummer}{\setboolean{ThmNummer}{true}}	
-%\ProcessOptions\relax
-%
-%% Notwendige Pakete
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\RequirePackage{amsmath}		%
-%\RequirePackage[amsmath,thmmarks]{ntheorem}
-%%%\RequirePackage{thmtools}
-%
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Hauptteil
-%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%%% -- Nummerierung von Gleichungen
-%%% -- \setcounter{section}{1} 
-%%% -- 
-%	\numberwithin{equation}{section}
-%	\renewcommand\theequation{\arabic{equation}} 
-%
-%%% -- Theoremumgebungen mit Nummer
-%%% -- 
-%	\theoremstyle{plain}
-%	\newtheorem{ntheorem}{Theorem} 
-%	\newtheorem{nproposition}[ntheorem]{Satz}
-%	\newtheorem{nlemma}[ntheorem]{Lemma}
-%	\newtheorem{ncorollary}[ntheorem]{Korollar}
-%	%% -------------------------------------------------	
-%	\newtheorem{nthm}[ntheorem]{Theorem}
-%	\newtheorem{nlem}[ntheorem]{Lemma}
-%	\newtheorem{ncor}[ntheorem]{Korollar}
-%	\newtheorem{nprop}[ntheorem]{Satz}
-%	%% ------------------------------------------------
-%	\theorembodyfont{\upshape}
-%	\theoremindent5pt
-%	\newtheorem{nexample}[ntheorem]{Beispiel} 
-%	\newtheorem{nexamples}[ntheorem]{Beispiele}
-%	\newtheorem{ndefinition}[ntheorem]{Definition}
-%	\newtheorem{ndefn}[ntheorem]{Definition}
-%	%% -------------------------------------------------
-%	\theorembodyfont{\small}
-%	\theoremindent5pt
-%	\newtheorem{nremark}[ntheorem]{Anmerkung}
-%	\newtheorem{nremarks}[ntheorem]{Anmerkungen}	
-%	\newtheorem{nanmerkung}[ntheorem]{Anmerkung}
-%	\newtheorem{nanmerkungen}[ntheorem]{Anmerkungen}
-%	\newtheorem{nrem}[ntheorem]{Anmerkung}
-%	\newtheorem{nrems}[ntheorem]{Anmerkungen}
-%
-%%% -- Theoremumgebungen ohne Nummer
-%%% -- 
-%	\theoremstyle{nonumberplain}
-%	\theoremindent5pt
-%	\newtheorem{theorem}{Theorem} 
-%	\newtheorem{proposition}[theorem]{Satz}
-%	\newtheorem{lemma}[theorem]{Lemma}
-%	\newtheorem{corollary}[theorem]{Korollar}
-%	%% -------------------------------------------------	
-%	\newtheorem{thm}[theorem]{Theorem}
-%	\newtheorem{lem}[theorem]{Lemma}
-%	\newtheorem{cor}[theorem]{Korollar}
-%	\newtheorem{prop}[theorem]{Satz}
-%	%% -------------------------------------------------	
-%	\theorembodyfont{\upshape}
-%	\theoremindent5pt
-%	\newtheorem{example}[theorem]{Beispiel} 
-%	\newtheorem{examples}[theorem]{Beispiele}
-%	\newtheorem{definition}[theorem]{Definition}
-%	\newtheorem{defn}[theorem]{Definition}
-%	%% -------------------------------------------------	
-%	\theorembodyfont{\small}
-%	\theoremindent5pt
-%	\newtheorem{remark}[theorem]{Anmerkung}%[section] 
-%	\newtheorem{remarks}[theorem]{Anmerkungen}	
-%	\newtheorem{anmerkung}[theorem]{Anmerkung}
-%	\newtheorem{anmerkungen}[theorem]{Anmerkungen}
-%	\newtheorem{rem}[theorem]{Anmerkung}
-%	\newtheorem{rems}[theorem]{Anmerkungen}
-%
-%%% -------------------------------------------------
-%	\theoremstyle{nonumberplain}  
-%	\theoremindent5pt
-%	\theoremheaderfont{\itshape}
-%	\theoremseparator{}
-%	\theorembodyfont{\upshape}  
-%	\newtheorem{summary}{Zusammenfassung}	
-%	\newtheorem{zusammenfassung}{Zusammenfassung}
-%	\newtheorem{question}{Frage}
-%	\newtheorem{frage}{Frage}
-%	
-%%\theoremsymbol{\fbox}
-%%\theoremsymbol{\rule{1ex}{1ex}} 
-%%\newtheorem{proof}{Beweis}
-%%% -- Halmosgrabstein bei Beweis
-%%% -- 
-%\theoremsymbol{\ensuremath{\square}}
-%\newtheorem{proof}{Beweis}
-%%% -------------------------------------------------
-%\endinput	

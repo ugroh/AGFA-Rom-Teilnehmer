@@ -1,55 +1,72 @@
-%% This BibTeX bibliography file was created using BibDesk.
-%% https://bibdesk.sourceforge.io/
+%% Musterbibliothek für das Romseminar
+%% Saved with string encoding Unicode (UTF-8)
 
-%% Created for Ulrich Groh at 2024-08-27  
-
-
-%% Saved with string encoding Unicode (UTF-8) 
-
-
-@comment{jabref-meta: databaseType:biblatex;}
-
-
-
-@manual{enumitem,
-	author = {Bezos L{\'o}pez, Javier},
-	date = {2019},
-	title = {The Enumitem package},
-	url = {https://ctan.org/pkg/enumitem},
-	urldate = {2024-08-27},
+%% -- Zeitschriftenartikel
+@article{takesaki:1958,
+    author       = {Takesaki, Masamichi},
+    title        = {On the conjugate space of operator algebra},
+    journaltitle = {Tohoku Math. J.},
+    volume       = {10},
+    pages        = {194--203},
+    date         = {1958},
+    doi          = {10.2748/tmj/1178244713},
 }
 
+%% -- Bücher
 @book{heuser:2005,
-	author = {Heuser, Harro},
-	publisher = {Verlag Herder},
-	title = {Der Physiker Gottes -- Isaac Newton oder Die Revolution des Denkens},
-	year = {2005}}
-
-@online{AlphaGo,
-	author = {Steven Borowiec and Tracey Lien},
-	title = {AlphaGo beats human Go champ in milestone for artificial intelligence},
-	url = {https://www.latimes.com/world/asia/la-fg-korea-alphago-20160312-story.html},
-	urldate = {2024-08-27},
-	year = {2016},
+    author    = {Heuser, Harro},
+    title     = {Der Physiker Gottes -- Isaac Newton oder
+                 die Revolution des Denkens},
+    publisher = {Verlag Herder},
+    date      = {2005},
 }
 
 @book{alsina:2013,
-	address = {Wiesbaden},
-	author = {Alsina, Claudi AND Nelsen, Roger B.},
-	publisher = {Springer},
-	title = {Bezaubernde Beweise -- Eine Reise durch die Eleganz der Mathematik},
-	year = {2013}
-	}
-	
-
-@article{takesaki:1958,
-	author = {Takesaki, Masamichi},
-	date = {1958},
-	doi = {10.2748/tmj/1178244713},
-	journaltitle = {Tohoku Math. J.},
-	pages = {194--203},
-	title = {On the conjugate space of operator algebra},
-	volume = {10},
+    author    = {Alsina, Claudi and Nelsen, Roger B.},
+    title     = {Bezaubernde Beweise -- Eine Reise durch
+                 die Eleganz der Mathematik},
+    publisher = {Springer},
+    location  = {Wiesbaden},
+    date      = {2013},
 }
 
+%% -- Kapitel in Sammelband
+@incollection{beispiel:incollection,
+    author    = {Autor, Vorname},
+    title     = {Titel des Kapitels},
+    booktitle = {Titel des Sammelbands},
+    editor    = {Herausgeber, Vorname},
+    publisher = {Verlag},
+    location  = {Ort},
+    pages     = {1--50},
+    date      = {2020},
+}
 
+%% -- Dissertation
+@thesis{beispiel:thesis,
+    author      = {Autor, Vorname},
+    title       = {Titel der Dissertation},
+    institution = {Universität},
+    type        = {phdthesis},
+    location    = {Ort},
+    date        = {2020},
+}
+
+%% -- Handbuch / Paketdokumentation
+@manual{enumitem,
+    author  = {Bezos López, Javier},
+    title   = {The Enumitem Package},
+    url     = {https://ctan.org/pkg/enumitem},
+    urldate = {2024-08-27},
+    date    = {2019},
+}
+
+%% -- Online-Quellen
+@online{AlphaGo,
+    author  = {Borowiec, Steven and Lien, Tracey},
+    title   = {AlphaGo beats human Go champ in milestone
+               for artificial intelligence},
+    url     = {https://www.latimes.com/world/asia/la-fg-korea-alphago-20160312-story.html},
+    urldate = {2024-08-27},
+    date    = {2016},
+}

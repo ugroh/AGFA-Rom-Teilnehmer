@@ -1,41 +1,33 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Abkürzungen 
-%% Rom-Abkuerzungen.sty
-%% Stand: 2025-11-12
+%% -- Rom-Abkuerzungen.sty
+%% -- Stand: 2026-03-07
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\NeedsTeXFormat{LaTeX2e}	%
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-Abkuerzungen}
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Initialisierungen
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ProcessOptions\relax
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Pakete
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% --
 \RequirePackage{xspace}
-%%
+%% -- \renewcommand nötig da babel \dh und \og bereits definiert
 \AtBeginDocument{%
-\newcommand{\zB}{\mbox{z.\,B.}\xspace}
-\newcommand{\iA}{\mbox{i.\,A.}\xspace}
-\newcommand{\iAllg}{\mbox{i.\,Allg.}\xspace}
-\renewcommand{\dh}{\mbox{d.\,h.}\xspace}
-\newcommand{\oAe}{\mbox{o.\,Ä.}\xspace}
-\newcommand{\uAe}{\mbox{u.\,Ä.}\xspace}
-\renewcommand{\og}{\mbox{o.\,g.}\xspace}
-\newcommand{\ua}{\mbox{u.\,a.}\xspace}
-\newcommand{\inkl}{inkl.\xspace}
-\newcommand{\sog}{sog.\xspace}
-\newcommand{\bzgl}{bzgl.\xspace}
-\newcommand{\fue}{\mbox{f.\,ü.}\xspace}
-\newcommand{\vs}{vs.\xspace}
-\newcommand{\ca}{ca.\xspace}
-\newcommand{\bzw}{bzw.\xspace}
-\newcommand{\etc}{etc.\xspace}
-\newcommand{\usw}{usw.\xspace}
-\newcommand{\ggf}{ggf.\xspace}
-\newcommand{\evtl}{evtl.\xspace}
-\newcommand{\vgl}{vgl.\xspace}
-} %% Ende \AtBeginDocument
+    \newcommand{\zB}{\mbox{z.\,B.}\xspace}
+    \newcommand{\iA}{\mbox{i.\,A.}\xspace}
+    \newcommand{\iAllg}{\mbox{i.\,Allg.}\xspace}
+    \renewcommand{\dh}{\mbox{d.\,h.}\xspace}
+    \newcommand{\oAe}{\mbox{o.\,Ä.}\xspace}
+    \newcommand{\uAe}{\mbox{u.\,Ä.}\xspace}
+    \renewcommand{\og}{\mbox{o.\,g.}\xspace}
+    \newcommand{\ua}{\mbox{u.\,a.}\xspace}
+    \newcommand{\inkl}{inkl.\xspace}
+    \newcommand{\sog}{sog.\xspace}
+    \newcommand{\bzgl}{bzgl.\xspace}
+    \newcommand{\fue}{\mbox{f.\,ü.}\xspace}
+    \newcommand{\vs}{vs.\xspace}
+    \newcommand{\ca}{ca.\xspace}
+    \newcommand{\bzw}{bzw.\xspace}
+    \newcommand{\etc}{etc.\xspace}
+    \newcommand{\usw}{usw.\xspace}
+    \newcommand{\ggf}{ggf.\xspace}
+    \newcommand{\evtl}{evtl.\xspace}
+    \newcommand{\vgl}{vgl.\xspace}
+}
 \endinput
 
- 

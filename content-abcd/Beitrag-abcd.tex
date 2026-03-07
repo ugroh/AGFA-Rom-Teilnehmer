@@ -1,90 +1,85 @@
 % !TEX root = ../Rom-abcd.tex
-%% -- 
-%% -- Musterdatei für die Erstellung des Beitrags
-%% -- zum Romseminar. Um ein einheitliches Aussehen zu ermöglichen:
-%% -- Bitte die Definitionen nicht ändern. 
-%% -- Stand: 2025-11-12
-%% -- 
-
-%% -- Definitionen, damit die Eingabe einfacher wird
-%% -- Bitte \renewcommand belassen und die entsprechenden Angaben
-%% -- eintragen.
-%% --
-
-%% -- Titel des Beitrags
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Musterdatei für die Erstellung des Beitrags zum Romseminar.
+%% -- Bitte die Definitionen nicht ändern.
+%% -- Stand: 2026-03-07
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Titel, Autoren
 %% --
 \renewcommand{\LongTitel}{Langform des Titels für die Überschrift des Beitrags}
-\renewcommand{\ShortTitel}{Kurzform des Titel} % falls es ein langer Titel ist
+\renewcommand{\ShortTitel}{Kurzform des Titels}
 \renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
 
-%% -- Kapitelüberschrift und Eintrag in TOC
+%% -- Kapitelüberschrift und TOC-Eintrag
 %% --
-\addchap[\ShortTitel]{\LongTitel}
+%\addchap[\ShortTitel]{\LongTitel}
+\addchap{\LongTitel}
 \addtocontents{toc}{\textsc{\AutorenBeitrag}}
-\addtocontents{toc}{}
+\addtocontents{toc}{}% Leerzeile im TOC
 
-%% -- Kopfzeile 
-%% -- Gerade Seiten : Autoren
-%% -- Ungerade Seiten: Kurztitel
+%% -- Kopfzeile: gerade Seiten = Autoren, ungerade = Kurztitel
 %% --
-\markleft{\textsc{\AutorenBeitrag}}	
-\markright{\textsc{\ShortTitel}}	
+\markleft{\textsc{\AutorenBeitrag}}
+\markright{\textsc{\ShortTitel}}
 
-%% -- Titelseite des Beitrags inkl. Bild
-%% -- des/der Vortragenden
+%% -- Titelseite mit Bild des/der Vortragenden
 %% --
 \begin{center}
-	\textsc{\Large \AutorenBeitrag}\\[1.5em]
-	\includegraphics[width=8cm, height=8cm, keepaspectratio=true]
-		{./content-abcd/autor-abcd}
+    \textsc{\Large \AutorenBeitrag}\\[1.5em]
+    \includegraphics[width=8cm, height=8cm, keepaspectratio=true]
+        {./content-abcd/autor-abcd}
 \end{center}
 
-%% -- Wer einen sinnvollen Spruch nutzen will
-%% -- dann bitte mit \dictum[]{}  
-%% -- Anpassen der Breite: 
-\renewcommand{\dictumwidth}{0.45\textwidth}
+%% -- Motto (optional); Breite anpassen falls nötig
 %% --
+\renewcommand{\dictumwidth}{0.45\textwidth}
+\dictum[\href{https://de.wikipedia.org/wiki/Albert_Einstein}{Albert Einstein}]{%
+    Wahnsinn ist, dasselbe immer \mbox{wieder} zu tun und andere Ergebnisse zu erwarten.}
 
-\dictum[\href{https://de.wikipedia.org/wiki/Albert_Einstein}{Albert Einstein}]{Wahnsinn ist, dasselbe immer  \mbox{wieder} zu tun und andere Ergebnisse zu erwarten.}
-
-%%
+%% -- Kurzzusammenfassung
+%% --
 \begin{quote}
-Für eine kurze Zusammenfassung des Beitrags, damit man weiß, warum man diesen unbedingt lesen will.
-Aber lesen \textbf{muss jeder} das \emph{README.pdf} und das Beispiel \emph{Rom-ulgr.pdf}
+Für eine kurze Zusammenfassung des Beitrags, damit man weiß, warum man
+diesen unbedingt lesen will.
+Aber lesen \textbf{muss jeder} das \emph{ReadMe} und das Beispiel
+\emph{Rom-ulgr.pdf}.
 \end{quote}
-
-%% -- Literaturreferenzen des Beitrags am Ende des Artikels
-%% -- Damit es keine Überscheidungen mit anderen Zitaten gibt
-%% -- \begin{refsection} -- \end{refsection}
+%% --
+\newpage
+%% --
+%% -- Literaturreferenzen in eigener refsection (verhindert Überschneidungen)
 %% --
 \begin{refsection}
+%%
+\section*{Erster Hauptabschnitt}
+\subsection*{Erster Unterabschnitt}
 %% --
-\section*{Erster Hauptabschnitt}		%% 
-\subsection*{Erster Unterabschnitt}		%% 
+Jeden neuen Satz auf einer neuen Zeile beginnen -- macht das Lesen und
+die Fehlersuche einfacher.
+Einen neuen Absatz beginnt man mit einer Leerzeile --
+bitte nicht \verb|\\| oder \verb|\newline| verwenden.
 
-Eingabe von Text beginnt hier.
-Jeden neue Satz auf einer neuen Zeile beginnen -- macht das Lesen und die Fehlersuche einfacher.
+Literatur zitiert man mit \verb|\textcite[genaue Stelle]{label}|, \zB
+\textcite{AlphaGo},
+\textcite{alsina:2013},
+\textcite[S.\,120]{heuser:2005},
+\textcite{enumitem} oder \textcite{takesaki:1958}.
 
-Und einen neuen Absatz beginnt man, indem man eine Leerzeile einfügt. 
-Bitte nicht \verb|\newline| oder \verb|\\| oder ähnliches dazu verwenden -- dies ist eine Todsünde in \LaTeX{}.
-
-Literatur zitiert man mithilfe von \verb|\texcite[genaue Stelle]{label}| am Ende eines Satzes, \zB \ldots Interssant sind \textcite{AlphaGo}, \textcite{alsina:2013},  \textcite[S.\,120]{heuser:2005}, \textcite{enumitem} oder \textcite{takesaki:1958}				
-
-Wie man eine Literarturdatenbank anlegt und pflegt finden sich in den \emph{\LaTeX-Tipps}.
+Wie man eine Literaturdatenbank anlegt und pflegt finden sich in den \emph{\LaTeX{}-Tipps}.
 Als Muster für die Eingabe kann man die Bibliothek \texttt{Biblio-abcd.bib} nutzen.
-
+%% --
 \subsection*{Zweiter Unterabschnitt}
-
+%% --
 Ein weiterer Unterabschnitt, in dem wir uns nun ansehen, wie man Anführungszeichen eingibt.
-Bei uns immer mithilfe von \verb|\enquote{Text}|, was \enquote{Text} ergibt. 
+Bei uns immer mithilfe von \verb|\enquote{Text}|, was \enquote{Text} ergibt.
 
-Un was macht man bei längeren Textstellen mit Texten aus einer anderen Sprache?
+Und was macht man bei längeren Textstellen mit Texten aus einer anderen Sprache?
 Dazu findet man einiges in dem Unterverzeichnis \texttt{beispiel}.
 
 
-\section*{Zweiter Hauptabschnitt}		  
-\subsection*{Erster Unterabschnitt}	
-	  
+\section*{Zweiter Hauptabschnitt}
+\subsection*{Erster Unterabschnitt}
+
 In dem Unterverzeichnis \texttt{LaTeX-Tipps} findet sich alles, was für die Eingabe von Text in \LaTeX{} nützlich ist -- bitte nutzen.
 
 %% -- etc.
@@ -98,6 +93,106 @@ In dem Unterverzeichnis \texttt{LaTeX-Tipps} findet sich alles, was für die Ein
 
 
 
-			
-%% -- Ende des Beitrags
-%% --
+
+%%% --
+%%% -- Musterdatei für die Erstellung des Beitrags
+%%% -- zum Romseminar. Um ein einheitliches Aussehen zu ermöglichen:
+%%% -- Bitte die Definitionen nicht ändern.
+%%% -- Stand: 2025-11-12
+%%% --
+%
+%%% -- Definitionen, damit die Eingabe einfacher wird
+%%% -- Bitte \renewcommand belassen und die entsprechenden Angaben
+%%% -- eintragen.
+%%% --
+%
+%%% -- Titel des Beitrags
+%%% --
+%\renewcommand{\LongTitel}{Langform des Titels für die Überschrift des Beitrags}
+%\renewcommand{\ShortTitel}{Kurzform des Titel} % falls es ein langer Titel ist
+%\renewcommand{\AutorenBeitrag}{Autor1, Autor2 \& Autor3}
+%
+%%% -- Kapitelüberschrift und Eintrag in TOC
+%%% --
+%\addchap[\ShortTitel]{\LongTitel}
+%\addtocontents{toc}{\textsc{\AutorenBeitrag}}
+%\addtocontents{toc}{}
+%
+%%% -- Kopfzeile
+%%% -- Gerade Seiten : Autoren
+%%% -- Ungerade Seiten: Kurztitel
+%%% --
+%\markleft{\textsc{\AutorenBeitrag}}
+%\markright{\textsc{\ShortTitel}}
+%
+%%% -- Titelseite des Beitrags inkl. Bild
+%%% -- des/der Vortragenden
+%%% --
+%\begin{center}
+%	\textsc{\Large \AutorenBeitrag}\\[1.5em]
+%	\includegraphics[width=8cm, height=8cm, keepaspectratio=true]
+%		{./content-abcd/autor-abcd}
+%\end{center}
+%
+%%% -- Wer einen sinnvollen Spruch nutzen will
+%%% -- dann bitte mit \dictum[]{}
+%%% -- Anpassen der Breite:
+%\renewcommand{\dictumwidth}{0.45\textwidth}
+%%% --
+%
+%\dictum[\href{https://de.wikipedia.org/wiki/Albert_Einstein}{Albert Einstein}]{Wahnsinn ist, dasselbe immer  \mbox{wieder} zu tun und andere Ergebnisse zu erwarten.}
+%
+%%%
+%\begin{quote}
+%Für eine kurze Zusammenfassung des Beitrags, damit man weiß, warum man diesen unbedingt lesen will.
+%Aber lesen \textbf{muss jeder} das \emph{README.pdf} und das Beispiel \emph{Rom-ulgr.pdf}
+%\end{quote}
+%
+%%% -- Literaturreferenzen des Beitrags am Ende des Artikels
+%%% -- Damit es keine Überscheidungen mit anderen Zitaten gibt
+%%% -- \begin{refsection} -- \end{refsection}
+%%% --
+%\begin{refsection}
+%%% --
+%\section*{Erster Hauptabschnitt}		%%
+%\subsection*{Erster Unterabschnitt}		%%
+%
+%Eingabe von Text beginnt hier.
+%Jeden neue Satz auf einer neuen Zeile beginnen -- macht das Lesen und die Fehlersuche einfacher.
+%
+%Und einen neuen Absatz beginnt man, indem man eine Leerzeile einfügt.
+%Bitte nicht \verb|\newline| oder \verb|\\| oder ähnliches dazu verwenden -- dies ist eine Todsünde in \LaTeX{}.
+%
+%Literatur zitiert man mithilfe von \verb|\texcite[genaue Stelle]{label}| am Ende eines Satzes, \zB \ldots Interssant sind \textcite{AlphaGo}, \textcite{alsina:2013},  \textcite[S.\,120]{heuser:2005}, \textcite{enumitem} oder \textcite{takesaki:1958}
+%
+%Wie man eine Literarturdatenbank anlegt und pflegt finden sich in den \emph{\LaTeX-Tipps}.
+%Als Muster für die Eingabe kann man die Bibliothek \texttt{Biblio-abcd.bib} nutzen.
+%
+%\subsection*{Zweiter Unterabschnitt}
+%
+%Ein weiterer Unterabschnitt, in dem wir uns nun ansehen, wie man Anführungszeichen eingibt.
+%Bei uns immer mithilfe von \verb|\enquote{Text}|, was \enquote{Text} ergibt.
+%
+%Un was macht man bei längeren Textstellen mit Texten aus einer anderen Sprache?
+%Dazu findet man einiges in dem Unterverzeichnis \texttt{beispiel}.
+%
+%
+%\section*{Zweiter Hauptabschnitt}
+%\subsection*{Erster Unterabschnitt}
+%
+%In dem Unterverzeichnis \texttt{LaTeX-Tipps} findet sich alles, was für die Eingabe von Text in \LaTeX{} nützlich ist -- bitte nutzen.
+%
+%%% -- etc.
+%%% --
+%
+%%% -- Literaturverzeichnis
+%%% --
+%\RaggedRight
+%\printbibliography
+%\end{refsection}
+%
+%
+%
+%
+%%% -- Ende des Beitrags
+%%% --

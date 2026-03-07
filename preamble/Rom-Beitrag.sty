@@ -1,55 +1,41 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% -- Paket für die Erstellung der Beiträge der Teilnehmer
 %% -- Rom-Beitrag.sty
-%% -- Stand: 2025-11-13
+%% -- Stand: 2026-03-07
 %% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Kenndaten
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\NeedsTeXFormat{LaTeX2e}											
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-Beitrag}
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% -- Initialisierungen
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{ifthen}
-	\provideboolean{review}
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% -- Deklaration von Optionen
-%% -- Wir verwenden KOMA-Script
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\provideboolean{review}
 
+%% -- KOMA-Optionen
 \DeclareOption*{\expandafter\PassOptionsToClass\expandafter{\CurrentOption}{scrartcl}}
 
-%% -- KOMA Otions
-%% -- 
 \KOMAoptions{%
-	,paper 		= a4
-	,pagesize
-	,BCOR		= 15mm		% siehe KOMA-Script 2.6, S. 39
-	,twoside	= true		% siehe KOMA-Script 2.6, S. 47
-	,fontsize	= 12pt		% Standard ist 11pt
-	,headings 	= small		% siehe KOMA-Script 3.16, S. 113
-	,open = any
-	}
+    ,paper    = a4
+    ,pagesize
+    ,BCOR     = 10mm
+    ,twoside  = true
+    ,fontsize  = 12pt
+    ,headings  = small
+    ,open      = any
+}
 
-%% -- 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Für Headings, TOC etc
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \DeclareRobustCommand{\LongTitel}{}
 \DeclareRobustCommand{\ShortTitel}{}
 \DeclareRobustCommand{\AutorenBeitrag}{}
 \DeclareRobustCommand{\ShortTitelTOC}{}
 \DeclareRobustCommand{\ShortTitelKopfzeile}{}
-
-
-%% -- mathematische Umgebungen mit / ohne Nummer
-%\DeclareOption{ThmNummer}{\PassOptionsToPackage{ThmNummer}{Rom-Theorem}}
-
-%% -- Zeilenabstand verdoppelt
-\DeclareOption{review}{\setboolean{review}{true}} 
-
+\DeclareOption{review}{\setboolean{review}{true}}
 \ProcessOptions\relax
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Laden von Paketen 
+%% -- Pakete
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{scrhack}
@@ -58,141 +44,57 @@
 \RequirePackage{./preamble/Rom-Pakete}
 
 
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Abarbeiten
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Schrift (pdfLaTeX)
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% -- LuaLaTeX oder PDFLaTeX
-%% -- 
-\ifluatex
-	\RequirePackage{% wegen LuaLaTeX Problem hier
-		,amsmath
-		,amssymb
-		} 
-   \RequirePackage{libertinus-otf}
-   \unimathsetup{partial=upright}
-   \unimathsetup{math-style=ISO}
-   \setmathfont[range=\mathcal, Scale=MatchUppercase]{LatinModernMath-Regular}
-   \setmathfont[range={\mathfrak},Scale=MatchUppercase]{LatinModernMath-Regular}
-\else
-	\RequirePackage[T1]{fontenc}	
-	\RequirePackage{libertinus}	
-	\let\digamma\relax
-	%\let\eth\relax
-	%\let\smallsetminus\relax
-	\RequirePackage{%
-		,amsmath
-		,amssymb
-	} 
-\fi
+\RequirePackage[T1]{fontenc}
+\RequirePackage{libertinus}
 
-%% -- Sprache und Anführungszeichen richtig
-%% -- Andere Sprache via \selectlanguage{sprache}; siehe Manual
-%% -- 
-\RequirePackage[%
-	,english
-	,italian
-	,french
-	,main=ngerman]{babel} 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Sprache
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% -- Richtige Trennung
-%% --
+\RequirePackage[english,italian,french,main=ngerman]{babel}
 \babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
 
-%% -- Hochkomma: Eingabe mittels \enquote{text}; dann wird alles richtig
-%% --
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Anführungszeichen
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \RequirePackage[%
-	,autostyle
-	,italian = guillemets
-	,french  = guillemets
-	,german  = guillemets
-	,english = american]{csquotes}
+    ,autostyle
+    ,italian = guillemets
+    ,french  = guillemets
+    ,german  = guillemets
+    ,english = american]{csquotes}
 
-%% --	
-%\let\digamma\relax
-%\RequirePackage{%
-%	,amsmath
-%	,amssymb} 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Querverweise
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% --
-\RequirePackage[tbtags]{mathtools}	
-
-%% -- Querverweise und hyperref
-%% -- 
-\RequirePackage{nameref}
-\RequirePackage[nospace]{varioref}	% \vref
-%% -- hyperref
-\RequirePackage[%  
-	,breaklinks= true                                                    
-	]{hyperref}     
-%
+\RequirePackage[nospace]{varioref}
+\RequirePackage[breaklinks=true]{hyperref}
 \RequirePackage{bookmark}
-%
 \hypersetup{%
-	,colorlinks	= true                                                          
-	,urlcolor	= blue  %                                                              
-	,citecolor	= blue  %                                                          
-	,linkcolor	= blue	% 
-	}
-%
-\RequirePackage{cleveref}
+    ,colorlinks = true
+    ,urlcolor   = blue
+    ,citecolor  = blue
+    ,linkcolor  = blue
+    ,hypertexnames=true
+}
 
-
-%% -- Abkürzungen
-%% --
+%% -- Eigene Pakete
 \RequirePackage{./preamble/Rom-Abkuerzungen}
-
-%% -- Mathematik
-%% -- 
 \RequirePackage{./preamble/Rom-Mathematik}
 
-%% -- Mathematik Theoreme
-%% -- 
-\RequirePackage{./preamble/Rom-Theorem}
+%% -- cleveref nach amsmath laden
+\RequirePackage{cleveref}
 
-%% -- Zeilenabstand für review
+%% -- Review-Modus
+\ifthenelse{\boolean{review}}{\RequirePackage[doublespacing]{setspace}}{}
+
 %% --
-\ifthenelse{\boolean{review}}
-{%% -- if
-	\RequirePackage[doublespacing]{setspace}
- }
- {%% -- else
- }
- 
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Automatische Klammergrößenanpassung
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% WARNUNG: Macht (), [] zu aktiven Zeichen!
-%% Kann in TikZ, Beamer oder anderen Paketen zu Problemen führen.
-%% Quelle: DTK 1/2011 & Herbert Voß
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\makeatletter
-\gdef\resetMathstrut@{%
-    \setbox\z@\hbox{%
-        \mathchardef\@tempa\mathcode`\!\relax%
-        \def\@tempb##1"##2##3{\the\textfont"##3\char"}%
-        \expandafter\@tempb\meaning\@tempa \relax
-    }%
-    \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@}
-\makeatother
-
-\begingroup
-    \catcode`(\active \xdef({\left\string(}
-    \catcode`)\active \xdef){\right\string)}
-    \catcode`[\active \xdef[{\left\string[}
-    \catcode`]\active \xdef]{\right\string]}
-\endgroup
-\mathcode`(="8000 \mathcode`)="8000
-\mathcode`[="8000 \mathcode`]="8000
-
-%% Geschweifte Klammern: Funktionieren sowohl in Mathe als auch Text
-\DeclareRobustCommand{\{}{\ifmmode\left\lbrace\else\textbraceleft\fi}
-\DeclareRobustCommand{\}}{\ifmmode\right\rbrace\else\textbraceright\fi}
 
 \endinput
-
-
-
-
 

@@ -1,50 +1,67 @@
-### Zehn+ Tipps für die Eingabe 
+### Tipps und Hinweise zur Eingabe
 
-Bitte unbedingt `./beispiel/Rom-ulgr.pdf` lesen. Dort finden sich einige Tipps und regeln für die Engabe von Text in ein LaTeX-Dokument.
+Bitte unbedingt `./beispiel/Rom-ulgr.pdf` lesen.
+Dort finden sich Tipps und Regeln für die Eingabe von Text in ein LaTeX-Dokument.
+Und nun zu einigen Hinweisen.
 
-Und nun zu einigen Tipps und Regeln für die Eingabe.  
+- Jeder Satz beginnt auf einer neuen Zeile.
+  Das macht die Fehlersuche einfacher und das Lesen leichter.
 
-- Jeder Satz beginnt auf einer neuen Zeile. Das macht die Fehlersuche einfacher und das Lesen leichter.
+- Einen neuen Absatz erreicht man mithilfe einer Leerzeile.
+  Bitte nicht `\\`, `\newline` oder ähnliche Konstruktionen nutzen – eine Leerzeile genügt.
 
-- Einen neuen Absatz erreicht man mithilfe einer Leerzeile. Bitte nicht `\\`, `\newline` oder ähnliche Konstruktionen nutzen – eine Leerzeile genügt.
+- Die richtigen »Anführungszeichen« bekommt man mit `\enquote{Text}`.
+  Mehr dazu steht auf Seite 3 von `./beispiel/Rom-ulgr.pdf`.
 
-- Die richtigen »Anführungszeichen« bekommt man mit `\enquote{Text}`. Mehr dazu steht auf Seite 3 von `./beispiel/Rom-ulgr.pdf`.
+- Hervorhebungen im Text (kursiv) nicht mit `\textit{kursiv}`, sondern stets mit `\emph{kursiv}` –
+  `\textit` ist ein typografischer Befehl, `\emph` dagegen ein semantischer und damit der richtige.
 
-- Hervorhebungen im Text (kursiv) nicht mit `\textit{kursiv}`, sondern stets mit `\emph{kursiv}` – der erste Befehl ist für längere Textstellen.
+- Die Eingabe von fremdsprachlichem Text erfolgt entweder mit
 
-- Die Eingabe von fremdsprachlichem Text erfolgt entweder mit  	
-	`\selectlanguage{sprache} Text \selectlanguage{ngerman}` 
+  ```latex
+  \selectlanguage{sprache} Text \selectlanguage{ngerman}
+  ```
 
-oder mit	
+  oder mit
 
-```latex
+  ```latex
   \begin{otherlanguage}{sprache}
-    Text
+      Text
   \end{otherlanguage}
-```
+  ```
 
-Als Sprache etwa `english`, `italian` oder `french`. Beispiele hierzu findet man in `./beispiel/Rom-ulgr.pdf`.
+  Als Sprache etwa `english`, `italian` oder `french`.
+  Beispiele hierzu findet man in `./beispiel/Rom-ulgr.pdf`.
 
-- Ein Gedankenstrich ist etwas anderes als ein Bindestrich oder ein Minuszeichen – siehe hierzu `./beispiel/Rom-ulgr.pdf`, Seite 5 
+- Ein Gedankenstrich ist etwas anderes als ein Bindestrich oder ein Minuszeichen –
+  siehe hierzu `./beispiel/Rom-ulgr.pdf`, Seite 5.
 
-- Will man etwa d.h. typografisch korrekt eingeben, dann gehört nach dem ersten Punkt ein kleiner Abstand zum folgenden `h` und es muss auch klar sein, dass der Punkt nach diesem kein Schlusspunkt eines Satzes ist. Dazu dient dann der Befehl `\dh` und viele weitere. Dies findet man auf der Seite 6 des o.g. PDF.
+- Abkürzungen wie d.\,h. werden typografisch korrekt mit `\dh` eingegeben –
+  viele weitere Abkürzungen finden sich auf Seite 6 von `./beispiel/Rom-ulgr.pdf`.
 
-- Die  Eingabe von Listen erfolgt mittels 
+- Die Eingabe von Listen erfolgt mittels
 
-	```latex
-	\begin{enumerate}[label]
-	\item
-	\end{enumerate} 
-	```
-	
-	
+  ```latex
+  \begin{enumerate}[label]
+      \item ...
+  \end{enumerate}
+  ```
 
-wobei `label` etwa `(i)` für eine römische Nummerierung ist. Weiteres auf Seite 7 in  `./beispiel/Rom-ulgr.pdf`.
+  wobei `label` etwa `(i)` für eine römische Nummerierung ist.
+  Weiteres auf Seite 7 in `./beispiel/Rom-ulgr.pdf`.
 
-- Die Eingabe mathematischen Textes ist ausführlich in  `/beispiel/Rom-ulgr.pdf`  beschrieben. Es schadet nicht, sich dieses anzusehen – vermeidet manche Frustrationen.
+- Die Eingabe mathematischen Textes ist ausführlich in `./beispiel/Rom-ulgr.pdf` beschrieben.
+  Es lohnt sich, dies zu lesen – es vermeidet manche Frustration.
 
-- Querverweise: bitte `\vref{link}` nutzen – dann wird auch die korrekte Seite angezeigt. Zu Querverweisen u.ä. findet man weiteres in den `LaTeX-Tipps`. Bitte die `links` sinnvoll benennen (siehe `./beispiel/Rom-ulgr.pdf` für Beispiele).
+- Querverweise: bitte `\vref{label}` nutzen – dann wird auch die korrekte Seite angezeigt.
+  Labels bitte sinnvoll benennen (siehe `./beispiel/Rom-ulgr.pdf` für Beispiele).
+  Weiteres zu Querverweisen findet sich in den `LaTeX-Tipps`.
 
-- Zitieren von Literatur: `\textcite[wo-steht-etwas]{link}`. Einiges Weitere dazu finden sich in den `LaTeX-Tipps`⁣. Für die `links` empfehle ich einheitlich `verfasser:jahr` zu verwenden (siehe die beigefügte `bib`-Datei). Vereinfacht das Suchen nach den Literaturstellen (wenn man mal etwas verbessern muss).
-  
-- Beim Verwenden von URL-Links bitte ich darum, diese abzukürzen. Dazu nutzen wir einheitlich [https://tinyurl.com](https://tinyurl.com) – dies gilt auch für die URL-Links für Referenzen (Literaturzitate).
+- Literatur zitiert man mit `\textcite[genaue Stelle]{label}`.
+  Für `label` empfiehlt sich das einheitliche Format `verfasser:jahr` (siehe die beigefügte
+  `bib`-Datei) – das vereinfacht die Suche nach Literaturstellen.
+  Weiteres dazu findet sich in den `LaTeX-Tipps`.
+
+- URL-Links bitte grundsätzlich kürzen, einheitlich mit
+  [https://tinyurl.com](https://tinyurl.com) –
+  dies gilt auch für URL-Links in Literaturzitaten.

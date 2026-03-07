@@ -1,0 +1,142 @@
+% !TEX root = ../Rom-abcd.tex
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Testdatei für alle wesentlichen Features der Vorlage
+%% -- content-ulgr.tex
+%% -- Stand: 2026-03-07
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\LongTitel}{Halbgruppen auf Banachräumen -- Ein Überblick}
+\renewcommand{\ShortTitel}{Halbgruppen auf Banachräumen}
+\renewcommand{\AutorenBeitrag}{Ulrich Groh}
+%% -- Kapitelüberschrift und TOC-Eintrag
+\addchap[\ShortTitel]{\LongTitel}
+\addtocontents{toc}{\textsc{\AutorenBeitrag}}
+\addtocontents{toc}{}
+%% -- Kopfzeile
+\markleft{\textsc{\AutorenBeitrag}}
+\markright{\textsc{\ShortTitel}}
+%% -- Autor
+\begin{center}
+    \textsc{\Large \AutorenBeitrag}\\[1.5em]
+%    \includegraphics[width=8cm, height=8cm, keepaspectratio=true]
+%        {./content-ulgr/autor-abcd}
+\end{center}
+%% -- Motto
+\renewcommand{\dictumwidth}{0.45\textwidth}
+\dictum[\href{https://de.wikipedia.org/wiki/Israel_Gelfand}{Israel Gelfand}]{%
+    Alle Mathematik ist Funktionalanalysis.}
+%% -- Zusammenfassung
+\begin{quote}
+Dieser Beitrag dient als Testdatei für alle wesentlichen Features der
+Vorlage: Theorem-Umgebungen, mathematische Notation, Abkürzungen,
+Literaturverweise, Aufzählungen und Tabellen.
+\end{quote}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{refsection}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Test der Vorlage}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Abkürzungen}
+
+Einige Abkürzungen im Fließtext: \zB ist $E = L^2([0,1])$ ein
+Hilbertraum; \bzw ist $E = C([0,1])$ ein Banachraum.
+Die Theorie gilt \zB für beliebige Banachräume, \vgl \textcite{alsina:2013}.
+Weitere Details findet man \ua in \textcite{takesaki:1958} \bzw in
+den dort angegebenen Quellen.
+
+\subsection*{Mathematische Symbole}
+
+Zahlbereiche: $\N, \Z, \Q, \R, \C, \K$.
+
+Norm und Betrag: $\norm{x}$, $\norm{}$, $\abs{x}$, $\abs{}$.
+
+Differentiale: $\int_0^t f(s)\ds$, $\int_\R f(x)\dx$,
+$\int_0^\infty \eu^{-\lambda t} T(t)x\dt$.
+
+Eulersche Zahl und imaginäre Einheit: $\eu^{\iu\pi} + 1 = 0$.
+
+\subsection*{Theorem-Umgebungen ohne Nummer}
+
+\begin{theorem}[Ohne Nummer]
+Dies ist ein Theorem ohne Nummer -- \verb|\begin{theorem}|.
+\end{theorem}
+
+\begin{lemma}
+Dies ist ein Lemma ohne Nummer -- \verb|\begin{lemma}|.
+\end{lemma}
+
+\begin{remark}
+Dies ist eine Anmerkung -- \verb|\begin{remark}|.
+In \texttt{\small} gesetzt.
+\end{remark}
+
+\begin{example}
+Auf $E = C_0(\R)$ wirkt die Translationshalbgruppe durch
+$T(t)f(x) = f(x+t)$ -- \verb|\begin{example}|.
+\end{example}
+
+\subsection*{Theorem-Umgebungen mit Nummer}
+
+\begin{ntheorem}[Mit Nummer]
+Dies ist ein Theorem ohne Nummer -- \verb|\begin{theorem}|.
+\end{ntheorem}
+
+\begin{nlemma}
+Dies ist ein Lemma ohne Nummer -- \verb|\begin{lemma}|.
+\end{nlemma}
+
+\begin{nremark}
+Dies ist eine Anmerkung -- \verb|\begin{remark}|.
+In \texttt{\small} gesetzt.
+\end{nremark}
+
+\begin{nexample}
+Auf $E = C_0(\R)$ wirkt die Translationshalbgruppe durch
+$T(t)f(x) = f(x+t)$ -- \verb|\begin{example}|.
+\end{nexample}
+
+\subsection*{Aufzählungen}
+
+Eine Aufzählung mit \texttt{enumerate}:
+\begin{enumerate}[\upshape(i)]
+    \item Erster Punkt,
+    \item zweiter Punkt,
+    \item dritter Punkt.
+\end{enumerate}
+
+Eine Aufzählung mit \texttt{itemize}:
+\begin{itemize}
+    \item $C_0$-Halbgruppen,
+    \item Kontraktionshalbgruppen,
+    \item analytische Halbgruppen.
+\end{itemize}
+
+\subsection*{Tabelle}
+
+\begin{center}
+\begin{tabular}{lll}
+    \toprule
+    Raum $E$ & Halbgruppe $T(t)$ & Erzeuger $A$ \\
+    \midrule
+    $L^{p}(\R)$ & Translation $f(\,\cdot\,+t)$ & Ableitung $f'$ \\
+    $L^{2}([0,1])$ & Wärme & $\Delta$ mit Randbedingungen \\
+    $C_{0}(\R)$ & Translation & Ableitung $f'$ \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Anführungszeichen}
+
+Deutsch: \enquote{Ein schöner Satz.} \verb|\enquote{Ein schöner Satz.}|
+
+Englisch: \foreignquote{english}{A beautiful theorem.} \verb|\foreignquote{english}{A beautiful theorem.}|
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Literaturverzeichnis
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RaggedRight
+\printbibliography
+\end{refsection}
+%% -- Ende des Beitrags
