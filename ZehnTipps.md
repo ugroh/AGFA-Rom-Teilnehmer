@@ -47,7 +47,7 @@ Und nun zu einigen Hinweisen.
   \end{enumerate}
   ```
 
-  wobei `label` etwa `(i)` für eine römische Nummerierung ist.
+  wobei `label` etwa `\upshape(i)` für eine römische Nummerierung ist.
   Weiteres auf Seite 7 in `./beispiel/Rom-ulgr.pdf`.
 
 - Die Eingabe mathematischen Textes ist ausführlich in `./beispiel/Rom-ulgr.pdf` beschrieben.
