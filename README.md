@@ -40,7 +40,7 @@ LaTeX ist ein [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System: Man *prog
 
 Wer mehr erfahren möchte: [https://tex.social](https://tex.social).
 
-*Kleine Ergänzung* Der [LaTeX Online Course](https://www.learnlatex.org/) ist bestens geeignet sich einzuarbeiten - auch geeignet fur alle, die LaTeX kennen.
+**Kleine Ergänzung:** Der [LaTeX Online Course](https://www.learnlatex.org/) ist bestens geeignet sich einzuarbeiten - auch geeignet fur alle, die LaTeX kennen.
 ---
 
 <a name="aufbau"></a>
