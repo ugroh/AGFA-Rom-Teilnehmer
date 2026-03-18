@@ -38,7 +38,8 @@ Vor der Abgabe bitte den Text mit dem [LanguageTool](https://languagetool.org/de
 
 LaTeX ist ein [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System: Man *programmiert* den Inhalt, um ein typografisch korrektes Ergebnis zu erhalten. Für einen Einstieg empfehle ich [*lshort*](https://ctan.org/pkg/lshort-german) und weitere Literaturhinweise finden sich im Abschnitt [Ergänzende Literatur](#lit-latex).
 
-Wer mehr erfahren möchte: [https://tex.social](https://tex.social). Und der [LaTeX Online Course](https://www.learnlatex.org/) ist bestens geeignet sich einzuarbeiten - auch geeignet fur alle, die LaTeX kennen.
+Wer mehr erfahren möchte: [https://tex.social](https://tex.social). Und der [LaTeX Online Kurs](https://www.learnlatex.org) ist bestens geeignet, sich einzuarbeiten. 
+
 ---
 
 <a name="aufbau"></a>
