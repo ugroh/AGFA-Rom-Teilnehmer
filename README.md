@@ -1,4 +1,4 @@
-# Rom-Seminar: LaTeX-Vorlage für Teilnehmer (Stand 2026-03-07)
+# Rom-Seminar: LaTeX-Vorlage für Teilnehmer (Stand 2026-03-21)
 
 ### Inhaltsverzeichnis
 
@@ -38,7 +38,7 @@ Vor der Abgabe bitte den Text mit dem [LanguageTool](https://languagetool.org/de
 
 LaTeX ist ein [WYSIWYM](https://de.wikipedia.org/wiki/WYSIWYM)-System: Man *programmiert* den Inhalt, um ein typografisch korrektes Ergebnis zu erhalten. Für einen Einstieg empfehle ich [*lshort*](https://ctan.org/pkg/lshort-german) und weitere Literaturhinweise finden sich im Abschnitt [Ergänzende Literatur](#lit-latex).
 
-Wer mehr erfahren möchte: [https://tex.social](https://tex.social). Und der [LaTeX Online Kurs](https://www.learnlatex.org) ist bestens geeignet, sich einzuarbeiten. 
+Wer mehr erfahren möchte: [https://tex.social](https://tex.social). Und der [LaTeX Online Kurs](https://www.learnlatex.org) ist bestens geeignet, sich einzuarbeiten.
 
 ---
 
@@ -51,16 +51,16 @@ Wer mehr erfahren möchte: [https://tex.social](https://tex.social). Und der [La
 Das Hauptverzeichnis `Rom-Seminar-Teilnehmer` enthält:
 
 - `Rom-abcd.tex` – Master-Datei; bitte Struktur nicht ändern
-- `Rom-abcd.pdf` – kompiliertes Beispiel
+- `Rom-abcd.pdf` – kompiliertes Beispiel (Platzhalter; der eigentliche Musterbeitrag liegt unter `beispiel/`)
 - `Rom-Beamer.tex` – Beamer-Vorlage für die Präsentation
 
 Unterverzeichnisse:
 
 - **`beispiel`** – Musterbeitrag `Rom-ulgr.pdf` mit LaTeX-Tipps
 - **`LaTeX-Tipps`** – Tipps zu Literaturverwaltung und Querverweisen
-- **`content-abcd`** – 
-  - Dateien des Beitrags: `Beitrag-abcd.tex`, Bilder, 
-  -  `Defn-abcd.tex` für eigene Definitionen (bereits via `\input{Defn-abcd}` eingebunden). 
+- **`content-abcd`** –
+  - Dateien des Beitrags: `Beitrag-abcd.tex` und Bilder
+  - `Defn-abcd.tex` für eigene Definitionen (bereits via `\input{Defn-abcd}` eingebunden)
   - Literaturdatei `Biblio-abcd.bib` mit Mustereinträgen. Für die Erstellung des Literaturverzeichnisses wird `biber` benötigt – bitte im Editor einstellen.
 - **`preamble`** – alle Formatierungsdateien; bitte **nicht** verändern
 
@@ -105,7 +105,7 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
 
 - **`Rom-Beitrag.sty`** – Hauptpaket; lädt alle weiteren Pakete (eingebunden via `\usepackage{Rom-Beitrag}` in `Rom-abcd.tex`)
 - **`Rom-Abkuerzungen.sty`** – Abkürzungen für korrekte Schreibweise (z.B. `\dh` für d.\,h.)
-- **`Rom-BibLaTeX.sty`** – Formatierung des Literaturverzeichnisses; benötigt `biber`-Lauf (sichergestellt durch `% !TEX TS-program = pdflatexmk` in der ersten Zeile). Tipp: [BibDesk](https://bibdesk.sourceforge.io/) (macOS) oder [JabRef](https://www.jabref.org/) zur Pflege der `bib`-Datei
+- **`Rom-BibLaTeX.sty`** – Formatierung des Literaturverzeichnisses; benötigt `biber`-Lauf (sichergestellt durch `% !TEX TS-program = pdflatexmk` in der ersten Zeile von `Rom-abcd.tex`). Tipp: [BibDesk](https://bibdesk.sourceforge.io/) (macOS) oder [JabRef](https://www.jabref.org/) zur Pflege der `bib`-Datei
 - **`Rom-Layout.sty`** – Layout (Kopfzeilen, Schriften, Abstände). `\section*` und `\subsection*` wie üblich; `\subsubsection` erzeugt eine Nummer und kann zur Untergliederung verwendet werden
 - **`Rom-Mathematik.sty`** – mathematische Definitionen (z.B. `\N`, `\norm{}`, `\abs{}`); Übersicht im Unterverzeichnis `beispiel`
 - **`Rom-Theorem.sty`** – mathematische Umgebungen (nummeriert und unnummeriert); Details in der Übersicht unter `beispiel`
