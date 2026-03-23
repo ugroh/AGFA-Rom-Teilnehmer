@@ -64,4 +64,5 @@ Und nun zu einigen Hinweisen.
 
 - URL-Links bitte grundsätzlich kürzen, einheitlich mit
   [https://tinyurl.com](https://tinyurl.com) –
-  dies gilt auch für URL-Links in Literaturzitaten.
+  dies gilt auch für URL-Links in Literaturzitaten. Diese können dann mittels
+  `\href{link}{Was-auch-immer}` in das `TeX`-Dokument integriert werden.
