@@ -1,6 +1,6 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Theorem.sty -- Theorem-Umgebungen
-%% -- Stand: 2026-03-07
+%% -- Stand: 2026-08-31 (Workaround fuer den TeX Live 2026 / thmtools-sibling-Bug)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -9,6 +9,22 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{thmtools}
+
+%% --- Workaround für TeX Live 2026 / thmtools-Bug ------------------------
+%% Der LaTeX-Kernel 2026 fuehrt einen neuen \newcounteralias-Mechanismus
+%% fuer Theorem-Umgebungen ein. thmtools 0.76 ist damit noch nicht
+%% kompatibel: JEDES \declaretheorem[..., sibling=...]{...} bricht mit
+%% "Command \c@<name> already defined" ab (offizieller Bug, siehe
+%% https://github.com/muzimuzhi/thmtools/issues/75). Offizieller
+%% Workaround (TeX Live 2026 Release Notes / Overleaf-Blog): vor den
+%% \declaretheorem-Aufrufen \thmt@autorefsetup so umdefinieren, dass es
+%% den neuen Kernel-Mechanismus nicht anstoesst.
+\makeatletter
+\@ifundefined{newcounteralias}{}{%
+    \renewcommand\thmt@autorefsetup{\@xa\def\csname\thmt@envname autorefname\@xa\endcsname\@xa{\thmt@thmname}}%
+}
+\makeatother
+%% -------------------------------------------------------------------------
 
 %% Gleichungsnummerierung
 %% --
