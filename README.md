@@ -108,7 +108,7 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
 - **`Rom-BibLaTeX.sty`** – Formatierung des Literaturverzeichnisses; benötigt `biber`-Lauf (sichergestellt durch `% !TEX TS-program = pdflatexmk` in der ersten Zeile von `Rom-abcd.tex`). Tipp: [BibDesk](https://bibdesk.sourceforge.io/) (macOS) oder [JabRef](https://www.jabref.org/) zur Pflege der `bib`-Datei
 - **`Rom-Layout.sty`** – Layout (Kopfzeilen, Schriften, Abstände). `\section*` und `\subsection*` wie üblich; `\subsubsection` erzeugt eine Nummer und kann zur Untergliederung verwendet werden
 - **`Rom-Mathematik.sty`** – mathematische Definitionen (z.B. `\N`, `\norm{}`, `\abs{}`); Übersicht im Unterverzeichnis `beispiel`
-- **`Rom-Theorem.sty`** – mathematische Umgebungen (nummeriert und unnummeriert); Details in der Übersicht unter `beispiel`
+- **`Rom-Theorem.sty`** – mathematische Umgebungen (nummeriert und unnummeriert); Details in der Übersicht unter `beispiel`. 
 - **`Rom-Pakete.sty`** – ergänzende LaTeX-Pakete; Dokumentation via `texdoc paketname` oder [ctan.org](https://ctan.org/)
 
 ---
