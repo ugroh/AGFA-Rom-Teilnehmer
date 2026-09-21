@@ -1,6 +1,6 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Layout.sty
-%% -- Stand: 2026-03-07
+%% -- Stand: 2026-09-21  (tocnumwidth 0em, tocdepth absolut)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -16,7 +16,7 @@
 %% -- Keine section etc. im TOC
 %% --
 
-\addtocounter{tocdepth}{-2}
+\setcounter{tocdepth}{0}% nur chapter im TOC
 
 %% -- chapter
 %% --
@@ -31,7 +31,7 @@
      beforeskip = -1.5\baselineskip
     ,afterskip  =  2.5\baselineskip
     ,innerskip  =  0.75ex
-    ,tocnumwidth=  7em
+    ,tocnumwidth=  0em% keine Nummer im TOC (s. \addchaptertocentry); sonst 7em Einzug ab 2. Zeile
 ]{chapter}
 
 %
