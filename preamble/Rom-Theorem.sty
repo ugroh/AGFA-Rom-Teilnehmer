@@ -1,6 +1,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Theorem.sty -- Theorem-Umgebungen
-%% -- Stand: 2026-08-31 (Workaround fuer den TeX Live 2026 / thmtools-sibling-Bug)
+%% -- Stand: 2026-09-21 (Workaround fuer den TeX Live 2026 / thmtools-sibling-Bug;
+%% --                   nthm und thm teilen jetzt den Zaehler mit ntheorem)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -90,7 +91,7 @@
 
 \declaretheorem[style=plain-style,   
     name=Theorem,    
-    numberwithin=section]{nthm}
+    sibling=ntheorem]{nthm}
 
 \declaretheorem[style=plain-style,   
     name=Satz,       
@@ -177,7 +178,7 @@
 
 \declaretheorem[style=plain-style,   
     name=Theorem,    
-    numberwithin=section]{thm}
+    sibling=ntheorem]{thm}
 
 \declaretheorem[style=plain-style,   
     name=Satz,       

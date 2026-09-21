@@ -1,6 +1,6 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-BibLaTeX.sty
-%% -- Stand: 2026-03-07
+%% -- Stand: 2026-09-21  (Buch: kein einsamer Punkt/Abrufdatum bei url; doi.org per https)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-BibLaTeX}
@@ -30,6 +30,10 @@
 \AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\clearlist{location}}
 \AtEveryBibitem{\clearfield{pagetotal}}
+%% -- Buecher: URL samt Abrufdatum ganz entfernen (ein leeres Feldformat
+%%    laesst sonst einen einsamen Punkt in einer eigenen Zeile und
+%%    "(Aufgerufen am ...)" ohne URL stehen)
+\AtEveryBibitem{\ifentrytype{book}{\clearfield{url}\clearfield{urldate}}{}}
 
 %% -- Verlag ohne Ort
 %% --
@@ -75,7 +79,6 @@
 \DeclareFieldFormat[book]{date}{\mkbibparens{#1}}
 \DeclareFieldFormat[book]{pages}{}
 \DeclareFieldFormat[book]{pagetotal}{}
-\DeclareFieldFormat[book]{url}{}
 \DeclareFieldFormat[book]{language}{}
 \DeclareFieldFormat[book]{isbn}{}
 \DeclareFieldFormat[book]{series}{}
@@ -141,7 +144,7 @@
 %% --
 
 \newbibmacro{string+doi}[1]{%
-    \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}
+    \iffieldundef{doi}{#1}{\href{https://doi.org/\thefield{doi}}{#1}}
 }
 \DeclareFieldFormat{title}{%
     \usebibmacro{string+doi}{\mkbibemph{#1}}

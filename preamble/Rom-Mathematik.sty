@@ -1,6 +1,6 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Mathematik.sty
-%% -- Stand: 2026-03-07
+%% -- Stand: 2026-09-21  (\L und \P nur noch im Mathemodus umdefiniert; LuaLaTeX-tauglich)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -8,8 +8,15 @@
 
 %% -- Mathematische Pakete
 %% --
-\let\digamma\relax
-\RequirePackage{amsmath,amssymb}
+\RequirePackage{amsmath}
+%% -- pdfLaTeX: amssymb kommt erst nach der Schrift; libertinust1math
+%%    definiert \digamma schon, deshalb vorher \let\digamma\relax.
+%%    LuaLaTeX/XeLaTeX: amssymb wurde in Rom-Beitrag.sty schon VOR der
+%%    Schrift (unicode-math) geladen, hier also nichts mehr zu tun.
+\@ifpackageloaded{amssymb}{}{%
+    \let\digamma\relax
+    \RequirePackage{amssymb}%
+}
 \RequirePackage[tbtags]{mathtools}
 \RequirePackage{mleftright}
 
@@ -71,11 +78,16 @@
     \let\preceq\ORGvarpreccurlyeq
     %% -- Mengenoperationen
     \let\setminus\smallsetminus
-    \renewcommand{\P}{\mathfrak{P}}
-    %% -- Operator L(E,F)
+    %% -- Potenzmenge: \P im Mathemodus = \mathfrak{P}; im Text bleibt
+    %%    \P das Absatzzeichen (Pilcrow)
+    \DeclareRobustCommand{\P}{\ifmmode\mathfrak{P}\else\textparagraph\fi}
+    %% -- Operator L(E,F): \L{E,F} im Mathemodus -> \mathcal{L}(E,F).
+    %%    Im Textmodus bleibt \L das polnische \L (z.B. {\L}ojasiewicz in
+    %%    Literaturangaben); sonst bricht die Bibliographie ab.
     \let\ORGL\L
-    \DeclareRobustCommand{\L}[1]{\mathcal{L}(#1)}
+    \DeclareRobustCommand{\L}{\ifmmode\expandafter\Rom@LinMath\else\expandafter\ORGL\fi}
 }
+\newcommand{\Rom@LinMath}[1]{\mathcal{L}(#1)}
 
 %% -- Norm und Absolutbetrag
 %% --

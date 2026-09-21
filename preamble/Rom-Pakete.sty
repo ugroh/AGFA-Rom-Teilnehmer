@@ -20,7 +20,11 @@
 %% -- Grafik
 %% --
 
-\RequirePackage{graphicx}
+\RequirePackage{%
+	,graphicx	% Voss, LaTeX - 5.10.2 - Seite 174
+	,wrapfig	% Voss, LaTeX - 5.10.3 - Seite 177
+	,cutwin		% Voss, LaTeX - 5.10.3 - Seite 178
+	}
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,arrows}
 
@@ -41,6 +45,7 @@
     ,subcaption
     ,floatrow}
 \captionsetup{hypcap=false}
+
 
 %% -- Mehrspaltiger Text
 %% --

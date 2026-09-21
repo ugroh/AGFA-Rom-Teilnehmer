@@ -1,6 +1,6 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Beitrag.sty
-%% -- Stand: 2026-03-14
+%% -- Stand: 2026-09-21  (babel nur noch english + ngerman; laeuft mit pdfLaTeX und LuaLaTeX)
 %% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
@@ -45,17 +45,27 @@
 
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% -- Schrift (pdfLaTeX)
+%% -- Schrift (pdfLaTeX oder LuaLaTeX/XeLaTeX)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[T1]{fontenc}
+\RequirePackage{iftex}
+%% -- LuaLaTeX/XeLaTeX: libertinus laedt unicode-math. amsmath und amssymb
+%%    muessen dann VOR der Schrift geladen werden (Reihenfolge laut
+%%    unicode-math), sonst "Command \eth already defined" in amssymb.
+\ifPDFTeX
+    \RequirePackage[T1]{fontenc}
+\else
+    \RequirePackage{amsmath,amssymb}
+    \RequirePackage[tbtags]{mathtools}% ebenfalls vor unicode-math (Option wie in Rom-Mathematik)
+\fi
 \RequirePackage{libertinus}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Sprache
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[english,italian,french,main=ngerman]{babel}
+%% -- english bleibt geladen: varioref (TL2026) braucht \extrasenglish
+\RequirePackage[english,main=ngerman]{babel}
 %\babelprovide[hyphenrules=ngerman-x-latest]{ngerman}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,33 +1,36 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Abkuerzungen.sty
-%% -- Stand: 2026-03-07
+%% -- Stand: 2026-09-21  (\providecommand statt \newcommand, \og ohne French)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-Abkuerzungen}
 %% --
 \RequirePackage{xspace}
-%% -- \renewcommand nötig da babel \dh und \og bereits definiert
+%% -- \renewcommand nötig, da \dh (T1-Kodierung) bereits definiert ist.
+%%    \og gibt es nur mit babel-french, deshalb \providecommand.
+%% -- Alle anderen mit \providecommand: Hat ein Autor z.B. \zB selbst
+%%    definiert, gibt es keinen Fehler "already defined" bei \begin{document}.
 \AtBeginDocument{%
-    \newcommand{\zB}{\mbox{z.\,B.}\xspace}
-    \newcommand{\iA}{\mbox{i.\,A.}\xspace}
-    \newcommand{\iAllg}{\mbox{i.\,Allg.}\xspace}
+    \providecommand{\zB}{\mbox{z.\,B.}\xspace}
+    \providecommand{\iA}{\mbox{i.\,A.}\xspace}
+    \providecommand{\iAllg}{\mbox{i.\,Allg.}\xspace}
     \renewcommand{\dh}{\mbox{d.\,h.}\xspace}
-    \newcommand{\oAe}{\mbox{o.\,Ä.}\xspace}
-    \newcommand{\uAe}{\mbox{u.\,Ä.}\xspace}
-    \renewcommand{\og}{\mbox{o.\,g.}\xspace}
-    \newcommand{\ua}{\mbox{u.\,a.}\xspace}
-    \newcommand{\inkl}{inkl.\xspace}
-    \newcommand{\sog}{sog.\xspace}
-    \newcommand{\bzgl}{bzgl.\xspace}
-    \newcommand{\fue}{\mbox{f.\,ü.}\xspace}
-    \newcommand{\vs}{vs.\xspace}
-    \newcommand{\ca}{ca.\xspace}
-    \newcommand{\bzw}{bzw.\xspace}
-    \newcommand{\etc}{etc.\xspace}
-    \newcommand{\usw}{usw.\xspace}
-    \newcommand{\ggf}{ggf.\xspace}
-    \newcommand{\evtl}{evtl.\xspace}
-    \newcommand{\vgl}{vgl.\xspace}
+    \providecommand{\oAe}{\mbox{o.\,Ä.}\xspace}
+    \providecommand{\uAe}{\mbox{u.\,Ä.}\xspace}
+    \providecommand{\og}{\mbox{o.\,g.}\xspace}
+    \providecommand{\ua}{\mbox{u.\,a.}\xspace}
+    \providecommand{\inkl}{inkl.\xspace}
+    \providecommand{\sog}{sog.\xspace}
+    \providecommand{\bzgl}{bzgl.\xspace}
+    \providecommand{\fue}{\mbox{f.\,ü.}\xspace}
+    \providecommand{\vs}{vs.\xspace}
+    \providecommand{\ca}{ca.\xspace}
+    \providecommand{\bzw}{bzw.\xspace}
+    \providecommand{\etc}{etc.\xspace}
+    \providecommand{\usw}{usw.\xspace}
+    \providecommand{\ggf}{ggf.\xspace}
+    \providecommand{\evtl}{evtl.\xspace}
+    \providecommand{\vgl}{vgl.\xspace}
 }
 \endinput
 
