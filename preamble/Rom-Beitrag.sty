@@ -1,6 +1,6 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Beitrag.sty
-%% -- Stand: 2026-09-21  (babel nur noch english + ngerman; laeuft mit pdfLaTeX und LuaLaTeX)
+%% -- Stand: 2026-09-21  (babel nur english + ngerman; pdfLaTeX und LuaLaTeX; ohne cleveref; \vref mit Namen)
 %% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
@@ -83,7 +83,7 @@
 %% -- Querverweise
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[nospace]{varioref}
+\RequirePackage[nospace,ngerman]{varioref}
 \RequirePackage[breaklinks=true]{hyperref}
 \RequirePackage{bookmark}
 \hypersetup{%
@@ -98,8 +98,18 @@
 \RequirePackage{./preamble/Rom-Abkuerzungen}
 \RequirePackage{./preamble/Rom-Mathematik}
 
-%% -- cleveref nach amsmath laden
-\RequirePackage{cleveref}
+%% -- Querverweise: \vref liefert Name + Nummer + Seitenhinweis, z.B.
+%%    "Satz 1.1 auf der vorherigen Seite". Der Name kommt von hyperrefs
+%%    \autoref (Satz, Lemma, Abschnitt, Gleichung, Abbildung, ...), der
+%%    Seitenhinweis von varioref. Den Namen also NICHT von Hand davorschreiben.
+%%    cleveref wird bewusst nicht geladen (es wuerde \vref ersetzen).
+%%    \vref ist robust; gesichert wird deshalb das innere Makro (\vref<Leerzeichen>).
+\expandafter\let\expandafter\Rom@vrefinner\csname vref \endcsname
+\newcommand{\Rom@vrefnorm}[1]{{\let\ref\autoref\Rom@vrefinner{#1}}}
+\newcommand{\Rom@vrefstar}[1]{{\let\ref\autoref\Rom@vrefinner*{#1}}}
+\DeclareRobustCommand{\vref}{\@ifstar{\Rom@vrefstar}{\Rom@vrefnorm}}
+%% -- \Vref = \vref (der Name von \autoref ist schon gross geschrieben)
+\DeclareRobustCommand{\Vref}{\vref}
 
 %% -- Review-Modus
 \ifthenelse{\boolean{review}}{\RequirePackage[doublespacing]{setspace}}{}

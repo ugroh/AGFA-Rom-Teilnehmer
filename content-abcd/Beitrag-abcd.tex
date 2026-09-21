@@ -94,6 +94,113 @@ im rechtwinkligen Dreieck mit den Katheten $a$, $b$ und der Hypotenuse $c$.
 \begin{proof}
 Kennt man aus der Schule.
 \end{proof}
+%% --
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Test der Vorlage}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Abkürzungen}
+
+Einige Abkürzungen im Fließtext: \zB ist $E = L^2([0,1])$ ein
+Hilbertraum; \bzw ist $E = C([0,1])$ ein Banachraum.
+Die Theorie gilt \zB für beliebige Banachräume, \vgl \textcite{alsina:2013}.
+Weitere Details findet man \ua in \textcite{takesaki:1958} \bzw in
+den dort angegebenen Quellen.
+
+\subsection*{Mathematische Symbole}
+
+Zahlbereiche: $\N, \Z, \Q, \R, \C, \K$.
+
+Norm und Betrag: $\norm{x}$, $\norm{}$, $\abs{x}$, $\abs{}$.
+
+Differentiale: $\int_0^t f(s)\ds$, $\int_\R f(x)\dx$,
+$\int_0^\infty \eu^{-\lambda t} T(t)x\dt$.
+
+Eulersche Zahl und imaginäre Einheit: $\eu^{\iu\pi} + 1 = 0$.
+
+\subsection*{Theorem-Umgebungen ohne Nummer}
+
+\begin{theorem}[Ohne Nummer]
+Dies ist ein Theorem ohne Nummer -- \verb|\begin{theorem}|.
+\end{theorem}
+
+\begin{lemma}
+Dies ist ein Lemma ohne Nummer -- \verb|\begin{lemma}|.
+\end{lemma}
+
+\begin{remark}
+Dies ist eine Anmerkung -- \verb|\begin{remark}|.
+In \verb|\small| gesetzt.
+\end{remark}
+
+\begin{example}
+Auf $E = C_0(\R)$ wirkt die Translationshalbgruppe durch
+$T(t)f(x) = f(x+t)$ -- \verb|\begin{example}|.
+\end{example}
+
+\subsection*{Theorem-Umgebungen mit Nummer}
+\setcounter{section}{1}
+
+\begin{ntheorem}[Mit Nummer]\label{thm:nummer}
+Dies ist ein Theorem mit Nummer -- \verb|\begin{ntheorem}|.
+\end{ntheorem}
+
+\begin{nlemma}
+Dies ist ein Lemma mit Nummer -- \verb|\begin{nlemma}|.
+\end{nlemma}
+
+\begin{nremark}
+Dies ist eine Anmerkung mit Nummer -- \verb|\begin{nremark}| -- mit \texttt{\small} gesetzt.
+\end{nremark}
+
+\begin{nexample}
+Auf $E = C_{0}(\R)$ wirkt die Translationshalbgruppe durch
+$T(t)f(x) = f(x+t)$ -- \verb|\begin{nexample}|.
+\end{nexample}
+
+\subsection*{Aufzählungen}
+
+Eine Aufzählung mit \texttt{enumerate}:
+\begin{enumerate}[\upshape(i)]
+    \item Erster Punkt,
+    \item zweiter Punkt,
+    \item dritter Punkt.
+\end{enumerate}
+
+Eine Aufzählung mit \texttt{itemize}:
+\begin{itemize}
+    \item $C_0$-Halbgruppen,
+    \item Kontraktionshalbgruppen,
+    \item analytische Halbgruppen.
+\end{itemize}
+
+\subsection*{Tabelle}
+
+\begin{center}
+\begin{tabular}{lll}
+    \toprule
+    Raum $E$ & Halbgruppe $T(t)$ & Erzeuger $A$ \\
+    \midrule
+    $L^{p}(\R)$ & Translation $f(\,\cdot\,+t)$ & Ableitung $f'$ \\
+    $L^{2}([0,1])$ & Wärme & $\Delta$ mit Randbedingungen \\
+    $C_{0}(\R)$ & Translation & Ableitung $f'$ \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Anführungszeichen}
+%% --
+\begin{enumerate}[--]
+
+\item
+Deutsch: \enquote{Ein schöner Satz.} \verb|\enquote{Ein schöner Satz.}|
+
+\item
+Englisch: \foreignquote{english}{A beautiful theorem.} \verb|\foreignquote{english}{A beautiful theorem.}|
+
+\end{enumerate}
+%% --
+Und dann noch das nummerierte Theorem, siehe  \vref{thm:nummer}
 %% -- etc.
 %% --
 %% -- Literaturverzeichnis
