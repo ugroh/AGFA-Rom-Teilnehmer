@@ -1,0 +1,53 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- Rom-Quellen.sty
+%% -- Verzeichnis der Bildquellen: \quelle{URL} bei einer Abbildung,
+%% -- \druckequellen gibt die gesammelten Angaben aus.
+%% -- Bitte diese Datei nicht verändern.
+%% -- Stand: 2026-09-22
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Rom-Quellen}[2026/09/22 Bildquellenverzeichnis fuer das Rom-Seminar]
+
+\RequirePackage{etoolbox}
+
+\makeatletter
+
+%% -- Sammelstelle fuer die Bildquellen; wird pro refsection geleert
+\newcommand{\bildquellen}{}
+\newcounter{quellenr}
+
+%% -- Aufruf: \quelle{URL} direkt bei/unter der jeweiligen Abbildung.
+%% -- Erzeugt an der Stelle selbst keine sichtbare Ausgabe, sondern
+%% -- sammelt den Eintrag fuer \druckequellen. Sonderzeichen wie
+%% -- _, &, # in der URL muessen NICHT escaped werden.
+\newcommand{\quelle}[1]{%
+  \stepcounter{quellenr}%
+  \phantomsection
+  \label{quelle:\thequellenr}%
+  \edef\@tempa{%
+    \noexpand\g@addto@macro\noexpand\bildquellen{%
+      \noexpand\item Abb.~\thefigure, S.~\pageref{quelle:\thequellenr}: \noexpand\url{\detokenize{#1}}}%
+  }%
+  \@tempa
+}
+
+%% -- Aufruf: \druckequellen am Ende des eigenen Beitrags aufrufen
+%% -- (nach \printbibliography, vor \end{refsection}).
+%% -- Gibt nichts aus, wenn keine \quelle{...} verwendet wurde.
+\newcommand{\druckequellen}{%
+  \ifdefempty{\bildquellen}{}{%
+    \subsection*{Bildquellen}
+    \begin{enumerate}[label={[\arabic*]}]
+    \bildquellen
+    \end{enumerate}
+  }%
+  \global\let\bildquellen\@empty
+}
+
+%% -- Verzeichnis pro refsection zuruecksetzen, damit sich die
+%% -- Bildquellen verschiedener Beitraege nicht vermischen.
+\BeforeBeginEnvironment{refsection}{\global\let\bildquellen\@empty}
+\AfterEndEnvironment{refsection}{\global\let\bildquellen\@empty}
+
+\makeatother
+%% -- Ende Rom-Quellen.sty

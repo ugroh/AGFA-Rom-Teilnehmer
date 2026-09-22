@@ -1,6 +1,8 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Beitrag.sty
-%% -- Stand: 2026-09-21  (babel nur english + ngerman; pdfLaTeX und LuaLaTeX; ohne cleveref; \vref mit Namen)
+%% -- Stand: 2026-09-22  (Theorem-Umgebungen preamble/Rom-Theorem.sty und Bildquellenverzeichnis
+%% --                   preamble/Rom-Quellen.sty werden jetzt geladen;
+%% --                   babel nur english + ngerman; pdfLaTeX und LuaLaTeX; ohne cleveref; \vref mit Namen)
 %% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
@@ -97,6 +99,8 @@
 %% -- Eigene Pakete
 \RequirePackage{./preamble/Rom-Abkuerzungen}
 \RequirePackage{./preamble/Rom-Mathematik}
+\RequirePackage{./preamble/Rom-Theorem}
+\RequirePackage{./preamble/Rom-Quellen}
 
 %% -- Querverweise: \vref liefert Name + Nummer + Seitenhinweis, z.B.
 %%    "Satz 1.1 auf der vorherigen Seite". Der Name kommt von hyperrefs

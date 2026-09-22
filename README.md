@@ -93,8 +93,8 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
 
 ### Kompilieren
 
-- **Programm**: `pdflatex` oder `lualatex`. In TeXShop wird das Programm oben im Fenster ausgewählt; alternativ kann man in die ersten Zeilen von `Rom-abcd.tex` schreiben: `% !TEX TS-program = lualatex` (TeXShop) bzw. `% !TEX program = lualatex` (TeXworks).
-- **Reihenfolge**: Erst ein Lauf mit `pdflatex` bzw. `lualatex`, dann `biber`, dann noch mindestens zweimal `pdflatex` bzw. `lualatex`. Die meisten Editoren können das automatisch (Stichwort *Latexmk* bzw. „Typeset-Kette“).
+- **Programm**: ausschließlich `lualatex` (verpflichtend für alle Teilnehmer*innen, kein `pdflatex` mehr). In TeXShop wird das Programm oben im Fenster ausgewählt; alternativ kann man in die ersten Zeilen von `Rom-abcd.tex` schreiben: `% !TEX TS-program = lualatex` (TeXShop) bzw. `% !TEX program = lualatex` (TeXworks).
+- **Reihenfolge**: Erst ein Lauf mit `lualatex`, dann `biber`, dann noch mindestens zweimal `lualatex`. Die meisten Editoren können das automatisch (Stichwort *Latexmk* bzw. „Typeset-Kette“).
 - **Biber und biblatex müssen zusammenpassen**: Beide kommen aus derselben TeX-Live-Version. Bei der Fehlermeldung „control file version“ ist meist eine der beiden veraltet – dann TeX Live aktualisieren.
 - **Korrekturlesen**: `Rom-Beitrag.sty` kennt die Option `review` (doppelter Zeilenabstand).
 
@@ -154,6 +154,7 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
   | `\L{E,F}` | im Mathemodus ℒ(E,F); im Text bleibt `\L` das polnische Ł |
 - **`Rom-Theorem.sty`** – mathematische Umgebungen, siehe [Sätze](#saetze).
 - **`Rom-Pakete.sty`** – ergänzende LaTeX-Pakete; Dokumentation via `texdoc paketname` oder [ctan.org](https://ctan.org/)
+- **`Rom-Quellen.sty`** – Bildquellenverzeichnis, siehe [Bildquellen](#hinweise).
 
 ---
 
@@ -162,6 +163,8 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
 ### Querverweise, Sätze und eigene Makros
 
 **Querverweise mit `\vref`**: `\vref{label}` liefert Name, Nummer und – falls nötig – einen Seitenhinweis, z. B. „Satz 1.1 auf der vorherigen Seite“. Auf derselben Seite steht nur „Satz 1.1“. Der Name (Satz, Lemma, Abschnitt, Gleichung, Abbildung …) richtet sich nach der Umgebung, nicht nach dem Label; Präfixe wie `prop:` oder `eq:` sind nur eine Merkhilfe. **Der Name darf deshalb nicht noch einmal davorgeschrieben werden** („Satz~\vref{…}“ ergäbe „Satz Satz 1.1“). `\ref{}` und `\autoref{}` funktionieren wie gewohnt. `\cref` und `\Cref` (Paket *cleveref*) gibt es bewusst nicht.
+
+**Bildquellen mit `\quelle`**: Bei fremdem Bildmaterial direkt bei der jeweiligen Abbildung `\quelle{URL}` aufrufen, z. B. `\quelle{https://commons.wikimedia.org/wiki/File:Beispiel.jpg}`. Das erzeugt an der Stelle selbst keine Ausgabe, sondern sammelt Abbildungsnummer, Seitenzahl und URL. Sonderzeichen wie `_`, `&`, `#` in der URL müssen **nicht** escaped werden. Am Ende des eigenen Beitrags (nach `\printbibliography`, noch vor `\end{refsection}`) einmal `\druckequellen` aufrufen – das druckt die gesammelte Liste unter der Überschrift „Bildquellen“. Ohne mindestens einen `\quelle`-Aufruf im Beitrag erscheint dabei nichts.
 
 <a name="saetze"></a>
 
@@ -191,7 +194,7 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
 |---|---|
 | `Command \R already defined` (ebenso `\N`, `\C`, `\L` …) | Der Name ist schon in `Rom-Mathematik.sty` vergeben. Anderen Namen wählen oder `\renewcommand` verwenden. |
 | `Undefined control sequence` bei `\cref` | `cleveref` ist nicht geladen; stattdessen `\vref` benutzen. |
-| Literatur fehlt, `[?]` im Text, „Please (re)run Biber“ | `biber` wurde nicht ausgeführt. Reihenfolge: `lualatex`/`pdflatex` → `biber` → 2× `lualatex`/`pdflatex`. |
+| Literatur fehlt, `[?]` im Text, „Please (re)run Biber“ | `biber` wurde nicht ausgeführt. Reihenfolge: `lualatex` → `biber` → 2× `lualatex`. |
 | `File './preamble/…' not found` | Ordnerstruktur wurde verändert oder es wird nicht `Rom-abcd.tex` kompiliert. Bitte im Hauptverzeichnis kompilieren. |
 | „Satz Satz 1.1“ im Text | Der Name wurde vor `\vref` von Hand geschrieben; einfach weglassen. |
 
@@ -201,7 +204,15 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
 
 ### Aktualisierungen
 
-Das Paket ist so gestaltet, dass sowohl `pdfLaTeX` als auch `LuaLaTeX` verwendet werden kann.
+Kompiliert wird ausschließlich mit `LuaLaTeX`.
+
+**2026-09-22**
+
+- Kompiliert wird ab sofort ausschließlich mit `LuaLaTeX` (vorher wahlweise `pdfLaTeX` oder `LuaLaTeX`). Grund: native Unicode-Verarbeitung, u.a. für Namen mit Sonderzeichen (z.B. ş, ğ), die in der Standard-`T1`-Kodierung von `pdfLaTeX` nicht zur Verfügung stehen.
+- `\quelle{...}` (Bildquellenangabe) verarbeitet Sonderzeichen jetzt robust: `_`, `&`, `#` u.Ä. in der URL müssen nicht mehr mit `\` escaped werden. Das Bildquellenverzeichnis (`\druckequellen`) setzt die Angabe zudem als klickbaren Link.
+- `\quelle` und `\druckequellen` sind jetzt in `preamble/Rom-Quellen.sty` ausgelagert und stehen damit auch beim lokalen Kompilieren des eigenen Beitrags zur Verfügung (vorher nur im finalen Buch definiert). Siehe [Bildquellen](#hinweise).
+
+---
 
 **2026-09-21**
 
