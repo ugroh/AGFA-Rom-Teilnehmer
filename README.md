@@ -164,7 +164,38 @@ Wenn alles fertig ist: Verzeichnis `Rom-Seminar-Teilnehmer` (mit angepasstem `ab
 
 **Querverweise mit `\vref`**: `\vref{label}` liefert Name, Nummer und – falls nötig – einen Seitenhinweis, z. B. „Satz 1.1 auf der vorherigen Seite“. Auf derselben Seite steht nur „Satz 1.1“. Der Name (Satz, Lemma, Abschnitt, Gleichung, Abbildung …) richtet sich nach der Umgebung, nicht nach dem Label; Präfixe wie `prop:` oder `eq:` sind nur eine Merkhilfe. **Der Name darf deshalb nicht noch einmal davorgeschrieben werden** („Satz~\vref{…}“ ergäbe „Satz Satz 1.1“). `\ref{}` und `\autoref{}` funktionieren wie gewohnt. `\cref` und `\Cref` (Paket *cleveref*) gibt es bewusst nicht.
 
-**Bildquellen mit `\quelle`**: Bei fremdem Bildmaterial direkt bei der jeweiligen Abbildung `\quelle{URL}` aufrufen, z. B. `\quelle{https://commons.wikimedia.org/wiki/File:Beispiel.jpg}`. Das erzeugt an der Stelle selbst keine Ausgabe, sondern sammelt Abbildungsnummer, Seitenzahl und URL. Sonderzeichen wie `_`, `&`, `#` in der URL müssen **nicht** escaped werden. Am Ende des eigenen Beitrags (nach `\printbibliography`, noch vor `\end{refsection}`) einmal `\druckequellen` aufrufen – das druckt die gesammelte Liste unter der Überschrift „Bildquellen“. Ohne mindestens einen `\quelle`-Aufruf im Beitrag erscheint dabei nichts.
+**Bildquellen mit `\quelle`**: Kurzanleitung.
+
+1. Bei fremdem Bildmaterial `\quelle{URL}` direkt nach der `\caption{...}` aufrufen – noch **innerhalb** derselben `figure`-Umgebung, da sich `\quelle` die aktuelle Abbildungsnummer (`\thefigure`) und Seite merkt:
+
+   ```latex
+   \begin{figure}[htbp]
+       \centering
+       \includegraphics[width=0.8\linewidth]{./content-abcd/Bild}
+       \caption{Kurze Bildunterschrift}
+       \quelle{https://commons.wikimedia.org/wiki/File:Beispiel.jpg}
+   \end{figure}
+   ```
+
+   `\quelle` erzeugt an der Stelle selbst **keine** sichtbare Ausgabe, sondern sammelt den Eintrag im Hintergrund. Sonderzeichen wie `_`, `&`, `#` in der URL können unverändert eingegeben werden, ohne `\`-Escape.
+
+2. Einmal am Ende des eigenen Beitrags – nach `\printbibliography`, noch vor `\end{refsection}` – `\druckequellen` aufrufen:
+
+   ```latex
+   \printbibliography
+   \druckequellen
+   \end{refsection}
+   ```
+
+   Das druckt eine nummerierte, verlinkte Liste unter der Überschrift „Bildquellen“, z. B.:
+
+   ```
+   Bildquellen
+   [1] Abb. 1.1, S. 3: https://commons.wikimedia.org/wiki/File:Beispiel.jpg
+   [2] Abb. 1.2, S. 4: https://www.example.com/bild.jpg
+   ```
+
+Wurde `\quelle` im Beitrag gar nicht verwendet, gibt `\druckequellen` nichts aus. Der Aufruf kann also unabhängig davon, ob Bildquellen vorkommen, immer am Ende jedes Beitrags stehen.
 
 <a name="saetze"></a>
 
