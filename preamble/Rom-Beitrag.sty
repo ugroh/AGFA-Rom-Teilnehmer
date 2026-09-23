@@ -1,8 +1,9 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Beitrag.sty
-%% -- Stand: 2026-09-22  (Theorem-Umgebungen preamble/Rom-Theorem.sty und Bildquellenverzeichnis
+%% -- Stand: 2026-09-23  (Theorem-Umgebungen preamble/Rom-Theorem.sty und Bildquellenverzeichnis
 %% --                   preamble/Rom-Quellen.sty werden jetzt geladen;
-%% --                   babel nur english + ngerman; pdfLaTeX und LuaLaTeX; ohne cleveref; \vref mit Namen)
+%% --                   babel nur english + ngerman; pdfLaTeX und LuaLaTeX;
+%% --                   Querverweise jetzt mit cleveref, \vref mit Namen)
 %% -- Literatur: Der LaTeX-Begleiter, A.4, Seite 910 ff
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
@@ -96,24 +97,23 @@
     ,hypertexnames=true
 }
 
+%% -- Querverweise mit cleveref: \cref, \Cref, \vref, \Vref, \vrefrange, ...
+%%    \vref liefert Name + Nummer + Seitenhinweis, z.B.
+%%    "Satz 1.1 auf der vorherigen Seite". Der Name kommt von cleveref,
+%%    der Seitenhinweis von varioref. Den Namen NICHT von Hand davorschreiben.
+%%    Reihenfolge (getestet):
+%%      varioref -> hyperref -> amsmath/amsthm -> cleveref -> Rom-Theorem
+%%    cleveref muss VOR den \declaretheorem-Befehlen stehen, sonst heisst
+%%    z.B. ein nlemma (sibling=ntheorem) im Verweis "Theorem".
+%%    Die Namen (Singular/Plural) setzt Rom-Theorem.sty per refname={..,..}.
+\RequirePackage{amsmath,amsthm}
+\RequirePackage[ngerman,nameinlink,noabbrev]{cleveref}
+
 %% -- Eigene Pakete
 \RequirePackage{./preamble/Rom-Abkuerzungen}
 \RequirePackage{./preamble/Rom-Mathematik}
 \RequirePackage{./preamble/Rom-Theorem}
 \RequirePackage{./preamble/Rom-Quellen}
-
-%% -- Querverweise: \vref liefert Name + Nummer + Seitenhinweis, z.B.
-%%    "Satz 1.1 auf der vorherigen Seite". Der Name kommt von hyperrefs
-%%    \autoref (Satz, Lemma, Abschnitt, Gleichung, Abbildung, ...), der
-%%    Seitenhinweis von varioref. Den Namen also NICHT von Hand davorschreiben.
-%%    cleveref wird bewusst nicht geladen (es wuerde \vref ersetzen).
-%%    \vref ist robust; gesichert wird deshalb das innere Makro (\vref<Leerzeichen>).
-\expandafter\let\expandafter\Rom@vrefinner\csname vref \endcsname
-\newcommand{\Rom@vrefnorm}[1]{{\let\ref\autoref\Rom@vrefinner{#1}}}
-\newcommand{\Rom@vrefstar}[1]{{\let\ref\autoref\Rom@vrefinner*{#1}}}
-\DeclareRobustCommand{\vref}{\@ifstar{\Rom@vrefstar}{\Rom@vrefnorm}}
-%% -- \Vref = \vref (der Name von \autoref ist schon gross geschrieben)
-\DeclareRobustCommand{\Vref}{\vref}
 
 %% -- Review-Modus
 \ifthenelse{\boolean{review}}{\RequirePackage[doublespacing]{setspace}}{}

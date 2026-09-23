@@ -1,7 +1,8 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Theorem.sty -- Theorem-Umgebungen
-%% -- Stand: 2026-09-21 (Workaround fuer den TeX Live 2026 / thmtools-sibling-Bug;
-%% --                   nthm und thm teilen jetzt den Zaehler mit ntheorem)
+%% -- Stand: 2026-09-23 (Workaround fuer den TeX Live 2026 / thmtools-sibling-Bug;
+%% --                   nthm und thm teilen jetzt den Zaehler mit ntheorem;
+%% --                   refname={Singular,Plural} fuer cleveref: \cref, \vref)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
@@ -50,79 +51,100 @@
 
 %% -- Theoremumgebungen MIT Nummer
 %% --
+%% -- refname={Singular,Plural} setzt \crefname fuer cleveref (\Crefname
+%%    leitet cleveref daraus ab) und den Namen fuer \autoref.
+%%    Voraussetzung: cleveref ist VOR diesem Paket geladen (Rom-Beitrag.sty).
 
 \declaretheorem[style=plain-style,   
     name=Theorem,    
+    refname={Theorem,Theoreme},
     numberwithin=section]{ntheorem}
 
 \declaretheorem[style=plain-style,   
     name=Satz,       
+    refname={Satz,Sätze},
     sibling=ntheorem]{nproposition}
 
 \declaretheorem[style=plain-style,   
     name=Lemma,      
+    refname={Lemma,Lemmata},
     sibling=ntheorem]{nlemma}
 
 \declaretheorem[style=plain-style,
     name=Korollar,   
+    refname={Korollar,Korollare},
     sibling=ntheorem]{ncorollary}
 
 \declaretheorem[style=upshape-style, 
     name=Beispiel,   
+    refname={Beispiel,Beispiele},
     sibling=ntheorem]{nexample}
 
 \declaretheorem[style=upshape-style, 
     name=Beispiele,  
+    refname={Beispiele,Beispiele},
     sibling=ntheorem]{nexamples}
 
 \declaretheorem[style=upshape-style, 
     name=Definition, 
+    refname={Definition,Definitionen},
     sibling=ntheorem]{ndefinition}
     
 \declaretheorem[style=small-style,   
     name=Anmerkung,  
+    refname={Anmerkung,Anmerkungen},
     sibling=ntheorem]{nremark}
     
 \declaretheorem[style=small-style, 
     name=Anmerkungen,
+    refname={Anmerkungen,Anmerkungen},
     sibling=ntheorem]{nremarks}
     
 %% -- Kurzform
 
 \declaretheorem[style=plain-style,   
     name=Theorem,    
+    refname={Theorem,Theoreme},
     sibling=ntheorem]{nthm}
 
 \declaretheorem[style=plain-style,   
     name=Satz,       
+    refname={Satz,Sätze},
     sibling=ntheorem]{nprop}
 
 \declaretheorem[style=plain-style,   
     name=Lemma,      
+    refname={Lemma,Lemmata},
     sibling=ntheorem]{nlem}
 
 \declaretheorem[style=plain-style,
     name=Korollar,   
+    refname={Korollar,Korollare},
     sibling=ntheorem]{ncor}
 
 \declaretheorem[style=upshape-style, 
     name=Beispiel,   
+    refname={Beispiel,Beispiele},
     sibling=ntheorem]{nexamp}
 
 \declaretheorem[style=upshape-style, 
     name=Beispiele,  
+    refname={Beispiele,Beispiele},
     sibling=ntheorem]{nexamps}
 
 \declaretheorem[style=upshape-style, 
     name=Definition, 
+    refname={Definition,Definitionen},
     sibling=ntheorem]{ndefn}
     
 \declaretheorem[style=small-style,   
     name=Anmerkung,  
+    refname={Anmerkung,Anmerkungen},
     sibling=ntheorem]{nrem}
     
 \declaretheorem[style=small-style, 
     name=Anmerkungen,
+    refname={Anmerkungen,Anmerkungen},
     sibling=ntheorem]{nrems}
 
 %% -- Theoremumgebungen OHNE Nummer
@@ -178,38 +200,47 @@
 
 \declaretheorem[style=plain-style,   
     name=Theorem,    
+    refname={Theorem,Theoreme},
     sibling=ntheorem]{thm}
 
 \declaretheorem[style=plain-style,   
     name=Satz,       
+    refname={Satz,Sätze},
     sibling=ntheorem]{prop}
 
 \declaretheorem[style=plain-style,   
     name=Lemma,      
+    refname={Lemma,Lemmata},
     sibling=ntheorem]{lem}
 
 \declaretheorem[style=plain-style,
     name=Korollar,   
+    refname={Korollar,Korollare},
     sibling=ntheorem]{cor}
 
 \declaretheorem[style=upshape-style, 
     name=Beispiel,   
+    refname={Beispiel,Beispiele},
     sibling=ntheorem]{exam}
 
 \declaretheorem[style=upshape-style, 
     name=Beispiele,  
+    refname={Beispiele,Beispiele},
     sibling=ntheorem]{exams}
 
 \declaretheorem[style=upshape-style, 
     name=Definition, 
+    refname={Definition,Definitionen},
     sibling=ntheorem]{defn}
     
 \declaretheorem[style=small-style,   
     name=Anmerkung,  
+    refname={Anmerkung,Anmerkungen},
     sibling=ntheorem]{rem}
     
 \declaretheorem[style=small-style, 
     name=Anmerkungen,
+    refname={Anmerkungen,Anmerkungen},
     sibling=ntheorem]{rems}
 
 %% -- Beweis mit Halmosstein
