@@ -1,6 +1,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-BibLaTeX.sty
-%% -- Stand: 2026-09-21  (Buch: kein einsamer Punkt/Abrufdatum bei url; doi.org per https)
+%% -- Stand: 2026-09-24  (Bibliography-Strings auch fuer ngerman)
+%% -- vorher:  2026-09-21  (Buch: kein einsamer Punkt/Abrufdatum bei url; doi.org per https)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{./preamble/Rom-BibLaTeX}
@@ -108,7 +109,15 @@
 %% -- URL-Strings
 %% --
 
+%% -- babel laedt ngerman; biblatex behandelt german und ngerman als
+%%    getrennte Sprachen, deshalb fuer beide setzen.
 \DefineBibliographyStrings{german}{%
+     andothers = {et al.\addspace}
+    ,and       = {u\adddot}
+    ,urlseen   = {aufgerufen am\addspace}
+    ,urlfrom   = {URL\addspace}
+}
+\DefineBibliographyStrings{ngerman}{%
      andothers = {et al.\addspace}
     ,and       = {u\adddot}
     ,urlseen   = {aufgerufen am\addspace}

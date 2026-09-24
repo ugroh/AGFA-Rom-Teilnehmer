@@ -10,11 +10,9 @@
 %% --               können, z. B. prozentkodierte Adressen (%C3%B6).
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{Rom-Quellen}[2026/09/24 Bildquellenverzeichnis fuer das Rom-Seminar]
+\ProvidesPackage{./preamble/Rom-Quellen}[2026/09/24 Bildquellenverzeichnis fuer das Rom-Seminar]
 
 \RequirePackage{etoolbox}
-
-\makeatletter
 
 %% -- Sammelstelle fuer die Bildquellen; wird pro refsection geleert
 \newcommand{\bildquellen}{}
@@ -66,5 +64,4 @@
 \BeforeBeginEnvironment{refsection}{\global\let\bildquellen\@empty}
 \AfterEndEnvironment{refsection}{\global\let\bildquellen\@empty}
 
-\makeatother
 %% -- Ende Rom-Quellen.sty
