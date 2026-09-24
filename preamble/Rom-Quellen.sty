@@ -1,12 +1,16 @@
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Quellen.sty
 %% -- Verzeichnis der Bildquellen: \quelle{URL} bei einer Abbildung,
 %% -- \druckequellen gibt die gesammelten Angaben aus.
 %% -- Bitte diese Datei nicht verändern.
-%% -- Stand: 2026-09-22
+%% -- Stand: 2026-09-24
+%% --   2026-09-24: \quelle liest die URL jetzt mit geänderten
+%% --               Catcodes ein, damit auch %, #, &, _, ~, ^, $
+%% --               unverändert (ohne Backslash) angegeben werden
+%% --               können, z. B. prozentkodierte Adressen (%C3%B6).
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{Rom-Quellen}[2026/09/22 Bildquellenverzeichnis fuer das Rom-Seminar]
+\ProvidesPackage{Rom-Quellen}[2026/09/24 Bildquellenverzeichnis fuer das Rom-Seminar]
 
 \RequirePackage{etoolbox}
 
@@ -16,17 +20,30 @@
 \newcommand{\bildquellen}{}
 \newcounter{quellenr}
 
-%% -- Aufruf: \quelle{URL} direkt bei/unter der jeweiligen Abbildung.
+%% -- Aufruf: \quelle{URL} direkt bei/unter der jeweiligen Abbildung
+%% -- (innerhalb der figure-Umgebung, nach \caption).
 %% -- Erzeugt an der Stelle selbst keine sichtbare Ausgabe, sondern
-%% -- sammelt den Eintrag fuer \druckequellen. Sonderzeichen wie
-%% -- _, &, # in der URL muessen NICHT escaped werden.
-\newcommand{\quelle}[1]{%
+%% -- sammelt den Eintrag fuer \druckequellen.
+%% -- Die URL wird wie bei \url unverändert übernommen: Sonderzeichen
+%% -- wie %, #, &, _, ~ muessen NICHT escaped werden.
+%% -- Einschränkung: \quelle darf nicht im Argument eines anderen
+%% -- Befehls stehen (etwa in \caption{...}), da die Catcodes dort
+%% -- bereits festgelegt sind.
+\newcommand{\quelle}{%
+  \begingroup
+  \catcode`\%=12 \catcode`\#=12 \catcode`\&=12 \catcode`\_=12
+  \catcode`\~=12 \catcode`\^=12 \catcode`\$=12
+  \Rom@quelle
+}
+\newcommand{\Rom@quelle}[1]{%
+  \endgroup
   \stepcounter{quellenr}%
   \phantomsection
   \label{quelle:\thequellenr}%
   \edef\@tempa{%
     \noexpand\g@addto@macro\noexpand\bildquellen{%
-      \noexpand\item Abb.~\thefigure, S.~\pageref{quelle:\thequellenr}: \noexpand\url{\detokenize{#1}}}%
+      \noexpand\item Abb.~\thefigure, S.~\noexpand\pageref{quelle:\thequellenr}:
+      \noexpand\url{\unexpanded{#1}}}%
   }%
   \@tempa
 }
