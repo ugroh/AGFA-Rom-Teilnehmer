@@ -14,8 +14,8 @@
 %% --
 %\addchap[\ShortTitel]{\LongTitel}
 \addchap{\LongTitel}
-\addtocontents{toc}{\textsc{\AutorenBeitrag}}
-\addtocontents{toc}{}% Leerzeile im TOC
+\addtocontents{toc}{\protect\textsc{\AutorenBeitrag}\protect\par}
+\addtocontents{toc}{\protect\addvspace{\baselineskip}}
 
 %% -- Kopfzeile: gerade Seiten = Autoren, ungerade = Kurztitel
 %% --
