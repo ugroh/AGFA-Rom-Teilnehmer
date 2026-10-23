@@ -1,8 +1,9 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-Beitrag.sty
-%% -- Stand: 2026-09-24  (unbekannte Optionen werden gemeldet statt an
+%% -- Stand: 2026-10-23  (cleveref: Abbildungen heissen "Abb." wie in der Bildunterschrift)
+%% -- vorher:  2026-09-24  (unbekannte Optionen werden gemeldet statt an
 %% --                   scrartcl weitergereicht)
-%% -- vorher:  2026-09-23  (Theorem-Umgebungen preamble/Rom-Theorem.sty und Bildquellenverzeichnis
+%% --          2026-09-23  (Theorem-Umgebungen preamble/Rom-Theorem.sty und Bildquellenverzeichnis
 %% --                   preamble/Rom-Quellen.sty werden jetzt geladen;
 %% --                   babel nur english + ngerman; pdfLaTeX und LuaLaTeX;
 %% --                   Querverweise jetzt mit cleveref, \vref mit Namen)
@@ -113,6 +114,10 @@
 %%    Die Namen (Singular/Plural) setzt Rom-Theorem.sty per refname={..,..}.
 \RequirePackage{amsmath,amsthm}
 \RequirePackage[ngerman,nameinlink,noabbrev]{cleveref}
+%% -- Abbildungen wie in Rom-Layout (\figureformat) als "Abb.", nicht
+%%    "Abbildung" (cleveref-Standard bei noabbrev); gilt fuer \cref, \Cref, \vref
+\crefname{figure}{Abb.}{Abb.}
+\Crefname{figure}{Abb.}{Abb.}
 
 %% -- Eigene Pakete
 \RequirePackage{./preamble/Rom-Abkuerzungen}

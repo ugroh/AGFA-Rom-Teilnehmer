@@ -1,6 +1,8 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% -- Rom-BibLaTeX.sty
-%% -- Stand: 2026-09-24  (Bibliography-Strings auch fuer ngerman)
+%% -- Stand: 2026-10-23  (postnote mit \mkpageprefix: "S." automatisch bei Seitenzahlen;
+%% --                   URLs nicht mehr gesperrt; kein doppeltes Leerzeichen nach "aufgerufen am")
+%% --          2026-09-24  (Bibliography-Strings auch fuer ngerman)
 %% -- vorher:  2026-09-21  (Buch: kein einsamer Punkt/Abrufdatum bei url; doi.org per https)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
@@ -92,8 +94,19 @@
 %% -- Felder: online
 \DeclareFieldFormat[online]{date}{\mkbibparens{#1}}
 %% --
-\DeclareFieldFormat{postnote}{#1}
-\DeclareFieldFormat{multipostnote}{#1}
+%% -- URLs im Literaturverzeichnis nicht sperren: kein dehnbarer Leerraum
+%%    nach Ziffern/Buchstaben, stattdessen dort Umbruch erlauben (Strafpunkte)
+\biburlnumskip=0mu\relax
+\biburlucskip=0mu\relax
+\biburllcskip=0mu\relax
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+%% -- Seitenangaben: \cite[62]{key} -> [n, S. 62]; auch 136--140 und xxi.
+%%    Steht schon "S.~62" oder "Kap.~2" da, bleibt es unverändert
+%%    (\mkpageprefix setzt "S." nur vor Zahlen/Seitenbereichen).
+\DeclareFieldFormat{postnote}{\mkpageprefix[pagination]{#1}}
+\DeclareFieldFormat{multipostnote}{\mkpageprefix[pagination]{#1}}
 
 %% -- Namensformatierung
 %% --
@@ -114,13 +127,13 @@
 \DefineBibliographyStrings{german}{%
      andothers = {et al.\addspace}
     ,and       = {u\adddot}
-    ,urlseen   = {aufgerufen am\addspace}
+    ,urlseen   = {aufgerufen am}
     ,urlfrom   = {URL\addspace}
 }
 \DefineBibliographyStrings{ngerman}{%
      andothers = {et al.\addspace}
     ,and       = {u\adddot}
-    ,urlseen   = {aufgerufen am\addspace}
+    ,urlseen   = {aufgerufen am}
     ,urlfrom   = {URL\addspace}
 }
 \DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\url{#1}}
